@@ -17,7 +17,7 @@
   },
   {
     "input": ["LUKA", "LUKARIOO"],
-    "result": "link"
+    "result": "https://www.amazon.com.br/Spectral-Reports-Newspapers-1865-1917-English-ebook/dp/B0774FZNPL"
   },
   {
     "input": ["JOZEP"],
@@ -105,7 +105,7 @@
   },
   {
     "input": ["SELO"],
-    "result": "link"
+    "result": "https://en.wikipedia.org/wiki/Sun_cross"
   },
   {
     "input": ["GUERREIRO"],
