@@ -1,14 +1,14 @@
 [
   {
     "input": ["ALDRIC", "CIENTISTA"],
-    "result": "Criador da máquina suprema. Capaz de substituir funções de deuses."
+    "result": "Criador da máquina suprema.<br>Capaz de substituir funções de deuses."
   },
   {
     "input": ["HI"],
     "result": "Serpente"
   },
   {
-    "input": ["HEDRIC"],
+    "input": ["HELDRIC"],
     "result": "NR.pdf"
   },
   {
@@ -25,7 +25,7 @@
   },
   {
     "input": ["ANACRÔNIMO"],
-    "result": "Esteriótype do culto"
+    "result": "Esteriótipo do culto"
   },
   {
     "input": ["VIAJANTE", "VIAJANTE TETRADIMENSIONAL", "TETRADIMENSIONAL"],
@@ -69,15 +69,15 @@
   },
   {
     "input": ["MALUM"],
-    "result": "Tiozão não tão mal quanto seu nome, impalado por trás."
+    "result": "Tiozão não tão mal quanto seu nome.<br>Status: Impalado."
   },
   {
     "input": ["BENIGNITAS"],
-    "result": "Esposa de malum, e apenas conhecida por isso"
+    "result": "Esposa de malum,<br>e apenas conhecida por isso"
   },
   {
     "input": ["BEGNIDITAS"],
-    "result": "Nome gerado em um gerador de sílabas, não confundir com Benignitas."
+    "result": "Nome gerado em um<br>gerador de sílabas,<br>não confundir com Benignitas."
   },
   {
     "input": ["LAURA", "ATLIY", "ATLIYLOL", "GABI", "BAGI"],
@@ -85,23 +85,19 @@
   },
   {
     "input": ["ATILY"],
-    "result": "Nome gerado em um gerador de sílabas, não confundir com Atliy."
+    "result": "Nome gerado em um<br>gerador de sílabas,<br>não confundir com Atliy."
   },
   {
     "input": ["DARLO", "DARLU", "DARLIN", "REI", "MONARCA"],
-    "result": "Morreu trágicamente. Esqueceu de respirar pois estava muito 'húmido'"
+    "result": "Morreu trágicamente.<br>Esqueceu de respirar pois estava muito<br>'húmido'"
   },
   {
     "input": ["FUNGI", "REINO FUNGI"],
     "result": "Fungi.jpeg"
   },
   {
-    "input": ["LS"],
-    "result": "Music  Public  Desktop   Downloads  Pictures  Videos"
-  },
-  {
     "input": ["CULTO", "CULTISTA", "CULTISTAS"],
-    "result": "A primeira regra do culto é que você não fala do culto."
+    "result": "A primeira regra do culto<br>é que você não fala do culto."
   },
   {
     "input": ["SELO"],
@@ -117,7 +113,7 @@
   },
   {
     "input": ["THE DEEP", "DEEP"],
-    "result": "Onde almas vagam e o terror mora"
+    "result": "Onde almas vagam<br>e o terror mora"
   },
   {
     "input": ["BEDROCK"],
@@ -129,7 +125,7 @@
   },
   {
     "input": ["MYT", "MYYT", "MYTT", "MYTH", "MYTCH"],
-    "result": "O que chamam de bilionário."
+    "result": "O que chamam de<br>bilionário."
   },
   {
     "input": ["SERAPHIM", "SERAFIM"],
@@ -141,7 +137,7 @@
   },
   {
     "input": ["TORRE", "TORRE DO RELÓGIO", "TORRE RELÓGIO"],
-    "result": "Entidade infortuna o suficiente para não ser documentada."
+    "result": "Entidade infortuna o<br>suficiente para não ser<br>documentada."
   },
   {
     "input": ["?"],
@@ -149,15 +145,15 @@
   },
   {
     "input": ["BYE BYE", "BYEBYE", "BYE"],
-    "result": "Protocolo 365 iniciado. Neurotoxinas da sala vazando."
+    "result": "Protocolo 365 iniciado.<br>Neurotoxinas ativadas."
   },
   {
     "input": ["CREATE"],
-    "result": "Impressionante constando que seu fim não foi queimando."
+    "result": "Será lembrado."
   },
   {
     "input": ["ADMIN", "ADMINISTRADOR"],
-    "result": "Acesso negado. Razão: Baixo nível de intelecto."
+    "result": "Acesso negado.<br>Razão: Baixo intelecto."
   },
   {
     "input": ["PASSWORD", "SENHA"],
@@ -170,5 +166,53 @@
   {
     "input": ["ESPÍRITO DA FLORESTA"],
     "result": "Orb.webm"
+  },
+  {
+    "input": ["STAR", "STARLIGHT"],
+    "result": "Construtor de reatores."
+  },
+  {
+    "input": ["PÓS", "POS"],
+    "result": "Inundado."
+  },
+  {
+    "input": ["GL", "GLSMP", "GAURA"],
+    "result": "O melhor dos melhores"
+  },
+  {
+    "input": ["GL3", "GLSMP3", "GL 3", "GLSMP 3", "GAURA SMP 3"],
+    "result": "Atual"
+  },
+  {
+    "input": ["GL4", "GLSMP4", "GL 4", "GLSMP 4", "GAURA SMP 4"],
+    "result": "Não."
+  },
+  {
+    "input": ["GL2", "GLSMP2", "GL 2", "GLSMP 2", "GAURA SMP 2"],
+    "result": "O Terrível"
+  },
+  {
+    "input": ["GL1", "GLSMP1", "GL 1", "GLSMP 1", "GAURA SMP 1"],
+    "result": "O Início"
+  },
+  {
+    "input": ["TSMP2", "TSMP 2", "TSMP3", "TSMP3"],
+    "result": "Inexistente"
+  },
+  {
+    "input": ["TSMP1", "TSMP 1", "TSMP"],
+    "result": "O Início<br>(definitivo)"
+  },
+  {
+    "input": ["THE BLOOD", "BLOOD SMP", "THE BLOOD SMP"],
+    "result": "Universo b340 - Desconhecido"
+  },
+  {
+    "input": ["QSMP"],
+    "result": "Q.jpeg"
+  },
+  {
+    "input": ["SANGUINE"],
+    "result": "O coração de sangue<br>bombeia mais uma vez."
   }
 ]
