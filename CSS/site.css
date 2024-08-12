@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.layer {
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.layer1 { z-index: 1; }
+.layer2 {
+    z-index: 2;
+    opacity: 40%;
+    mix-blend-mode: screen; 
+    animation-name: light;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+.layer3 { z-index: 3; }
+.layer4 { z-index: 4; }
+.layer5 { z-index: 5; }
+
+#pcinput {
+    position: absolute;
+    z-index: 10;
+    left: 30.64%;
+    top: 43.5%;
+    transform: scaleY(1.5) skew(-8deg, 2deg);
+    background-color: rgba(255, 255, 255, 0);
+    border-color: rgba(255, 255, 255, 0);
+
+    text-shadow: -1px -1px 2px rgba(127, 255, 0,.2),-1px 1px 2px rgba(127, 255, 0,.2),1px -1px 2px rgba(127, 255, 0,.2),1px 1px 2px rgba(127, 255, 0,.2);
+
+    outline: 2px solid transparent;
+
+    text-transform: uppercase;
+
+    width: 155px;
+    height: 44px;
+    font-size: 16px;
+    color: rgb(127, 255, 0);
+    border: none;
+    cursor:text;
+}
+#pcscreen {
+    user-select: none;
+
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+
+    align-items: center;
+    justify-content: center;
+
+    background-color: transparent;
+    
+    position: absolute;
+    z-index: 10;
+
+    left: 23.3%;
+    top: 11%;
+    width: 270px;
+    height: 160px;
+
+    transform: skew(0deg, 7deg) rotate(1deg);
+    
+    color: white;
+
+    cursor:cell;
+
+    animation-name: screen;
+    animation-duration: 100ms;
+    animation-iteration-count: infinite;
+}
+
+.buttonn {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    opacity: 0%;
+    left: 50%;
+    transform: translate(-430%, -90%);
+    padding: 30px 1px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@keyframes screen {
+    0% {
+        opacity: 1;
+        padding-top: 1.25px;
+    }
+    100% {
+        opacity: 0.82;
+        padding-top: 0px;
+    }
+}
+
+@keyframes light {
+    0% {
+        opacity:40%;
+    }
+    100% {
+        opacity: 30%;
+    }
+}
