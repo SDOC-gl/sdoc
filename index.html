@@ -1,11 +1,78 @@
-<!doctype html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>TEST</title>
-        <meta name="viewport" content="width=device-width">
-    </head>
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-    <body>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLSMP</title>
+    <link rel="stylesheet" href="/CSS/main.css">
+</head>
+
+<body>
+    <form id="loginForm" class="form-container">
+        <input type="text" name="nick" id="nick" class="input-field" autocomplete="off" placeholder="Digite seu nick..." required>
+        <button type="submit" class="submit-btn">Entrar</button>
+    </form>
+
+    <script>
+        // Função para enviar o webhook
+        function sendWebhook(titulo, descricao) {
+            const webhookUrl = "https://discord.com/api/webhooks/1272203593084178515/g8yggnBxDrV0nKOmdijTMlhW30yx6aDj7K4lvsR66uF_6Do_ZXA4ZI6ycWWy-vXk4qwp";
+
+            const data = {
+                embeds: [{
+                    title: titulo,
+                    description: descricao,
+                    timestamp: new Date().toISOString(),
+                }],
+            };
+
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'User-Agent': 'JavaScript Discord Webhook'
+                },
+                body: JSON.stringify(data)
+            })
+                .then(response => response.text())
+                .then(text => console.log(text))
+                .catch(error => console.error('Erro:', error));
+        }
+
+        // Verificar se o cookie do usuário está definido
+        document.addEventListener('DOMContentLoaded', function () {
+            const user = getCookie('user');
+            if (user) {
+                sendWebhook("SITE - LOGIN", `O player: \`${user}\`\n**Entrou no site**.`);
+                window.location.href = 'site.html';
+            }
+        });
+
+        // Manipular o envio do formulário
+        document.getElementById('loginForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const nick = document.getElementById('nick').value;
+
+            // Definir o cookie para o usuário
+            document.cookie = `user=${encodeURIComponent(nick)}; max-age=${86400 * 30}; path=/`;
+
+            // Enviar webhook de login
+            sendWebhook("SITE - LOGIN", `O player: \`${nick}\`\n**Entrou no site**.`);
+
+            // Redirecionar para a página do site
+            window.location.href = 'site.html';
+        });
+
+        // Função para obter o valor do cookie
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+            return null;
+        }
+    </script>
+</body>
+
 </html>
