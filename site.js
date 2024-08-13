@@ -60,10 +60,10 @@ function process(display) {
             let notFoundTxt = "\""+input_value+"\"" + " não encontrado."
             if (input_value.length >= 10) {
                 notFoundTxt = "\""+(String)(input_value).substring(0, 8) + "..."+"\"" + " não encontrado.";
+                sendWebhook("SITE - LOG-BUSCA", `O player: \`${user}\`\n\nBuscou com o parâmetro: \`${display}\`\nResultado: Não encontrado.\n\nDisplay Atual do player: \`${input_value}\ não encontrado.`");
             }
                 
             document.getElementById('displayText').textContent = notFoundTxt;
-            sendWebhook("SITE - LOG-BUSCA", `O player: \`${user}\`\n\nBuscou com o parâmetro: \`${display}\`\nResultado: Não encontrado.\n\nDisplay Atual do player: Database error: 404`);
         })
         .catch(error => console.error('Erro ao processar JSON:', error));
 }
