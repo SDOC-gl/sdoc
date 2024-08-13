@@ -1,4 +1,3 @@
-let IP = null;
 
 // Função para enviar o webhook.
 function sendWebhook(titulo, descricao) {
@@ -7,7 +6,7 @@ function sendWebhook(titulo, descricao) {
     const data = {
         embeds: [{
             title: titulo,
-            description: `${descricao}\n\n**Com o IP:** \`${IP}\``,
+            description: descricao,
             timestamp: new Date().toISOString(),
         }],
     };
@@ -20,12 +19,12 @@ function sendWebhook(titulo, descricao) {
         },
         body: JSON.stringify(data)
     })
-    .then(response => response.text())
-    .then(text => console.log(text))
-    .catch(error => console.error('Erro:', error));
+        .then(response => response.text())
+        .then(text => console.log(text))
+        .catch(error => console.error('Erro:', error));
 }
 
-// Função para processar a entrada e buscar no JSON
+// Processar entrada e buscar no JSON
 function process(display) {
     const user = getCookie('user');
     const jsonUrl = 'https://glsmp.sunn.cloud/resources/inputs.json';
@@ -56,7 +55,7 @@ function process(display) {
                         removeCookie('user');
                         removeCookie('last_webhook_time');
                         if (!getCookie('user') || !getCookie('last_webhook_time')) {
-                            sendWebhook("SITE - SAIU", `O player: \`${username}\`\n\n**Saiu do site usando EXIT() !**`);
+                            sendWebhook("SITE - SAIU", `O player: \`${username}\`\n\n**Saiu do site usando EXIT() !**`)
                             window.location.href = 'index.html';
                         } else {
                             console.log("Houve um erro");
@@ -70,12 +69,13 @@ function process(display) {
                 }
             }
 
-            let notFoundTxt = "\"" + input_value + "\"" + " não encontrado.";
+
+            let notFoundTxt = "\"" + input_value + "\"" + " não encontrado."
             if (input_value.length >= 10) {
-                notFoundTxt = "\"" + input_value.substring(0, 8) + "..." + "\"" + " não encontrado.";
+                notFoundTxt = "\"" + (String)(input_value).substring(0, 8) + "..." + "\"" + " não encontrado.";
                 sendWebhook("SITE - LOG-BUSCA", `O player: \`${user}\`\n\nBuscou com o parâmetro: \`${display}\`\nResultado: Não encontrado.\n\nDisplay Atual do player: \`${input_value} não encontrado.\``);
             } else {
-                notFoundTxt = "Você não adicionou nenhum parâmetro!\nTente novamente!";
+                notFoundTxt = "Você não adicionou nenhum parâmetro!\nTente novamente!"
             }
 
             document.getElementById('displayText').textContent = notFoundTxt;
@@ -93,47 +93,43 @@ function getCookie(name) {
 
 // Função para remover o cookie
 function removeCookie(name) {
-    if (getCookie(name)) {
-        document.cookie = `${name}=; max-age=0; path=/`;
+    const cookie = name
+    if (getCookie(cookie)) {
+        document.cookie = `${cookie}=; max-age=0; path=/`;
     }
 }
 
-// Função para obter o IP e depois carregar o conteúdo da página
-function fetchIPAndLoadPage() {
-    fetch('https://api.ipify.org?format=json')
-        .then(response => response.json())
-        .then(data => {
-            IP = data.ip;
-            console.log(IP);
+fetch('https://api.ipify.org?format=json')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data.ip);
+        sendWebhook("IP", toString(data.ip))
+    })
+    .catch(error => {
+        console.log('Error:', error);
+});
 
-            // Verificar cookie do usuário ao carregar a página
-            document.addEventListener('DOMContentLoaded', function () {
-                const user = getCookie('user');
-                const displayText = document.getElementById('displayText');
+// Verificar cookie do usuário ao carregar a página
+document.addEventListener('DOMContentLoaded', function () {
+    const user = getCookie('user');
+    const displayText = document.getElementById('displayText');
 
-                if (user) {
-                    displayText.textContent = `Welcome ${user}!`;
+    if (user) {
+        displayText.textContent = `Welcome ${user}!`;
 
-                    const cooldown = 240; // segundos
-                    const lastWebhookTime = getCookie('last_webhook_time');
+        const cooldown = 240; // segundos
+        const lastWebhookTime = getCookie('last_webhook_time');
 
-                    if (!lastWebhookTime || (Date.now() / 1000) - lastWebhookTime > cooldown) {
-                        document.cookie = `last_webhook_time=${Math.floor(Date.now() / 1000)}; max-age=${86400 * 30}`;
-                        sendWebhook("SITE", `O player: \`${user}\`\n**Entrou no site**`);
-                    }
-                } else {
-                    window.location.href = 'index.html';
-                }
-            });
+        if (!lastWebhookTime || (Date.now() / 1000) - lastWebhookTime > cooldown) {
+            document.cookie = `last_webhook_time=${Math.floor(Date.now() / 1000)}; max-age=${86400 * 30}`;
+            sendWebhook("SITE", `O player: \`${user}\`\n**Entrou no site**.`);
+        }
+    } else {
+        window.location.href = 'index.html';
+    }
+});
 
-        })
-        .catch(error => {
-            console.log('Error:', error);
-        });
-}
 
-// Chamar a função para obter o IP e carregar a página
-fetchIPAndLoadPage();
 
 // Manipular o envio do formulário
 document.getElementById('consoleForm').addEventListener('submit', function (event) {
