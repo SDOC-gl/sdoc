@@ -1,9 +1,12 @@
+html {
+    overflow: hidden;
+}
+
 body {
     margin: 0;
     padding: 0;
     height: 100vh;
     width: 100vw;
-    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,14 +14,12 @@ body {
 }
 
 .container {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+    position: absolute;
+    width: calc(1932px / 1.5);
+    height: calc(1074px / 1.5);
 }
 
 .layer {
-
     position: absolute;
     width: 100%;
     height: 100%;
@@ -42,11 +43,10 @@ body {
 #pcinput {
     position: absolute;
     z-index: 10;
-    left: 30.64%;
-    top: 43.5%;
-    transform: scaleY(1.5) skew(-8deg, 2deg);
-    background-color: rgba(255, 255, 255, 0);
-    border-color: rgba(255, 255, 255, 0);
+    left: 392px;
+    top: 315px;
+    transform: scaleY(1.75) skew(-12deg, 2deg);
+    background-color: transparent;
 
     text-shadow: -1px -1px 2px rgba(127, 255, 0,.2),-1px 1px 2px rgba(127, 255, 0,.2),1px -1px 2px rgba(127, 255, 0,.2),1px 1px 2px rgba(127, 255, 0,.2);
 
@@ -54,7 +54,7 @@ body {
 
     text-transform: uppercase;
 
-    width: 155px;
+    width: 150px;
     height: 44px;
     font-size: 16px;
     color: rgb(127, 255, 0);
@@ -63,14 +63,7 @@ body {
 }
 #pcscreen {
     user-select: none;
-
-    display: -ms-flexbox;
-    display: -webkit-flex;
     display: flex;
-
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
 
     align-items: center;
     justify-content: center;
@@ -80,12 +73,12 @@ body {
     position: absolute;
     z-index: 10;
 
-    left: 23.3%;
-    top: 11%;
+    left: 292px;
+    top: 106px;
     width: 270px;
-    height: 160px;
+    height: 165px;
 
-    transform: skew(0deg, 7deg) rotate(1deg);
+    transform: skew(0deg, 5deg);
     
     color: white;
 
@@ -95,20 +88,15 @@ body {
     animation-duration: 100ms;
     animation-iteration-count: infinite;
 }
-
-.buttonn {
-    position: absolute;
-    z-index: 10;
-    top: 50%;
-    opacity: 0%;
-    left: 50%;
-    transform: translate(-430%, -90%);
-    padding: 30px 1px;
-    font-size: 16px;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+#displayText {
+    text-shadow: -1px -1px 2px 
+        rgba(255, 255, 255, 0.2),-1px 1px 2px 
+        rgba(255, 255, 255, 0.2),1px -1px 2px
+        rgba(255, 255, 255, 0.2),1px 1px 2px 
+        rgba(255, 255, 255, 0.2);
+}
+#displayImg {
+    max-height: 160px;
 }
 
 @keyframes screen {
