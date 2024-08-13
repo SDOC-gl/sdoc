@@ -44,7 +44,7 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
     // Temporario || Verificação de invasor!
     if (nick === "g4uradmins") {
         document.cookie = `user=${(nick)}; max-age=${86400 * 30}; path=/`;
-        sendWebhook("SITE - LOGIN", `O player: \`${nick}\`\n**Entrou no site**.`);
+        //sendWebhook("SITE - LOGIN", `O player: \`${nick}\`\n**Entrou no site**.`);
         window.location.href = 'site.html';
 
     } else {
