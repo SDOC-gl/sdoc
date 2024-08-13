@@ -11,7 +11,7 @@
   {
     "input": ["HELDRIC"],
     "result": "NR.pdf"
-  },
+  },  
   {
     "input": ["BELFEGOR"],
     "result": "Aquela topeira..."
@@ -25,16 +25,16 @@
     "result": "Trouxe companhia"
   },
   {
-    "input": ["ANACRÔNIMO"],
-    "result": "Esteriótipo do culto"
+    "input": ["ANACRÔNIMO", "ANACRONIMO"],
+    "result": "Anacronimo.pdf"
   },
   {
-    "input": ["VIAJANTE", "VIAJANTE TETRADIMENSIONAL", "TETRADIMENSIONAL"],
-    "result": "Provavelmente observando"
+    "input": ["VIAJANTE", "VIAJANTE TETRADIMENSIONAL", "VIAJANTE DA QUARTA DIMENSÃO"],
+    "result": "Viajante.pdf"
   },
   {
-    "input": ["APOCALÍPSE"],
-    "result": "Apocalipse.jpeg"
+    "input": ["APOCALIPSE", "APOCALÍPSE"],
+    "result": "Apocalipse.pdf"
   },
   {
     "input": ["MONÓLITO DA CONSCIÊNCIA", "MONÓLITO", "MONOLITO", "MONOLITO DA CONSCIÊNCIA", "MONOLITO DA CONSCIENCIA", "MONÓLITO DA CONSCIENCIA"],
@@ -161,8 +161,9 @@
     "result": "(página com mais coisa, ainda pensando em algo pra isso)"
   },
   {
-    "input": ["ESPÍRITO DA FLORESTA"],
-    "result": "Orb.webm"
+    "input": ["ESPÍRITO DA FLORESTA", "ESPIRITO DA FLORESTA", "ESPÍRITO", "ESPIRITO"],
+    "random": true,
+    "result": ["Espiritos.pdf", "Orb.webm"]
   },
   {
     "input": ["STAR", "STARLIGHT"],

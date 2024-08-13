@@ -36,7 +36,11 @@ function process(display) {
 
             for (const processing of processings) {
                 if (processing.input.map(item => item.toUpperCase()).includes(input_value)) {
-                    const content = processing.result;
+                    const isRandom = (Boolean)(processing.random);
+                    let content = processing.result;
+                    if (typeof content == "object" && isRandom) {
+                        content = content[Math.round(Math.random())];
+                    }
 
                     if (/^https?:\/\//.test(content)) {
                         sendWebhook("SITE - LOG-BUSCA", `O player: \`${user}\`\n\nBuscou com o parâmetro: \`${display}\`\nResultado: \`${content}\``);
