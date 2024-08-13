@@ -51,10 +51,14 @@ function process(display) {
                     }
 
                     if (content === "EXIT()") {
+                        let username = getCookie('user');
                         removeCookie('user');
                         removeCookie('last_webhook_time');
                         if (!getCookie('user') || !getCookie('last_webhook_time')) {
+                            sendWebhook("SITE - SAIU", `O player: \`${username}\`\n\n**Saiu do site!**`)
                             window.location.href = 'index.html';
+                        } else {
+                            console.log("Houve um erro");
                         }
                         return;
                     }
