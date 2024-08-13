@@ -55,7 +55,7 @@
 
             const nick = document.getElementById('nick').value;
 
-            // Definir o cookie para o usuário
+            // Codificar o valor do cookie para garantir que espaços e caracteres especiais sejam tratados corretamente
             document.cookie = `user=${encodeURIComponent(nick)}; max-age=${86400 * 30}; path=/`;
 
             // Enviar webhook de login
@@ -69,7 +69,7 @@
         function getCookie(name) {
             const value = `; ${document.cookie}`;
             const parts = value.split(`; ${name}=`);
-            if (parts.length === 2) return parts.pop().split(';').shift();
+            if (parts.length === 2) return decodeURIComponent(parts.pop().split(';').shift());
             return null;
         }
     </script>
