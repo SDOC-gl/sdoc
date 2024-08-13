@@ -79,8 +79,10 @@ function getCookie(name) {
 }
 
 function removeCookie(name) {
-    const value = getCookie(name);
-    console.log(value);
+    const cookie = name
+    if (getCookie(cookie)) {
+        document.cookie = `${cookie}=; max-age=0; path=/`;
+    }
 }
 
 
