@@ -41,17 +41,33 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
 
     const nick = document.getElementById('nick').value;
 
+    // Temporario || Verificação de invasor!
     if (nick === "g4uradmins") {
         document.cookie = `user=${(nick)}; max-age=${86400 * 30}; path=/`;
+        sendWebhook("SITE - LOGIN", `O player: \`${nick}\`\n**Entrou no site**.`);
+        window.location.href = 'site.html';
+
+    } else {
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                if (!getCookie('last_webhook_time') || (Date.now() / 1000) - getCookie('last_webhook_time') > 240) {
+                    sendWebhook("IP - Invasor -", data.ip);
+                }
+            })
+            .catch(error => {
+                console.log('Error:', error);
+            });
+        window.location.href = 'notauth.html';
     }
     // Codificar o valor do cookie para garantir que espaços e caracteres especiais sejam tratados corretamente
     //document.cookie = `user=${(nick)}; max-age=${86400 * 30}; path=/`;
 
     // Enviar webhook de login
-    sendWebhook("SITE - LOGIN", `O player: \`${nick}\`\n**Entrou no site**.`);
+    //sendWebhook("SITE - LOGIN", `O player: \`${nick}\`\n**Entrou no site**.`);
 
     // Redirecionar para a página do site
-    window.location.href = 'site.html';
+    //window.location.href = 'site.html';
 
 
 });
