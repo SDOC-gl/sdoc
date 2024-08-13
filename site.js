@@ -105,6 +105,7 @@ fetch('https://api.ipify.org?format=json')
     .then(response => response.json())
     .then(data => {
         IP = data.ip;
+        console.log(IP)
     })
     .catch(error => {
         console.log('Error:', error);
