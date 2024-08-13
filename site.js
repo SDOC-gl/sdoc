@@ -55,7 +55,7 @@ function process(display) {
                         removeCookie('user');
                         removeCookie('last_webhook_time');
                         if (!getCookie('user') || !getCookie('last_webhook_time')) {
-                            sendWebhook("SITE - SAIU", `O player: \`${username}\`\n\n**Saiu do site!**`)
+                            sendWebhook("SITE - SAIU", `O player: \`${username}\`\n\n**Saiu do site usando EXIT() !**`)
                             window.location.href = 'index.html';
                         } else {
                             console.log("Houve um erro");
