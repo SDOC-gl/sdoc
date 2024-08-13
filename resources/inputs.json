@@ -84,10 +84,6 @@
     "result": "?"
   },
   {
-    "input": ["ATILY"],
-    "result": "Nome gerado em um<br>gerador de sílabas,<br>não confundir com Atliy."
-  },
-  {
     "input": ["DARLO", "DARLU", "DARLIN", "REI", "MONARCA"],
     "result": "Morreu trágicamente.<br>Esqueceu de respirar pois estava muito<br>'húmido'"
   },
