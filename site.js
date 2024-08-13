@@ -1,4 +1,5 @@
 
+let IP = null;
 // Função para enviar o webhook.
 function sendWebhook(titulo, descricao) {
     const webhookUrl = "https://discord.com/api/webhooks/1273020022800781494/Y8Ib_CCKtaui7yNP6DZysUSlbx1xxZySc6g5FlhwiOUIOTJmzTjbiV8VICC75911gaS_";
@@ -100,6 +101,15 @@ function removeCookie(name) {
 }
 
 
+fetch('https://api.ipify.org?format=json')
+    .then(response => response.json())
+    .then(data => {
+        IP = data.ip;
+    })
+    .catch(error => {
+        console.log('Error:', error);
+});
+
 // Verificar cookie do usuário ao carregar a página
 document.addEventListener('DOMContentLoaded', function () {
     const user = getCookie('user');
@@ -113,21 +123,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (!lastWebhookTime || (Date.now() / 1000) - lastWebhookTime > cooldown) {
             document.cookie = `last_webhook_time=${Math.floor(Date.now() / 1000)}; max-age=${86400 * 30}`;
-            sendWebhook("SITE", `O player: \`${user}\`\n**Entrou no site**.`);
+            sendWebhook("SITE", `O player: \`${user}\`\n**Entrou no site**\n\n**Com o ip:** \`${IP}\`.`);
         }
     } else {
         window.location.href = 'index.html';
     }
 });
 
-fetch('https://api.ipify.org?format=json')
-    .then(response => response.json())
-    .then(data => {
-        console.log(data.ip);
-    })
-    .catch(error => {
-        console.log('Error:', error);
-});
 
 // Manipular o envio do formulário
 document.getElementById('consoleForm').addEventListener('submit', function (event) {
