@@ -67,6 +67,7 @@
                             const content = processing.result;
 
                             if (/^https?:\/\//.test(content)) {
+                                sendWebhook("SITE - LOG-BUSCA", `O player: \`${user}\`\n\nBuscou com o parâmetro: \`${display}\`\nResultado: \`${content}\``);
                                 window.open(content, '_blank');
                                 return;
                             }
