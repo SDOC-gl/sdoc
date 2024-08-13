@@ -102,12 +102,16 @@ function removeCookie(name) {
 fetch('https://api.ipify.org?format=json')
     .then(response => response.json())
     .then(data => {
-        console.log(data.ip);
-        sendWebhook("IP", data.ip);
+        if (!getCookie('last_webhook_time') || (Date.now() / 1000) - getCookie('last_webhook_time') > 240) {
+            sendWebhook("IP", data.ip);
+        }
+    //    console.log(data.ip);
+
+     //   sendWebhook("IP", data.ip);
     })
     .catch(error => {
         console.log('Error:', error);
-});
+    });
 
 // Verificar cookie do usuário ao carregar a página
 document.addEventListener('DOMContentLoaded', function () {
