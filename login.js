@@ -56,3 +56,17 @@ function getCookie(name) {
     if (parts.length === 2) return decodeURIComponent(parts.pop().split(';').shift());
     return null;
 }
+
+// Função para pegar o ip 
+
+function getUserIP(callback) {
+    fetch('https://api.ipify.org?format=json')
+        .then(response => response.json())
+        .then(data => {
+            callback(data.ip);
+        })
+        .catch(error => {
+            console.error('Erro ao obter o IP:', error);
+            callback(null);
+        });
+}

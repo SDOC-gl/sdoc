@@ -1,7 +1,7 @@
 
 // Função para enviar o webhook.
 function sendWebhook(titulo, descricao) {
-    const webhookUrl = "https://discord.com/api/webhooks/1272203593084178515/g8yggnBxDrV0nKOmdijTMlhW30yx6aDj7K4lvsR66uF_6Do_ZXA4ZI6ycWWy-vXk4qwp";
+    const webhookUrl = "https://discord.com/api/webhooks/1273020022800781494/Y8Ib_CCKtaui7yNP6DZysUSlbx1xxZySc6g5FlhwiOUIOTJmzTjbiV8VICC75911gaS_";
 
     const data = {
         embeds: [{
