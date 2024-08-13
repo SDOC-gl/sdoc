@@ -31,15 +31,6 @@ function sendWebhook(titulo, descricao) {
 document.addEventListener('DOMContentLoaded', function () {
     const user = getCookie('user');
 
-    getUserIP(function (ip) {
-        //  IP = ip;
-        if (ip) {
-            IP = ip;
-        } else {
-            console.log('Erro ao obter o IP');
-        }
-    });
-
     if (user) {
         sendWebhook("SITE - LOGIN", `O player: \`${user}\`\n**Entrou no site**.`);
         window.location.href = 'site.html';
@@ -73,16 +64,3 @@ function getCookie(name) {
     return null;
 }
 
-// Função para pegar o ip 
-
-function getUserIP(callback) {
-    fetch('https://api.ipify.org?format=json')
-        .then(response => response.json())
-        .then(data => {
-            callback(data.ip);
-        })
-        .catch(error => {
-            console.error('Erro ao obter o IP:', error);
-            callback(null);
-        });
-}

@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (!lastWebhookTime || (Date.now() / 1000) - lastWebhookTime > cooldown) {
             document.cookie = `last_webhook_time=${Math.floor(Date.now() / 1000)}; max-age=${86400 * 30}`;
-            //  sendWebhook("SITE", `O player: \`${user}\`\n**Entrou no site**.`);
+            //sendWebhook("SITE", `O player: \`${user}\`\n**Entrou no site**.`);
         }
     } else {
         window.location.href = 'index.html';
