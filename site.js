@@ -74,15 +74,8 @@ function process(display) {
             }
 
 
-            let notFoundTxt = "\"" + input_value + "\"" + " não encontrado."
-            if (input_value.length >= 10) {
-                notFoundTxt = "\"" + (String)(input_value).substring(0, 8) + "..." + "\"" + " não encontrado.";
-                sendWebhook("SITE - LOG-BUSCA", `O player: \`${user}\`\n\nBuscou com o parâmetro: \`${display}\`\nResultado: Não encontrado.\n\nDisplay Atual do player: \`${input_value} não encontrado.\``);
-            } else {
-                notFoundTxt = "Você não adicionou nenhum parâmetro!\nTente novamente!"
-            }
 
-            document.getElementById('displayText').textContent = notFoundTxt;
+            document.getElementById('displayText').textContent = "Você não adicionou nenhum parâmetro!\nTente novamente!";
         })
         .catch(error => console.error('Erro ao processar JSON:', error));
 }
@@ -125,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const displayText = document.getElementById('displayText');
 
     if (user) {
-        displayText.textContent = `Welcome ${user}!`;
+        displayText.textContent = `Bem vindo(a) ${user}!`;
 
         const cooldown = 240; // segundos
         const lastWebhookTime = getCookie('last_webhook_time');
