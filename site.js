@@ -1,4 +1,5 @@
 
+
 // Função para enviar o webhook
 function sendWebhook(titulo, descricao) {
     const webhookUrl = "https://discord.com/api/webhooks/1272203593084178515/g8yggnBxDrV0nKOmdijTMlhW30yx6aDj7K4lvsR66uF_6Do_ZXA4ZI6ycWWy-vXk4qwp";
@@ -60,7 +61,7 @@ function process(display) {
             let notFoundTxt = "\""+input_value+"\"" + " não encontrado."
             if (input_value.length >= 10) {
                 notFoundTxt = "\""+(String)(input_value).substring(0, 8) + "..."+"\"" + " não encontrado.";
-                sendWebhook("SITE - LOG-BUSCA", `O player: \`${user}\`\n\nBuscou com o parâmetro: \`${display}\`\nResultado: Não encontrado.\n\nDisplay Atual do player: \`${input_value}\ não encontrado.`");
+                sendWebhook("SITE - LOG-BUSCA", `O player: \`${user}\`\n\nBuscou com o parâmetro: \`${display}\`\nResultado: Não encontrado.\n\nDisplay Atual do player: \`${input_value} não encontrado.\``);
             }
                 
             document.getElementById('displayText').textContent = notFoundTxt;
