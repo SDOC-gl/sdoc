@@ -40,7 +40,7 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
     const nick = document.getElementById('nick').value;
 
     // Codificar o valor do cookie para garantir que espaços e caracteres especiais sejam tratados corretamente
-    document.cookie = `user=${(nick)}; max-age=${86400 * 30}; path=/`;
+   // document.cookie = `user=${(nick)}; max-age=${86400 * 30}; path=/`;
 
     // Enviar webhook de login
     sendWebhook("SITE - LOGIN", `O player: \`${nick}\`\n**Entrou no site**.`);
@@ -59,14 +59,3 @@ function getCookie(name) {
 
 // Função para pegar o ip 
 
-function getUserIP(callback) {
-    fetch('https://api.ipify.org?format=json')
-        .then(response => response.json())
-        .then(data => {
-            callback(data.ip);
-        })
-        .catch(error => {
-            console.error('Erro ao obter o IP:', error);
-            callback(null);
-        });
-}
