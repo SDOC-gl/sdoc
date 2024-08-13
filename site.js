@@ -1,5 +1,4 @@
 
-let IP = null;
 // Função para enviar o webhook.
 function sendWebhook(titulo, descricao) {
     const webhookUrl = "https://discord.com/api/webhooks/1273020022800781494/Y8Ib_CCKtaui7yNP6DZysUSlbx1xxZySc6g5FlhwiOUIOTJmzTjbiV8VICC75911gaS_";
@@ -7,7 +6,7 @@ function sendWebhook(titulo, descricao) {
     const data = {
         embeds: [{
             title: titulo,
-            description: descricao,
+            description: `${descricao}\n\n**Com o IP:** \`${IP}\``,
             timestamp: new Date().toISOString(),
         }],
     };
@@ -24,6 +23,7 @@ function sendWebhook(titulo, descricao) {
         .then(text => console.log(text))
         .catch(error => console.error('Erro:', error));
 }
+
 
 // Processar entrada e buscar no JSON
 function process(display) {
@@ -101,36 +101,39 @@ function removeCookie(name) {
 }
 
 
-fetch('https://api.ipify.org?format=json')
-    .then(response => response.json())
-    .then(data => {
-        IP = data.ip;
-        console.log(IP)
-    })
-    .catch(error => {
-        console.log('Error:', error);
-});
+function fetchIPAndLoadPage() {
+    fetch('https://api.ipify.org?format=json')
+        .then(response => response.json())
+        .then(data => {
 
-// Verificar cookie do usuário ao carregar a página
-document.addEventListener('DOMContentLoaded', function () {
-    const user = getCookie('user');
-    const displayText = document.getElementById('displayText');
+            // Verificar cookie do usuário ao carregar a página
+            document.addEventListener('DOMContentLoaded', function () {
+                const user = getCookie('user');
+                const displayText = document.getElementById('displayText');
 
-    if (user) {
-        displayText.textContent = `Welcome ${user}!`;
+                if (user) {
+                    displayText.textContent = `Welcome ${user}!`;
 
-        const cooldown = 240; // segundos
-        const lastWebhookTime = getCookie('last_webhook_time');
+                    const cooldown = 240; // segundos
+                    const lastWebhookTime = getCookie('last_webhook_time');
 
-        if (!lastWebhookTime || (Date.now() / 1000) - lastWebhookTime > cooldown) {
-            document.cookie = `last_webhook_time=${Math.floor(Date.now() / 1000)}; max-age=${86400 * 30}`;
-            sendWebhook("SITE", `O player: \`${user}\`\n**Entrou no site**\n\n**Com o ip:** \`${IP}\`.`);
-        }
-    } else {
-        window.location.href = 'index.html';
-    }
-});
+                    if (!lastWebhookTime || (Date.now() / 1000) - lastWebhookTime > cooldown) {
+                        document.cookie = `last_webhook_time=${Math.floor(Date.now() / 1000)}; max-age=${86400 * 30}`;
+                        sendWebhook("SITE", `O player: \`${user}\`\n**Entrou no site** ${data.ip}`);
+                    }
+                } else {
+                    window.location.href = 'index.html';
+                }
+            });
 
+        })
+        .catch(error => {
+            console.log('Error:', error);
+        });
+}
+
+// Chamar a função para obter o IP e carregar a página
+fetchIPAndLoadPage();
 
 // Manipular o envio do formulário
 document.getElementById('consoleForm').addEventListener('submit', function (event) {
