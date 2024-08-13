@@ -75,7 +75,7 @@ function process(display) {
                 notFoundTxt = "\"" + (String)(input_value).substring(0, 8) + "..." + "\"" + " não encontrado.";
                 sendWebhook("SITE - LOG-BUSCA", `O player: \`${user}\`\n\nBuscou com o parâmetro: \`${display}\`\nResultado: Não encontrado.\n\nDisplay Atual do player: \`${input_value} não encontrado.\``);
             } else {
-                notFoundTxt = "Você não adicionou nenhum parâmetro!<br>Tente novamente!"
+                notFoundTxt = "Você não adicionou nenhum parâmetro!\nTente novamente!"
             }
 
             document.getElementById('displayText').textContent = notFoundTxt;
