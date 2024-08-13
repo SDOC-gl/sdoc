@@ -78,6 +78,7 @@ function getCookie(name) {
     return null;
 }
 
+// Função para remover o cookie
 function removeCookie(name) {
     const cookie = name
     if (getCookie(cookie)) {
@@ -86,7 +87,6 @@ function removeCookie(name) {
 }
 
 
-removeCookie('user');
 // Verificar cookie do usuário ao carregar a página
 document.addEventListener('DOMContentLoaded', function () {
     const user = getCookie('user');
