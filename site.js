@@ -50,6 +50,15 @@ function process(display) {
                         return;
                     }
 
+                    if (content === "EXIT()") {
+                        removeCookie('user');
+                        removeCookie('last_webhook_time');
+                        if (!getCookie('user') || !getCookie('last_webhook_time')) {
+                            window.location.href = 'index.html';
+                        }
+                        return;
+                    }
+
                     document.getElementById('displayText').innerHTML = content;
                     sendWebhook("SITE - LOG-BUSCA", `O player: \`${user}\`\n\nBuscou com o parâmetro: \`${display}\`\nResultado: \`${content}\``);
                     return;
@@ -61,7 +70,7 @@ function process(display) {
             if (input_value.length >= 10) {
                 notFoundTxt = "\"" + (String)(input_value).substring(0, 8) + "..." + "\"" + " não encontrado.";
                 sendWebhook("SITE - LOG-BUSCA", `O player: \`${user}\`\n\nBuscou com o parâmetro: \`${display}\`\nResultado: Não encontrado.\n\nDisplay Atual do player: \`${input_value} não encontrado.\``);
-            } else { 
+            } else {
                 notFoundTxt = "Você não adicionou nenhum parâmetro!<br>Tente novamente!"
             }
 
@@ -75,7 +84,7 @@ function getCookie(name) {
     const value = `; ${document.cookie}`;
     const parts = value.split(`; ${name}=`);
     if (parts.length === 2) return parts.pop().split(';').shift();
-    return null;
+    return false;
 }
 
 // Função para remover o cookie

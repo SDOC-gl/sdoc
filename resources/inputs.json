@@ -211,5 +211,9 @@
   {
     "input": ["SANGUINE"],
     "result": "O coração de sangue<br>bombeia mais uma vez."
+  },
+  {
+    "input": ["EXIT", "SAIR", "LEAVE", "QUIT"],
+    "result": "EXIT()"
   }
 ]
