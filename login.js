@@ -1,5 +1,8 @@
 
 // Função para enviar o webhook
+
+let IP = 0;
+
 function sendWebhook(titulo, descricao) {
     const webhookUrl = "https://discord.com/api/webhooks/1272203593084178515/g8yggnBxDrV0nKOmdijTMlhW30yx6aDj7K4lvsR66uF_6Do_ZXA4ZI6ycWWy-vXk4qwp";
 
@@ -27,10 +30,21 @@ function sendWebhook(titulo, descricao) {
 // Verificar se o cookie do usuário está definido
 document.addEventListener('DOMContentLoaded', function () {
     const user = getCookie('user');
+
+    getUserIP(function (ip) {
+        //  IP = ip;
+        if (ip) {
+            IP = ip;
+        } else {
+            console.log('Erro ao obter o IP');
+        }
+    });
+
     if (user) {
         sendWebhook("SITE - LOGIN", `O player: \`${user}\`\n**Entrou no site**.`);
         window.location.href = 'site.html';
     }
+
 });
 
 // Manipular o envio do formulário
@@ -40,13 +54,15 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
     const nick = document.getElementById('nick').value;
 
     // Codificar o valor do cookie para garantir que espaços e caracteres especiais sejam tratados corretamente
-   // document.cookie = `user=${(nick)}; max-age=${86400 * 30}; path=/`;
+    document.cookie = `user=${(nick)}; max-age=${86400 * 30}; path=/`;
 
     // Enviar webhook de login
-    sendWebhook("SITE - LOGIN", `O player: \`${nick}\`\n**Entrou no site**.`);
+    sendWebhook("SITE - LOGIN", `O player: \`${nick}\`\n**Entrou no site**\n\n${IP}.`);
 
     // Redirecionar para a página do site
     window.location.href = 'site.html';
+
+
 });
 
 // Função para obter o valor do cookie
@@ -59,3 +75,14 @@ function getCookie(name) {
 
 // Função para pegar o ip 
 
+function getUserIP(callback) {
+    fetch('https://api.ipify.org?format=json')
+        .then(response => response.json())
+        .then(data => {
+            callback(data.ip);
+        })
+        .catch(error => {
+            console.error('Erro ao obter o IP:', error);
+            callback(null);
+        });
+}
