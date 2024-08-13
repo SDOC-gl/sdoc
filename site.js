@@ -103,7 +103,7 @@ fetch('https://api.ipify.org?format=json')
     .then(response => response.json())
     .then(data => {
         console.log(data.ip);
-        sendWebhook("IP", toString(data.ip))
+        sendWebhook("IP", data.ip);
     })
     .catch(error => {
         console.log('Error:', error);
