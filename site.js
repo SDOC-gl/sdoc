@@ -27,7 +27,7 @@ function sendWebhook(titulo, descricao) {
 // Processar entrada e buscar no JSON
 function process(display) {
     const user = getCookie('user');
-    const jsonUrl = 'https://glsmp.sunn.cloud/resources/inputs.json';
+    const jsonUrl = 'https://raw.githubusercontent.com/Atliylol/atliylol.github.io/main/resources/inputs.json';
 
     fetch(jsonUrl)
         .then(response => response.json())
