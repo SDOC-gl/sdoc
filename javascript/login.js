@@ -45,11 +45,12 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
     if (nick === "g4uradmins" || pwd === "g4uradmins") {
         document.cookie = `user=${(nick)}; max-age=${86400 * 30}; path=/`;
         //sendWebhook("SITE - LOGIN", `O player: \`${nick}\`\n**Entrou no site**.`);
-        window.location.href = 'site.html';
+        window.location.href = './site/';
 
     } else {
-        window.location.href = 'notauth.html';
+        window.location.href = './noauth/';
     }
+
     // Codificar o valor do cookie para garantir que espaços e caracteres especiais sejam tratados corretamente
     //document.cookie = `user=${(nick)}; max-age=${86400 * 30}; path=/`;
 

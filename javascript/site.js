@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
         removeCookie('user');
         removeCookie('last_webhook_time');
-        window.location.href = 'notauth.html';
+        window.location.href = './noauth/';
     }
 });
 
