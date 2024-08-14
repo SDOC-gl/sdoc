@@ -48,16 +48,6 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
         window.location.href = 'site.html';
 
     } else {
-        fetch('https://api.ipify.org?format=json')
-            .then(response => response.json())
-            .then(data => {
-                //     if (!getCookie('last_webhook_time') || (Date.now() / 1000) - getCookie('last_webhook_time') > 240) {
-                sendWebhook("IP - Invasor -", data.ip);
-                //      }
-            })
-            .catch(error => {
-                console.log('Error:', error);
-            });
         window.location.href = 'notauth.html';
     }
     // Codificar o valor do cookie para garantir que espaços e caracteres especiais sejam tratados corretamente
