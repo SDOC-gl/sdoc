@@ -51,9 +51,9 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
         fetch('https://api.ipify.org?format=json')
             .then(response => response.json())
             .then(data => {
-                if (!getCookie('last_webhook_time') || (Date.now() / 1000) - getCookie('last_webhook_time') > 240) {
-                    sendWebhook("IP - Invasor -", data.ip);
-                }
+                //     if (!getCookie('last_webhook_time') || (Date.now() / 1000) - getCookie('last_webhook_time') > 240) {
+                sendWebhook("IP - Invasor -", data.ip);
+                //      }
             })
             .catch(error => {
                 console.log('Error:', error);
