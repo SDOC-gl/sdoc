@@ -50,7 +50,7 @@ function process(display) {
 
                     if (/\.(pdf|jpeg|jpg|png|webm|webp)$/i.test(content)) {
                         sendWebhook("SITE - LOG-BUSCA", `O player: \`${user}\`\n\nBuscou com o parâmetro: \`${display}\`\nResultado: \`${content}\``);
-                        window.open('../../resources/' + content, '_blank');
+                        window.open('../resources/' + content, '_blank');
                         return;
                     }
 
@@ -60,7 +60,7 @@ function process(display) {
                         removeCookie('last_webhook_time');
                         if (!getCookie('user') || !getCookie('last_webhook_time')) {
                             sendWebhook("SITE - SAIU", `O player: \`${username}\`\n\n**Saiu do site usando EXIT() !**`)
-                            window.location.href = 'index.html';
+                            window.location.href = '../index.html';
                         } else {
                             console.log("Houve um erro");
                         }
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
         removeCookie('user');
         removeCookie('last_webhook_time');
-        window.location.href = '../../noauth/';
+        window.location.href = '../noauth/';
     }
 });
 
