@@ -1,6 +1,6 @@
 // Libs
 
-import funcoes from './libs/funcoes.js';
+import funcoes from './funcoes.js';
 
 
 
