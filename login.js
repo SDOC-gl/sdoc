@@ -26,10 +26,11 @@ function sendWebhook(titulo, descricao) {
 // Verificar se o cookie do usuário está definido
 document.addEventListener('DOMContentLoaded', function () {
     const user = getCookie('user');
-
+    
     if (user) {
        // sendWebhook("SITE - LOGIN", `O player: \`${user}\`\n**Entrou no site**.`);
-        window.location.href = '../site/';
+       // window.location.href = '../site/';
+       console.log("testing")
     }
 
 });
@@ -48,7 +49,8 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
         window.location.href = '../site/';
 
     } else {
-        window.location.href = '../noauth/';
+        //window.location.href = '../noauth/';
+        console.log("testing 2")
     }
 
     // Codificar o valor do cookie para garantir que espaços e caracteres especiais sejam tratados corretamente
