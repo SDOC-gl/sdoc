@@ -41,7 +41,7 @@
   },
   {
     "input": ["MONÓLITO DA CONSCIÊNCIA", "MONÓLITOS", "MONOLITOS", "MONÓLITO", "MONOLITO", "MONOLITO DA CONSCIÊNCIA", "MONOLITO DA CONSCIENCIA", "MONÓLITO DA CONSCIENCIA"],
-    "result": "Ancient.jpeg"
+    "result": "Monolitos.pdf"
   },
   {
     "input": ["LOTUS"],
@@ -73,7 +73,7 @@
   },
   {
     "input": ["MALUM"],
-    "result": "Tiozão não tão mal quanto seu nome.<br>Status: Impalado."
+    "result": "Tiozão não tão mal quanto seu nome."
   },
   {
     "input": ["BENIGNITAS"],
@@ -286,7 +286,7 @@
   },
   {
     "input": ["UNIVERSO"],
-    "result": ["Você quer dizer \"Universos\"?"]
+    "result": "Você quer dizer \"Universos\"?"
   },
   {
     "input": ["PATO", "PATOS"],
@@ -313,7 +313,7 @@
     "result": "HiBeta.webm"
   },
   {
-    "input": ["DRAGÃO", "DRAGAO"],
+    "input": ["DRAGÃO", "DRAGAO", "# DRAGÃO", "# DRAGAO"],
     "result": "Morto por civilização hiperavançada."
   },
   {
