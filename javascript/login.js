@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const user = getCookie('user');
 
     if (user) {
-        sendWebhook("SITE - LOGIN", `O player: \`${user}\`\n**Entrou no site**.`);
+       // sendWebhook("SITE - LOGIN", `O player: \`${user}\`\n**Entrou no site**.`);
         window.location.href = 'site.html';
     }
 
