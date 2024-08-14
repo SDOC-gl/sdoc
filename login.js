@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     if (user) {
        // sendWebhook("SITE - LOGIN", `O player: \`${user}\`\n**Entrou no site**.`);
-       // window.location.href = '../site/';
+       window.location.href = '../site/';
        console.log("testing")
     }
 
@@ -49,7 +49,7 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
         window.location.href = '../site/';
 
     } else {
-        //window.location.href = '../noauth/';
+        window.location.href = '../noauth/';
         console.log("testing 2")
     }
 
