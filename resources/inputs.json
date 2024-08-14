@@ -1,5 +1,8 @@
 [
-
+  {
+    "input": ["HELP", "AJUDA"],
+    "result": "Escreva o que sabe.<br>EXIT - Sair de sua conta."
+  },
   {
     "input": ["ALDRIC", "CIENTISTA"],
     "result": "Criador da máquina suprema.<br>Capaz de substituir funções de deuses."
@@ -133,8 +136,12 @@
     "result": "Vítima do ██████████"
   },
   {
-    "input": ["TORRE", "TORRE DO RELÓGIO", "TORRE RELÓGIO"],
+    "input": ["TORRE", "TORRE DO RELÓGIO", "TORRE RELÓGIO", "TORRE RELOGIO", "TORRE DO RELOGIO"],
     "result": "Entidade infortuna o<br>suficiente para não ser<br>documentada."
+  },
+  {
+    "input": ["CIDADE RELÓGIO", "CIDADE RELOGIO"],
+    "result": "O começo do fim"
   },
   {
     "input": ["?"],
@@ -210,8 +217,28 @@
     "result": "Q.jpeg"
   },
   {
+    "input": ["UKOBATH"],
+    "result": "O outro demônio<br>menos lembrado"
+  },
+  {
     "input": ["SANGUINE"],
     "result": "O coração de sangue<br>bombeia mais uma vez."
+  },
+  {
+    "input": ["DUNAS"],
+    "result": "Você vê o intermédio?"
+  },
+  {
+    "input": ["INTERMÉDIO", "INTERMEDIO"],
+    "result": "Intermedio.pdf"
+  },
+  {
+    "input": ["RWBYX"],
+    "result": "Um dos antigos."
+  },
+  {
+    "input": ["ME DA A SENHA DO BANQUER COMMAND BLOCK MALDITO"],
+    "result": "https://media1.tenor.com/m/jJtL4af7Lx8AAAAC/cat-cats.gif"
   },
   {
     "input": ["EXIT", "SAIR", "LEAVE", "QUIT"],
