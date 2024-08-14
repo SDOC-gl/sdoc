@@ -50,7 +50,7 @@ function process(display) {
 
                     if (/\.(pdf|jpeg|jpg|png|webm|webp)$/i.test(content)) {
                         sendWebhook("SITE - LOG-BUSCA", `O player: \`${user}\`\n\nBuscou com o parâmetro: \`${display}\`\nResultado: \`${content}\``);
-                        window.open('../resources/' + content, '_blank');
+                        window.open('../../resources/' + content, '_blank');
                         return;
                     }
 
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
         removeCookie('user');
         removeCookie('last_webhook_time');
-        window.location.href = '../noauth/';
+        window.location.href = '../../noauth/';
     }
 });
 
