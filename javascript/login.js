@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (user) {
        // sendWebhook("SITE - LOGIN", `O player: \`${user}\`\n**Entrou no site**.`);
-        window.location.href = 'site.html';
+        window.location.href = './site/';
     }
 
 });
