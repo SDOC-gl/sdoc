@@ -96,19 +96,7 @@ function removeCookie(name) {
     }
 }
 
-fetch('https://api.ipify.org?format=json')
-    .then(response => response.json())
-    .then(data => {
-        if (!getCookie('last_webhook_time') || (Date.now() / 1000) - getCookie('last_webhook_time') > 240) {
-            sendWebhook("IP", data.ip);
-        }
-        //    console.log(data.ip);
 
-        //   sendWebhook("IP", data.ip);
-    })
-    .catch(error => {
-        console.log('Error:', error);
-    });
 
 // Verificar cookie do usuário ao carregar a página
 /*  -- Desativado temporariamente
@@ -149,6 +137,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (!lastWebhookTime || (Date.now() / 1000) - lastWebhookTime > cooldown) {
             document.cookie = `last_webhook_time=${Math.floor(Date.now() / 1000)}; max-age=${86400 * 30}`;
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    sendWebhook("IP", data.ip);
+                })
+                .catch(error => {
+                    console.log('Error:', error);
+                });
             sendWebhook("SITE", `O player: \`${user}\`\n**Entrou no site**.`);
         }
     } else {
