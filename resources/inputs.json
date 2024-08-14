@@ -40,16 +40,16 @@
     "result": "Apocalipse.pdf"
   },
   {
-    "input": ["MONÓLITO DA CONSCIÊNCIA", "MONÓLITO", "MONOLITO", "MONOLITO DA CONSCIÊNCIA", "MONOLITO DA CONSCIENCIA", "MONÓLITO DA CONSCIENCIA"],
+    "input": ["MONÓLITO DA CONSCIÊNCIA", "MONÓLITOS", "MONOLITOS", "MONÓLITO", "MONOLITO", "MONOLITO DA CONSCIÊNCIA", "MONOLITO DA CONSCIENCIA", "MONÓLITO DA CONSCIENCIA"],
     "result": "Ancient.jpeg"
   },
   {
     "input": ["LOTUS"],
-    "result": "Primo emo do sculk"
+    "result": "Inimigo mortal do sculk.<br>Sobrevive a qualquer custo."
   },
   {
     "input": ["SCULK"],
-    "result": "Primo colorido do lotus"
+    "result": "Inimigo mortal do lotus.<br>Invadindo Espaços."
   },
   {
     "input": ["VIDA", "MORTE"],
@@ -156,8 +156,8 @@
     "result": "Será lembrado."
   },
   {
-    "input": ["ADMIN", "ADMINISTRADOR"],
-    "result": "Acesso negado.<br>Razão: Baixo intelecto."
+    "input": ["ADMIN", "ADMINISTRADOR", "UNIVERSOS"],
+    "result": "Acesso negado.<br>Razão: Senha não localizada."
   },
   {
     "input": ["PASSWORD", "SENHA"],
@@ -239,6 +239,122 @@
   {
     "input": ["ME DA A SENHA DO BANQUER COMMAND BLOCK MALDITO"],
     "result": "https://media1.tenor.com/m/jJtL4af7Lx8AAAAC/cat-cats.gif"
+  },
+  {
+    "input": ["BÍBLIOTECA", "BIBLIOTECA"],
+    "result": "Queimada, provavelmente."
+  },
+  {
+    "input": ["RIMUTU", "RIMUTUS"],
+    "result": "Sinônimo de sculk."
+  },
+  {
+    "input": ["RENASCER"],
+    "result": "Um de nós."
+  },
+  {
+    "input": ["FLOWER"],
+    "result": "Inofensivo a primeira vista."
+  },
+  {
+    "input": ["SIGILLUM", "SELO"],
+    "result": "Capaz de prender deuses."
+  },
+  {
+    "input": ["TENEBRIS"],
+    "result": "#000000"
+  },
+  {
+    "input": ["RUÍNAS", "RUÍNA", "RUINAS", "RUINA"],
+    "result": "Um fim digno."
+  },
+  {
+    "input": ["DEUS", "GOD"],
+    "result": "https://en.wikipedia.org/wiki/Four-dimensional_space"
+  },
+  {
+    "input": ["MÁQUINA", "MAQUINA", "MÁQUINAS", "MAQUINAS"],
+    "result": "bip bop"
+  },
+  {
+    "input": ["RITUAL", "RITUAIS", "RITUALS"],
+    "result": "O poder oferecido pelos dignos"
+  },
+  {
+    "input": ["TETRADIMENSIONAL", "QUARTA DIMENSÃO", "4 DIMENSÃO", "4D"],
+    "result": "Escaparam do universo acima."
+  },
+  {
+    "input": ["UNIVERSO"],
+    "result": ["Você quer dizer \"Universos\"?"]
+  },
+  {
+    "input": ["PATO", "PATOS"],
+    "result": "Forças supremas<br>eventualmente separadas."
+  },
+  {
+    "input": ["ESCURO", "ESCURIDAO", "ESCURIDÃO"],
+    "result": "Escuro.jpeg"
+  },
+  {
+    "input": ["MUNDO", "INABITÁVEL", "INABITAVEL", "MUNDO INABITÁVEL", "MUNDO INABITAVEL"],
+    "result": "Pós"
+  },
+  {
+    "input": ["BUNKER"],
+    "result": "Selado."
+  },
+  {
+    "input": ["ANCIÃO", "ANTIGO", "ANCIAO", "ANCIÕES", "ANCIOES", "ANTIGOS"],
+    "result": "Monólitos"
+  },
+  {
+    "input": ["CRIATURA", "TERROR", "HORROR", "BETA", "ALPHA", "ALFA", "LIMINAL", "HEROBRINE"],
+    "result": "HiBeta.webm"
+  },
+  {
+    "input": ["DRAGÃO", "DRAGAO"],
+    "result": "Morto por civilização hiperavançada."
+  },
+  {
+    "input": ["BALANÇA", "BALANCA"],
+    "result": "Balanca.jpeg"
+  },
+  {
+    "input": ["IGREJA"],
+    "result": "Recusada"
+  },
+  {
+    "input": ["FANTASMA", "FANTASMAS"],
+    "result": "Noticia.webp"
+  },
+  {
+    "input": ["ALQUIMIA"],
+    "result": "alquimia.jpeg"
+  },
+  {
+    "input": ["NR", "N.R."],
+    "result": "Você quer dizer \"lotus\"?"
+  },
+  {
+    "input": ["ALMAS VAGANTES", "ALMA VAGANTE", "ALMA", "ALMAS"],
+    "result": "Destinados a lutar<br>até que salvas."
+  },
+  {
+    "input": ["TERRA"],
+    "result": "Esquecida a muito tempo."
+  },
+  {
+    "input": ["DERIVAR", "DERIVAÇÃO"],
+    "result": "Processo de transformação ou característica"
+  },
+  {
+    "input": ["PORTAL"],
+    "result": "Pandora"
+  },
+  {
+    "input": ["PANDORA"],
+    "result": "O novo começo."
   },
   {
     "input": ["EXIT", "SAIR", "LEAVE", "QUIT"],

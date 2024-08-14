@@ -75,7 +75,7 @@ function process(display) {
 
 
 
-            document.getElementById('displayText').textContent = "Você não adicionou nenhum parâmetro!\nTente novamente!";
+            document.getElementById('displayText').textContent = "Tente novamente.";
         })
         .catch(error => console.error('Erro ao processar JSON:', error));
 }
