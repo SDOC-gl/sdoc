@@ -32,7 +32,7 @@ function process(display) {
     fetch(jsonUrl)
         .then(response => response.json())
         .then(processings => {
-            let input_value = display.toUpperCase();
+            let input_value = (String)(display.toUpperCase());
 
             for (const processing of processings) {
                 if (processing.input.map(item => item.toUpperCase()).includes(input_value)) {
@@ -40,12 +40,6 @@ function process(display) {
                     let content = processing.result;
                     if (typeof content == "object" && isRandom) {
                         content = content[Math.round(Math.random())];
-                    }
-
-                    if ((String)(content).startsWith("#")) {
-                        content.replace("#", "");
-                        if (input_value.startsWith("O"));
-                            input_value.replace("O", "");
                     }
 
                     content.trim();
