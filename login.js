@@ -1,4 +1,3 @@
-
 // Função para enviar o webhook
 function sendWebhook(titulo, descricao) {
     const webhookUrl = "https://discord.com/api/webhooks/1273020022800781494/Y8Ib_CCKtaui7yNP6DZysUSlbx1xxZySc6g5FlhwiOUIOTJmzTjbiV8VICC75911gaS_";
@@ -40,9 +39,10 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
     event.preventDefault();
 
     const nick = document.getElementById('nick').value;
+    const pwd = document.getElementById('password').value;
 
     // Temporario || Verificação de invasor!
-    if (nick === "g4uradmins") {
+    if (nick === "g4uradmins" || pwd === "g4uradmins") {
         document.cookie = `user=${(nick)}; max-age=${86400 * 30}; path=/`;
         //sendWebhook("SITE - LOGIN", `O player: \`${nick}\`\n**Entrou no site**.`);
         window.location.href = 'site.html';
