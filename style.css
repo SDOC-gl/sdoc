@@ -44,7 +44,11 @@ body {
     transform: scaleY(1.75) skew(-12deg, 2deg);
     background-color: transparent;
 
-    text-shadow: -1px -1px 2px rgba(127, 255, 0,.2),-1px 1px 2px rgba(127, 255, 0,.2),1px -1px 2px rgba(127, 255, 0,.2),1px 1px 2px rgba(127, 255, 0,.2);
+    text-shadow: -1px -1px 2px 
+        rgba(255, 255, 255, 0.2),-1px 1px 2px 
+        rgba(255, 255, 255, 0.2),1px -1px 2px
+        rgba(255, 255, 255, 0.2),1px 1px 2px 
+        rgba(255, 255, 255, 0.2);
 
     outline: 2px solid transparent;
 
@@ -53,7 +57,7 @@ body {
     width: 150px;
     height: 44px;
     font-size: 16px;
-    color: rgb(127, 255, 0);
+    color: white;
     border: none;
     cursor:text;
 }

@@ -1,12 +1,11 @@
 // Libs
-
-import funcoes from './funcoes.js';
+import data from './dataModule.js';
 
 
 
 // Verificar se o cookie do usuário está definido
 document.addEventListener('DOMContentLoaded', function () {
-    const user = funcoes.getCookie('user');
+    const user = data.getCookie('user');
     
     if (user) {
        // sendWebhook("SITE - LOGIN", `O player: \`${user}\`\n**Entrou no site**.`);
