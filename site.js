@@ -1,6 +1,9 @@
 // Libs 
 
 import data from './dataModule.js';
+import webhook from './libs/webhook/webhook.js'
+
+const Hook = new webhook.Webhook("https://discord.com/api/webhooks/1273020022800781494/Y8Ib_CCKtaui7yNP6DZysUSlbx1xxZySc6g5FlhwiOUIOTJmzTjbiV8VICC75911gaS_")
 
 // Verificar cookie do usuário ao carregar a página
 /*  -- Desativado temporariamente
