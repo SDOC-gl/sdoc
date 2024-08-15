@@ -56,7 +56,10 @@
     "result": "⊕"
   },
   {
-    "input": ["COMANDANTE", "COMMAND BLOCK", "BLOCO DE COMANDO"],
+    "input": [
+      "COMANDANTE", "COMMAND BLOCK", "BLOCO DE COMANDO",
+      "O COMANDANTE", "O COMMAND BLOCK", "O BLOCO DE COMANDO"
+    ],
     "result": "Comandante.jpeg"
   },
   {
@@ -64,7 +67,10 @@
     "result": "Finalmente enxergando"
   },
   {
-    "input": ["SHIRU", "PATO", "SHIRULINHO"],
+    "input": [
+      "SHIRU", "PATO", "SHIRULINHO",
+      "O PATO"
+    ],
     "result": "A forma de voltar o achou"
   },
   {
@@ -88,15 +94,24 @@
     "result": "?"
   },
   {
-    "input": ["DARLO", "DARLU", "DARLIN", "REI", "MONARCA"],
+    "input": [
+      "DARLO", "DARLU", "DARLIN", "REI", "MONARCA",
+      "O MONARCA", "O REI"
+    ],
     "result": "Morreu trágicamente.<br>Esqueceu de respirar pois estava muito<br>'húmido'"
   },
   {
-    "input": ["FUNGI", "REINO FUNGI"],
+    "input": [
+      "FUNGI", "REINO FUNGI",
+      "O REINO FUNGI"
+    ],
     "result": "Fungi.jpeg"
   },
   {
-    "input": ["CULTO", "CULTISTA", "CULTISTAS"],
+    "input": [
+      "CULTO", "CULTISTA", "CULTISTAS",
+      "O CULTO", "OS CULTISTAS"
+    ],
     "result": "A primeira regra do culto<br>é que você não fala do culto."
   },
   {
@@ -116,7 +131,7 @@
     "result": "Onde almas vagam<br>e o terror mora"
   },
   {
-    "input": ["BEDROCK"],
+    "input": ["BEDROCK", "A BEDROCK"],
     "result": "Fundo do poço"
   },
   {
@@ -136,11 +151,17 @@
     "result": "Vítima do ██████████"
   },
   {
-    "input": ["TORRE", "TORRE DO RELÓGIO", "TORRE RELÓGIO", "TORRE RELOGIO", "TORRE DO RELOGIO"],
+    "input": [
+      "TORRE", "TORRE DO RELÓGIO", "TORRE RELÓGIO", "TORRE RELOGIO", "TORRE DO RELOGIO",
+      "A TORRE", "A TORRE DO RELÓGIO", "A TORRE RELÓGIO", "A TORRE RELOGIO", "A TORRE DO RELOGIO"
+    ],
     "result": "Entidade infortuna o<br>suficiente para não ser<br>documentada."
   },
   {
-    "input": ["CIDADE RELÓGIO", "CIDADE RELOGIO"],
+    "input": [
+      "CIDADE RELÓGIO", "CIDADE RELOGIO",
+      "A CIDADE RELÓGIO", "A CIDADE RELOGIO"
+    ],
     "result": "O começo do fim"
   },
   {
@@ -177,7 +198,10 @@
     "result": "Construtor de reatores."
   },
   {
-    "input": ["PÓS", "POS"],
+    "input": [
+      "PÓS", "POS",
+      "O PÓS, O POS"
+    ],
     "result": "Inundado."
   },
   {
@@ -213,7 +237,7 @@
     "result": "Universo b340 - Desconhecido"
   },
   {
-    "input": ["QSMP"],
+    "input": ["QSMP", "Q", "QUACKITY", "CUCURUCHO"],
     "result": "Q.jpeg"
   },
   {
@@ -229,7 +253,10 @@
     "result": "Você vê o intermédio?"
   },
   {
-    "input": ["INTERMÉDIO", "INTERMEDIO"],
+    "input": [
+      "INTERMÉDIO", "INTERMEDIO",
+      "O INTERMÉDIO", "O INTERMEDIO"
+    ],
     "result": "Intermedio.pdf"
   },
   {
@@ -241,11 +268,14 @@
     "result": "https://media1.tenor.com/m/jJtL4af7Lx8AAAAC/cat-cats.gif"
   },
   {
-    "input": ["BÍBLIOTECA", "BIBLIOTECA"],
+    "input": [
+      "BÍBLIOTECA", "BIBLIOTECA",
+      "A BÍBLIOTECA", "A BIBLIOTECA"
+    ],
     "result": "Queimada, provavelmente."
   },
   {
-    "input": ["RIMUTU", "RIMUTUS"],
+    "input": ["RIMUTUS"],
     "result": "Sinônimo de sculk."
   },
   {
@@ -265,7 +295,10 @@
     "result": "#000000"
   },
   {
-    "input": ["RUÍNAS", "RUÍNA", "RUINAS", "RUINA"],
+    "input": [
+      "RUÍNAS", "RUÍNA", "RUINAS", "RUINA",
+      "AS RUÍNAS", "A RUÍNA", "AS RUINAS", "A RUINA"
+    ],
     "result": "Um fim digno."
   },
   {
@@ -277,7 +310,10 @@
     "result": "bip bop"
   },
   {
-    "input": ["RITUAL", "RITUAIS", "RITUALS"],
+    "input": [
+      "RITUAL", "RITUAIS",
+      "O RITUAL", "OS RITUAIS"
+    ],
     "result": "O poder oferecido pelos dignos"
   },
   {
@@ -285,75 +321,96 @@
     "result": "Escaparam do universo acima."
   },
   {
-    "input": ["UNIVERSO"],
+    "input": ["UNIVERSO", "O UNIVERSO"],
     "result": "Você quer dizer \"Universos\"?"
   },
   {
-    "input": ["PATO", "PATOS"],
+    "input": [
+      "PATO", "PATOS",
+      "O PATO", "OS PATOS"
+    ],
     "result": "Forças supremas<br>eventualmente separadas."
   },
   {
-    "input": ["ESCURO", "ESCURIDAO", "ESCURIDÃO"],
+    "input": [
+      "ESCURO", "ESCURIDAO", "ESCURIDÃO",
+      "O ESCURO", "A ESCURIDAO", "A ESCURIDÃO"
+    ],
     "result": "Escuro.jpeg"
   },
   {
-    "input": ["MUNDO", "INABITÁVEL", "INABITAVEL", "MUNDO INABITÁVEL", "MUNDO INABITAVEL"],
+    "input": [
+      "MUNDO", "INABITÁVEL", "INABITAVEL", "MUNDO INABITÁVEL", "MUNDO INABITAVEL",
+      "O MUNDO", "O NOSSO MUNDO", "NOSSO MUNDO", "O MUNDO INABITÁVEL", "O MUNDO INABITAVEL"
+    ],
     "result": "Pós"
   },
   {
-    "input": ["BUNKER"],
+    "input": ["BUNKER", "O BUNKER"],
     "result": "Selado."
   },
   {
-    "input": ["ANCIÃO", "ANTIGO", "ANCIAO", "ANCIÕES", "ANCIOES", "ANTIGOS"],
+    "input": [
+      "ANCIÃO", "ANTIGO", "ANCIAO", "ANCIÕES", "ANCIOES", "ANTIGOS",
+      "O ANCIÃO", "O ANTIGO", "O ANCIAO", "OS ANCIÕES", "OS ANCIOES", "OS ANTIGOS"
+    ],
     "result": "Monólitos"
   },
   {
-    "input": ["CRIATURA", "TERROR", "HORROR", "BETA", "ALPHA", "ALFA", "LIMINAL", "HEROBRINE"],
+    "input": ["A CRIATURA", "CRIATURA", "TERROR", "HORROR", "BETA", "ALPHA", "ALFA", "LIMINAL", "HEROBRINE"],
     "result": "HiBeta.webm"
   },
   {
-    "input": ["DRAGÃO", "DRAGAO", "# DRAGÃO", "# DRAGAO"],
+    "input": ["DRAGÃO", "DRAGAO", "O DRAGÃO", "O DRAGAO"],
     "result": "Morto por civilização hiperavançada."
   },
   {
-    "input": ["BALANÇA", "BALANCA"],
+    "input": [
+      "BALANÇA", "BALANCA",
+      "A BALANÇA", "A BALANCA"
+    ],
     "result": "Balanca.jpeg"
   },
   {
-    "input": ["IGREJA"],
+    "input": ["IGREJA", "A IGREJA"],
     "result": "Recusada"
   },
   {
-    "input": ["FANTASMA", "FANTASMAS"],
+    "input": [
+      "FANTASMA", "FANTASMAS",
+      "O FANTASMA", "OS FANTASMAS"
+    ],
     "result": "Noticia.webp"
   },
   {
     "input": ["ALQUIMIA"],
-    "result": "alquimia.jpeg"
+    "result": "Alquimia.webp"
   },
   {
     "input": ["NR", "N.R."],
     "result": "Você quer dizer \"lotus\"?"
   },
   {
-    "input": ["ALMAS VAGANTES", "ALMA VAGANTE", "ALMA", "ALMAS"],
+    "input": [
+      "ALMAS VAGANTES", "ALMA VAGANTE", "ALMA", "ALMAS",
+      "AS ALMAS VAGANTES", "A ALMA VAGANTE", "A ALMA", "ALMAS"
+    ],
     "result": "Destinados a lutar<br>até que salvas."
   },
   {
-    "input": ["TERRA"],
+    "input": ["TERRA", "A TERRA"],
     "result": "Esquecida a muito tempo."
   },
   {
-    "input": ["DERIVAR", "DERIVAÇÃO"],
+    "input": ["DERIVAR", "DERIVAÇÃO", "A DERIVAÇÃO"],
     "result": "Processo de transformação ou característica"
   },
   {
-    "input": ["PORTAL"],
+    "input": ["PORTAL", "O PORTAL"],
     "result": "Pandora"
   },
   {
-    "input": ["PANDORA"],
+    "input": ["PANDORA", "A PANDORA"],
     "result": "O novo começo."
   },
   {
