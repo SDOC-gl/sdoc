@@ -87,6 +87,7 @@ function process(display) {
                     if (content === "EXIT()") {
                         let username = data.getCookie('user');
                         data.removeCookie('user');
+                        // João queiroz
                         data.removeCookie('last_webhook_time');
                         if (!data.getCookie('user') || !data.getCookie('last_webhook_time')) {
                             data.sendWebhook("SITE - SAIU", `O player: \`${username}\`\n\n**Saiu do site usando EXIT() !**`)
