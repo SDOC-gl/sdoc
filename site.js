@@ -110,9 +110,6 @@ function process(display) {
                             `O player: \`${user}\`\n\nBuscou com o parâmetro: \`${display}\`\nResultado: \`${content}\``,
                             'success',
                         );
-
-                        window.open('../resources/' + content, '_blank');
-
                         openMedia("../resources/" + content);                        
                         return;
                     }
