@@ -16,10 +16,7 @@
             background-color: #000;
         }
 
-        .form-container {
-            display: flex;
-            align-items: center;
-        }
+
 
         .input-field {
             padding: 10px;
@@ -55,8 +52,10 @@
 <body>
     <form id="loginForm" class="form-container">
         <input type="text" name="nick" id="nick" class="input-field" autocomplete="off" maxlength="16" placeholder="Nick" required>
+        <br><br>
         <input type="password" name="password" id="password" class="input-field" autocomplete="off" placeholder="Senha" required>
-        <button type="submit" class="submit-btn">Entrar</button>
+        <br><br>
+        <center><button type="submit" class="submit-btn">Entrar</button></center>
     </form>
 
     <script type="module" src="./login.js"></script>
