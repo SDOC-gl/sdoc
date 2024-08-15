@@ -61,7 +61,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+let canDoAnything = true;
+
+
 function process(display) {
+    if (!canDoAnything) return;
+
 
     const user = data.getCookie('user');
     const jsonUrl = 'https://raw.githubusercontent.com/Atliylol/atliylol.github.io/main/resources/inputs.json';
@@ -108,6 +113,7 @@ function process(display) {
 
                         window.open('../resources/' + content, '_blank');
 
+                        openMedia("../resources/" + content);                        
                         return;
                     }
 
@@ -161,7 +167,89 @@ function process(display) {
 document.getElementById('consoleForm').addEventListener('submit', function (event) {
     event.preventDefault();
 
+    if (!canDoAnything) return;
+
     const inputElement = document.getElementById('pcinput');
     process(inputElement.value);
     inputElement.value = '';
 });
+    
+function openMedia(path = String) {
+    if (!canDoAnything) return;
+    
+    if (path.endsWith(".pdf")) {
+        window.open(path, '_blank');
+        return;
+    }
+
+    blurAll();
+
+    let isImg = !path.endsWith(".webm");
+    let suffix = "V"
+    if (isImg)
+        suffix = "I";
+    
+    const mediaOverlayContainer = document.getElementById("mediaOverlayContainer");
+    const mediaOverlay = document.getElementById("mediaOverlay" + suffix);
+    if (suffix === "V")
+        document.getElementById("mediaOverlayI").style.visibility = "collapse";
+    else
+        document.getElementById("mediaOverlayV").style.visibility = "collapse";
+    mediaOverlayContainer.style.visibility = "visible";
+    mediaOverlay.style.visibility = "visible";
+    mediaOverlay.src = path;
+
+    const animation = mediaOverlayContainer.animate(
+        [
+          { opacity: 0 },
+          { opacity: 1 }
+        ], {
+          easing: 'ease',
+          duration: 500
+        }
+    );
+
+    mediaOverlay.onclick = function() {
+        closeMedia(mediaOverlay);
+    };
+
+    animation.play();
+
+
+    if (!isImg) {
+        setTimeout(function() {
+            mediaOverlay.play();
+        }, 1000)
+    }
+}
+function closeMedia(overlayElement) {
+    if (!canDoAnything) return;
+    canDoAnything = false;
+
+    const mediaOverlayContainer = document.getElementById("mediaOverlayContainer");
+    
+    
+    const animation = mediaOverlayContainer.animate(
+        [
+          { opacity: 1 },
+          { opacity: 0 }
+        ], {
+          easing: 'ease',
+          duration: 500
+        }
+    );
+    animation.onfinish = function() {
+        mediaOverlayContainer.style.visibility = "hidden";
+        overlayElement.style.visibility = "collapse";
+        canDoAnything = true;
+    }
+
+}
+
+function blurAll(){
+    var tmp = document.createElement("input");
+    document.body.appendChild(tmp);
+    tmp.focus();
+    document.body.removeChild(tmp);
+}
+   
