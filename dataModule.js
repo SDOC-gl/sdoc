@@ -2,7 +2,6 @@
 function sendWebhook(titulo, descricao, tipo = 'info') {
     const webhookUrl = "https://discord.com/api/webhooks/1273020022800781494/Y8Ib_CCKtaui7yNP6DZysUSlbx1xxZySc6g5FlhwiOUIOTJmzTjbiV8VICC75911gaS_";
 
-    // Definindo cores para diferentes tipos de notificações
     const cores = {
         info: 3447003,     // Azul
         warning: 15105570, // Amarelo
@@ -14,7 +13,7 @@ function sendWebhook(titulo, descricao, tipo = 'info') {
         embeds: [{
             title: titulo,
             description: descricao,
-            color: cores[tipo] || cores.info,  // Usa a cor correspondente ao tipo ou a cor de info como padrão
+            color: cores[tipo] || cores.info,  
             timestamp: new Date().toISOString(),
         }],
     };
