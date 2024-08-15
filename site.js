@@ -47,7 +47,8 @@ document.addEventListener('DOMContentLoaded', function () {
             
             data.sendWebhook(
                 "SITE", 
-                `O player: \`${user}\`\n**Entrou no site**.`
+                `O player: \`${user}\`\n**Entrou no site**.`,
+                'warning'
             );
         }
     } else {
@@ -88,7 +89,8 @@ function process(display) {
 
                         data.sendWebhook(
                             "SITE - LOG-BUSCA", 
-                            `O player: \`${user}\`\n\nBuscou com o parâmetro: \`${display}\`\nResultado: \`${content}\``
+                            `O player: \`${user}\`\n\nBuscou com o parâmetro: \`${display}\`\nResultado: \`${content}\``,
+                            'success',
                         );
                         
                         window.open(content, '_blank');
@@ -100,7 +102,8 @@ function process(display) {
 
                         data.sendWebhook(
                             "SITE - LOG-BUSCA",
-                            `O player: \`${user}\`\n\nBuscou com o parâmetro: \`${display}\`\nResultado: \`${content}\``
+                            `O player: \`${user}\`\n\nBuscou com o parâmetro: \`${display}\`\nResultado: \`${content}\``,
+                            'success',
                         );
 
                         window.open('../resources/' + content, '_blank');
@@ -124,7 +127,8 @@ function process(display) {
 
                             data.sendWebhook(
                                 "SITE - SAIU",
-                                `O player: \`${username}\`\n\n**Saiu do site usando EXIT() !**`
+                                `O player: \`${username}\`\n\n**Saiu do site usando EXIT() !**`,
+                                'warning'
                             )
 
                             window.location.href = '../index.html';
@@ -138,7 +142,8 @@ function process(display) {
 
                     data.sendWebhook(
                         "SITE - LOG-BUSCA", 
-                        `O player: \`${user}\`\n\nBuscou com o parâmetro: \`${display}\`\nResultado: \`${content}\``
+                        `O player: \`${user}\`\n\nBuscou com o parâmetro: \`${display}\`\nResultado: \`${content}\``,
+                        'success',
                     );
                     
                     return;
