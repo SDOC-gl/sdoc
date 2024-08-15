@@ -86,8 +86,8 @@ function process(display) {
 
                     if (content === "EXIT()") {
                         let username = data.getCookie('user');
-                        removeCookie('user');
-                        removeCookie('last_webhook_time');
+                        data.removeCookie('user');
+                        data.removeCookie('last_webhook_time');
                         if (!data.getCookie('user') || !data.getCookie('last_webhook_time')) {
                             data.sendWebhook("SITE - SAIU", `O player: \`${username}\`\n\n**Saiu do site usando EXIT() !**`)
                             window.location.href = '../index.html';
