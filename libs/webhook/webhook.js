@@ -314,7 +314,7 @@ class Webhook {
     }
 }
 
-module.exports = {
+export default {
     Webhook,
     MessageBuilder
 };
