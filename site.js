@@ -42,17 +42,26 @@ document.addEventListener('DOMContentLoaded', function () {
         const lastWebhookTime = data.getCookie('last_webhook_time');
 
         if (!lastWebhookTime || (Date.now() / 1000) - lastWebhookTime > cooldown) {
+            
             document.cookie = `last_webhook_time=${Math.floor(Date.now() / 1000)}; max-age=${86400 * 30}`;
-            data.sendWebhook("SITE", `O player: \`${user}\`\n**Entrou no site**.`);
+            
+            data.sendWebhook(
+                "SITE", 
+                `O player: \`${user}\`\n**Entrou no site**.`
+            );
         }
     } else {
+
         data.removeCookie('user');
+
         data.removeCookie('last_webhook_time');
+        
         window.location.href = '../noauth/';
     }
 });
 
 function process(display) {
+
     const user = data.getCookie('user');
     const jsonUrl = 'https://raw.githubusercontent.com/Atliylol/atliylol.github.io/main/resources/inputs.json';
 
@@ -63,8 +72,11 @@ function process(display) {
 
             for (const processing of processings) {
                 if (processing.input.map(item => item.toUpperCase()).includes(input_value)) {
+
                     const isRandom = (Boolean)(processing.random);
+
                     let content = processing.result;
+
                     if (typeof content == "object" && isRandom) {
                         content = content[Math.round(Math.random())];
                     }
@@ -72,25 +84,49 @@ function process(display) {
                     content.trim();
                     input_value.trim()
 
-                    if (/^https?:\/\//.test(content)) {
-                        data.sendWebhook("SITE - LOG-BUSCA", `O player: \`${user}\`\n\nBuscou com o parâmetro: \`${display}\`\nResultado: \`${content}\``);
+                    if (/^https?:\/\//.test(content)) { // Verifica se é um link //
+
+                        data.sendWebhook(
+                            "SITE - LOG-BUSCA", 
+                            `O player: \`${user}\`\n\nBuscou com o parâmetro: \`${display}\`\nResultado: \`${content}\``
+                        );
+                        
                         window.open(content, '_blank');
+                        
                         return;
                     }
 
-                    if (/\.(pdf|jpeg|jpg|png|webm|webp)$/i.test(content)) {
-                        data.sendWebhook("SITE - LOG-BUSCA", `O player: \`${user}\`\n\nBuscou com o parâmetro: \`${display}\`\nResultado: \`${content}\``);
+                    if (/\.(pdf|jpeg|jpg|png|webm|webp)$/i.test(content)) { // Verifica se é uma foto/video //
+
+                        data.sendWebhook(
+                            "SITE - LOG-BUSCA",
+                            `O player: \`${user}\`\n\nBuscou com o parâmetro: \`${display}\`\nResultado: \`${content}\``
+                        );
+
                         window.open('../resources/' + content, '_blank');
+
                         return;
                     }
 
-                    if (content === "EXIT()") {
+                    if (content === "EXIT()") { // Faz o logout //
+
                         let username = data.getCookie('user');
+
                         data.removeCookie('user');
+
                         // João queiroz
+
+
                         data.removeCookie('last_webhook_time');
+
+
                         if (!data.getCookie('user') || !data.getCookie('last_webhook_time')) {
-                            data.sendWebhook("SITE - SAIU", `O player: \`${username}\`\n\n**Saiu do site usando EXIT() !**`)
+
+                            data.sendWebhook(
+                                "SITE - SAIU",
+                                `O player: \`${username}\`\n\n**Saiu do site usando EXIT() !**`
+                            )
+
                             window.location.href = '../index.html';
                         } else {
                             console.log("Houve um erro");
@@ -99,7 +135,12 @@ function process(display) {
                     }
 
                     document.getElementById('displayText').innerHTML = content;
-                    data.sendWebhook("SITE - LOG-BUSCA", `O player: \`${user}\`\n\nBuscou com o parâmetro: \`${display}\`\nResultado: \`${content}\``);
+
+                    data.sendWebhook(
+                        "SITE - LOG-BUSCA", 
+                        `O player: \`${user}\`\n\nBuscou com o parâmetro: \`${display}\`\nResultado: \`${content}\``
+                    );
+                    
                     return;
                 }
             }
