@@ -61,11 +61,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 let tooltipElements = [];
-/*.forEach(element => {
-    if (element.hasAttribute("tooltip")) {
-        tooltipElements.push(element);
-    }
-});*/
 
 for (let i = 0; i < document.getElementsByTagName("*").length; i++) {
     const element = document.getElementsByTagName("*").item(i);
@@ -180,10 +175,9 @@ function process(display) {
                 );
                 return;
             }
-            if (!hasInput)
-                document.getElementById('displayText').innerHTML = "Entrada não encontrada<br>Tente novamente.";
-            
         });
+        if (!hasInput)
+            document.getElementById('displayText').innerHTML = "Entrada não encontrada<br>Tente novamente.";
     });
 }
 

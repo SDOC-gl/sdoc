@@ -416,5 +416,31 @@
   {
     "input": ["EXIT", "SAIR", "LEAVE", "QUIT"],
     "result": "EXIT()"
+  },
+  {
+    "input": [
+      "OCEANO", "MAR", "ÁGUA", "AGUA", "RIO", "PROFUNDEZAS",
+      "O OCEANO", "O MAR", "A ÁGUA", "A AGUA", "O RIO", "AS PROFUNDEZAS", "PROFUNDEZA", "A PROFUNDEZA"
+    ],
+    "result": "Oceano.webp"
+  }, {
+    "input": [
+      "MAT PAT", "MATPAT", "MATT PATT", "GAME THEORY", "THE GAME THEORISTS", "THE GAME THEORY", "TEORIA", "A TEORIA"
+    ],
+    "result": "Matt.webm"
+  }, {
+    "input": [
+      "O ENIGMA", "ENIGMA"
+    ],
+    "result": "Whops!"
+  }, {
+    "input": [
+      "QUEM SÃO OS MONÓLITOS", "QUEM SAO OS MONOLITOS", "QUEM SÃO OS MONOLITOS", "QUEM SAO OS MONOLITOS",
+      "QUEM FORAM OS MONÓLITOS", "QUEM FORAM OS MONOLITOS"
+    ],
+    "result": "Cultistas anciãos<br>importantes demais para<br>morrer"
+  }, {
+    "input": ["CÓDIGO", "CODIGO", "CODE", "O CÓDIGO", "O CODIGO"],
+    "result": "<a href=\"../codigo/index.html\">Aqui está o código</a>"
   }
 ]
