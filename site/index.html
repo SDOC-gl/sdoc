@@ -11,13 +11,21 @@
 
 <body>
     <div class="container">
+
+        <img src="../IMG/myterywall.png" class="layer" id="mystery-wall" draggable="false">
         
-        <img src="../IMG/image5.png" class="layer" draggable="false">
-        <img src="../IMG/image4.png" class="layer layer2" draggable="false">
-        <img src="../IMG/image3.png" class="layer" draggable="false">
-        <img src="../IMG/image2bg.png" class="layer" draggable="false">
-        <img src="../IMG/image2.png" class="layer" style="z-index: 11;" draggable="false">
-        <img src="../IMG/image.png" class="layer" draggable="false">
+        <img src="../IMG/table-1.png" class="layer" draggable="false">
+
+        <img src="../IMG/candle-off.png" class="layer" draggable="false">
+        <img src="../IMG/candle-light.webp" class="layer" id="candle-light" draggable="false">
+
+        <img src="../IMG/commandblock-bg.png" class="layer" draggable="false">
+        <img src="../IMG/commandblock.png" class="layer" style="z-index: 11;" draggable="false">
+        
+        <img src="../IMG/lamp.png" class="layer" draggable="false">
+        <img src="../IMG/paper.png" class="layer" draggable="false">
+
+        <div id="candle-hover" tooltip="Precisa de luz"></div>
 
         <form id="consoleForm">
             <input id="pcinput"  style="z-index: 20;" autocomplete="off">
@@ -31,6 +39,8 @@
         <img class="mediaOverlay" id="mediaOverlayI">
         <video class="mediaOverlay" id="mediaOverlayV">
     </div>
+
+    <div id="tooltip">TOOLTIP</div>
 
     <script type="module" src="../site.js"></script>
 </body>

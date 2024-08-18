@@ -52,7 +52,6 @@ document.addEventListener('DOMContentLoaded', function () {
             );
         }
     } else {
-
         data.removeCookie('user');
 
         data.removeCookie('last_webhook_time');
@@ -60,6 +59,44 @@ document.addEventListener('DOMContentLoaded', function () {
         window.location.href = '../noauth/';
     }
 });
+
+let tooltipElements = [];
+/*.forEach(element => {
+    if (element.hasAttribute("tooltip")) {
+        tooltipElements.push(element);
+    }
+});*/
+
+for (let i = 0; i < document.getElementsByTagName("*").length; i++) {
+    const element = document.getElementsByTagName("*").item(i);
+    if (element.hasAttribute("tooltip")) {
+        tooltipElements.push(element);
+    }
+}
+tooltipElements.forEach(element => {
+    element.onmouseenter = function() {
+        tooltipShow(element.getAttribute("tooltip"));
+    }
+    element.onmouseleave = tooltipClose;
+});
+
+const tooltip = document.getElementById("tooltip");
+function tooltipShow(name = String) {
+    tooltip.style.visibility = "visible";
+    tooltip.innerHTML = name;
+}
+function tooltipClose() {
+    document.getElementById("tooltip").style.visibility = "collapse";
+}
+
+document.addEventListener('mousemove', function(e) {
+        if (tooltip.style.visibility != "visible") return;
+        let left = e.x;
+        let top = e.y;
+        tooltip.style.left = left + 10 + 'px';
+        tooltip.style.top = top + 10 + 'px';
+    }
+);
 
 let canDoAnything = true;
 

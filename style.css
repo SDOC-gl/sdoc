@@ -14,7 +14,7 @@ body {
 .container {
     position: absolute;
     width: calc(1932px / 1.5);
-    height: calc(1074px / 1.5);
+    height: calc(1250px / 1.5);
 }
 
 .layer {
@@ -22,23 +22,38 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    pointer-events: none;
 }
 
-.layer2 {
+#candle-light {
     z-index: 2;
     opacity: 40%;
-    mix-blend-mode: screen; 
+    mix-blend-mode:hard-light; 
     animation-name: light;
-    animation-duration: 1s;
+    animation-duration: 5s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    visibility: collapse;
+}
+#mystery-wall {
+    visibility: collapse;
+}
+
+#candle-hover {
+    position: absolute;
+    background-color: transparent;
+    width: 100px;
+    height: 130px;
+    left: 790px;
+    top: 385px;
+    cursor: pointer;
 }
 
 #pcinput {
     position: absolute;
 
-    left: 392px;
-    top: 315px;
+    left: 384px;
+    top: 440px;
     transform: scaleY(1.75) skew(-12deg, 2deg);
     background-color: transparent;
 
@@ -70,8 +85,8 @@ body {
     
     position: absolute;
 
-    left: 292px;
-    top: 106px;
+    left: 286px;
+    top: 232px;
     width: 270px;
     height: 165px;
 
@@ -115,6 +130,22 @@ body {
     outline-offset: 3.5vb;
     box-shadow: rgba(255, 255, 255, 0.274) 0 0 0px 3.5vb;
     border-radius: 0.5%;
+}
+
+#tooltip {
+    position: absolute;
+    background-color: rgb(62, 59, 73);
+    color: white;
+    width: fit-content;
+    height: fit-content;
+    padding: 5px;
+    font-family: monospace;
+    box-shadow: 2px 2px rgb(31, 28, 46);
+
+    visibility: collapse;
+
+    pointer-events: none;
+    z-index: 999999;
 }
 
 @keyframes screen {
