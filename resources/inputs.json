@@ -441,6 +441,237 @@
     "result": "Cultistas anciãos<br>importantes demais para<br>morrer"
   }, {
     "input": ["CÓDIGO", "CODIGO", "CODE", "O CÓDIGO", "O CODIGO"],
-    "result": "<a href=\"../codigo/index.html\">Aqui está o código</a>"
+    "result": "<a href=\"../codigo\" target=\"_blank\">Aqui está o código</a>"
+  }, {
+    "input": ["AQUI ESTÁ O CÓDIGO", "AQUI ESTA O CÓDIGO", "AQUI ESTA O CODIGO"],
+    "result": "<a href=\"../codigo\" target=\"_blank\">Você não tem o que fazer?</a>"
+  }, {
+    "input": [
+      "VOCÊ NÃO TEM O QUE FAZER",
+      "VOCE NÃO TEM O QUE FAZER",
+      "VOCÊ NAO TEM O QUE FAZER",
+      "VOCE NAO TEM O QUE FAZER"
+    ],
+    "result": "Não"
+  }, {
+    "input": ["QUARTO", "O QUARTO"],
+    "random": true,
+    "result": ["Escondido nas profundezas", "Quarto.png"]
+  }, {
+    "input": [
+      "DESTINO", "HI"
+    ],
+    "weak": true,
+    "result": "Dividido em incontáveis pedaços"
+  }, {
+    "input": [
+      "DESTINO", "HELDRIC"
+    ],
+    "weak": true,
+    "result": "Dividido em incontáveis pedaços"
+  }, {
+    "input": [
+      "DESTINO", "ALDRIC"
+    ],
+    "weak": true,
+    "result": "Morto por mortal"
+  }, {
+    "input": [
+      "DESTINO", "CIENTISTA"
+    ],
+    "weak": true,
+    "result": "Morto por mortal"
+  }, {
+    "input": [
+      "DESTINO", "BELFEGOR"
+    ],
+    "weak": true,
+    "result": "Destruído"
+  }, {
+    "input": [
+      "DESTINO", "MAXX"
+    ], 
+    "weak": true,
+    "result": "Descansou"
+  }, {
+    "input": ["QUEM É VOCÊ", "QUEM E VOCÊ", "QUEM E VOCE"],
+    "result": "A Criação"
+  }, {
+    "input": ["DESTINO", "TODOS"],
+    "weak": true,
+    "result": "O destino inevítavel"
+  }, {
+    "input": ["IA", "VOCÊ É IA", "VOCÊ É UMA IA", "VOCE E IA", "VOCE E UMA IA"],
+    "result": "Não sou IA,<br>sou database."
+  }, {
+    "input": ["QUEM SOU EU", "QUEM EU SOU", "QUEM SOU", "WHO AM I"],
+    "result": "%user%"
+  }, {
+    "input": ["AMIGOS", "QUEM SÃO SEUS AMIGOS", "SEUS AMIGOS"],
+    "result": "Lista de amigos:<br><code>0 Pessoas encontradas</code>"
+  }, {
+    "input": ["YAY", "YEY"],
+    "result": "Soa familiar"
+  }, {
+    "input": ["SUA FUNÇÃO"],
+    "weak": true,
+    "result": "Informar."
+  }, {
+    "input": ["SEU PROPÓSITO"],
+    "weak": true,
+    "result": "Informar."
+  }, {
+    "input": ["SEU PROPOSITO"],
+    "weak": true,
+    "result": "Informar."
+  }, {
+    "input": ["SEU MOTIVO"],
+    "weak": true,
+    "result": "Informar."
+  }, {
+    "input": ["CMDOS"],
+    "result": "Kernel"
+  }, {
+    "input": ["SIM"],
+    "result": "Não"
+  }, {
+    "input": ["NÃO"],
+    "result": "Talvêz"
+  }, {
+    "input": ["TALVÊZ", "TALVEZ"],
+    "result": "Por quê?"
+  }, {
+    "input": ["POR QUE", "POR QUÊ"],
+    "result": "Sim"
+  }, {
+    "input": ["QUEM", "MEMBROS", "CULTO"],
+    "weak": true,
+    "result": "Pessoas<br><sup>(maioria)</sup>"
+  }, {
+    "input": ["QUEM", "CULTISTAS"],
+    "weak": true,
+    "result": "Pessoas<br><sup>(maioria)</sup>"
+  }, {
+    "input": ["SAÍDA"],
+    "weak": true,
+    "result": "Saída não encontrada"
+  }, {
+    "input": ["IDADE", "UNIVERSO"],
+    "weak": true,
+    "result": "14700"
+  }, {
+    "input": ["LODO"],
+    "result": "Água, mas viscosa."
+  }, {
+    "input": ["NORGETS", "NORGET"],
+    "result": "function=norgetSpawn"
+  }, {
+    "input": ["ONDE ESTOU", "AONDE ESTOU", "ONDE EU ESTOU", "AONDE EU ESTOU"],
+    "result": "indefinido"
+  },  {
+    "input": ["ANTIGO", "FUNGI"],
+    "weak": true,
+    "result": "Possui uma história mais antigaa do que se imagina"
+  }, {
+    "input": ["SINGULARIDADE", "A SINGULARIDADE"],
+    "result": "Quando o gigante no<br>céu subir, você saberá.<br>E o arrebatamento chegará."
+  }, {
+    "input": ["COOKIE", "A COOKIE"],
+    "result": "Agente do caos"
+  }, {
+    "input": ["CAOS"],
+    "result": "Um pouco em<br>toda direção"
+  }, {
+    "input": ["ANOMALIA", "ANOMALIAS", "O QUE É A ANOMALIA", "O QUE É ANOMALIA"],
+    "result": "Espaço-tempo"
+  }, {
+    "input": ["DEEP WEB", "DARK WEB"],
+    "result": "TOR"
+  }, {
+    "input": ["ONION"],
+    "weak": true,
+    "result": "TOR"
+  }, {
+    "input": ["TOR"],
+    "weak": true,
+    "result": "Sigla de TOR:<br><a href=\"https://www.torproject.org/\" target=\"_blank\">Trampolins Originais dos Ratos</a>"
+  }, {
+    "input": [
+      "ESPAÇO TEMPO", "ESPACO TEMPO", "ESPAÇO-TEMPO", "ESPACO-TEMPO",
+      "O ESPAÇO TEMPO", "O ESPACO TEMPO", "O ESPAÇO-TEMPO", "O ESPACO-TEMPO"
+    ],
+    "result": "Santo lar"
+  }, {
+    "input": ["SOS", "...---...", "S.O.S.", "S.O.S"],
+    "result": "Não te ouvirão aqui embaixo"
+  }, {
+    "input": ["A VERDADE", "VERDADE", "QUAL É A VERDADE", "QUAL E A VERDADE"],
+    "result": "A verdade é que<br>não sabes a verdade"
+  }, {
+    "input": ["MENTIRA", "A MENTIRA", "QUAL É A MENTIRA", "QUAL E A MENTIRA"],
+    "result": "Não estão te observando"
+  }, {
+    "input": ["PROVAS", "AS PROVAS"],
+    "result": "Provas.webp"
+  }, {
+    "input": ["QUAIS", "PROVAS"],
+    "weak": true,
+    "result": "Provas.webp"
+  }, {
+    "input": ["FLOATER"],
+    "result": "ENIGMA AQ"
+  }, {
+    "input": ["POVO", "ANTIGO", "FUNGI"],
+    "weak": true,
+    "result": "DESCONHECIDO"
+  }, {
+    "input": ["POVO", "ANCIÃO", "FUNGI"],
+    "weak": true,
+    "result": "DESCONHECIDO"
+  }, {
+    "input": ["DESTINO", "MALUM"],
+    "weak": true,
+    "result": "Impalado pela serpente"
+  }, {
+    "input": ["DESTINO", "BENIGNITAS"],
+    "weak": true,
+    "result": "Impalada pela serpente"
+  }, {
+    "input": ["DESTINO", "BEGNIDITAS"],
+    "weak": true,
+    "result": "'Begniditas' é uma<br>entrada desconhecida<br>Você quer dizer 'Benignitas'?"
+  }, {
+    "input": [
+      "CORAÇÃO", "CORACAO", "CORAÇAO", "CORACÃO",
+      "O CORAÇÃO", "O CORACAO", "O CORAÇAO", "O CORACÃO"
+    ], 
+    "result": "Coracao.mp3"
+  }, {
+    "input": ["TRECO"],
+    "result": "<pre style=\"font-size:8px\">                   .                      <br>                  ****                    <br>              .xxx@@@@xxxx*               <br>          * xxxxxxxx   xxx@@x*            <br>          xxx      xxxx    @@xxx          <br>       *xxx      xx@@@@x      xx@x*       <br>    *xxx        @x      x .     @@xx      <br>xxx@@xx       .@@   0   @x        xxxxx   <br>* xxx@@x       @x      @xx         xxxxxx*<br>    *xxx@@x     x@@@@@xx        xxx@x*    <br>      *xxx@@xxx    xxx      xx@@x*        <br>          *xx@@@xxxx  xx@@@xx*.           <br>               .*xxxxxxx*.                <br>                    ..                    <br></pre>"
+  }, {
+    "input": ["TEST", "TESTE"],
+    "result": "Testando."
+  }, {
+    "input": ["PRISÃO", "PRISAO", "A PRISÃO", "A PRISAO"],
+    "result": "Liberdade Ltda."
+  }, {
+    "input": [
+      "LAB", "LABORATORIO", "LABORATÓRIO",
+      "O LAB", "O LABORATORIO", "O LABORATÓRIO"
+    ],
+    "result": "Antigo lar"
+  }, {
+    "input": ["QUANDO", "MORRO"],
+    "weak": true,
+    "result": "function=whenDie"
+  }, {
+    "input": ["QUANDO", "MORREREI"],
+    "weak": true,
+    "result": "function=whenDie"
+  }, {
+    "input": ["QUANDO", "MORRER"],
+    "weak": true,
+    "result": "function=whenDie"
   }
 ]

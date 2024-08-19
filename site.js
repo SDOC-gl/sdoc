@@ -95,6 +95,13 @@ document.addEventListener('mousemove', function(e) {
 
 let canDoAnything = true;
 
+function norgetSpawn() {
+    document.getElementById('displayText').innerHTML = "Para você!";
+}
+function whenDie() {
+    document.getElementById('displayText').innerHTML = data.getCookie('deathseed');
+}
+
 
 function process(display) {
     if (!canDoAnything) return;
@@ -104,77 +111,97 @@ function process(display) {
 
     $.getJSON("../resources/inputs.json", function(json) {
         let input_value = (String)(display.toUpperCase());
+        input_value = input_value.trim().replace("?", "")
+
         let hasInput = false;
         $.each(json, function (i, value) { 
+            const isWeakTyped = (Boolean)(value.weak);
+            if (isWeakTyped) {
+                for (let i = 0; i < value.input.length; i++) {
+                    if (!input_value.includes(value.input[i]))
+                        return;
+                }   
+            } else {
+                if (!value.input.includes(input_value))
+                    return;
+            }
             
-            if (value.input.includes(input_value)) {
-                hasInput = true;
-                const isRandom = (Boolean)(value.random);
+            hasInput = true;
+            const isRandom = (Boolean)(value.random);
 
-                let content = value.result;
+            let content = value.result;
+            content = content.trim().replace("%user%", data.getCookie('user'));
 
-                if (typeof content == "object" && isRandom) {
-                    content = content[Math.round(Math.random())];
-                }
+            if (typeof content == "object" && isRandom) {
+                content = content[Math.round(Math.random())];
+            }
 
-                content.trim();
-                input_value.trim()
+            if (content.startsWith("function=")) {
+                eval(content.split("=")[1] + "();")
+                return;
+            }
 
-                if (/^https?:\/\//.test(content)) { // Verifica se é um link //
-
-                    data.sendWebhook(
-                        "SITE - LOG-BUSCA", 
-                        `O player: \`${user}\`\n\nBuscou com o parâmetro: \`${display}\`\nResultado: \`${content}\``,
-                        'success',
-                    );
-                    
-                    window.open(content, '_blank');
-                    
-                    return;
-                }
-
-                if (/\.(pdf|jpeg|jpg|png|webm|webp)$/i.test(content)) { // Verifica se é uma foto/video //
-
-                    data.sendWebhook(
-                        "SITE - LOG-BUSCA",
-                        `O player: \`${user}\`\n\nBuscou com o parâmetro: \`${display}\`\nResultado: \`${content}\``,
-                        'success',
-                    );
-                    openMedia("../resources/" + content);                        
-                    return;
-                }
-
-                if (content === "EXIT()") { // Faz o logout //
-
-                    let username = data.getCookie('user');
-
-                    data.removeCookie('user');
-                    data.removeCookie('last_webhook_time');
-
-                    if (!data.getCookie('user') || !data.getCookie('last_webhook_time')) {
-
-                        data.sendWebhook(
-                            "SITE - SAIU",
-                            `O player: \`${username}\`\n\n**Saiu do site usando EXIT() !**`,
-                            'warning'
-                        )
-
-                        window.location.href = '../index.html';
-                    } else {
-                        console.log("Houve um erro");
-                    }
-                    return;
-                }
-
-                document.getElementById('displayText').innerHTML = content;
+            if (/^https?:\/\//.test(content)) { // Verifica se é um link //
 
                 data.sendWebhook(
                     "SITE - LOG-BUSCA", 
                     `O player: \`${user}\`\n\nBuscou com o parâmetro: \`${display}\`\nResultado: \`${content}\``,
                     'success',
                 );
+                
+                window.open(content, '_blank');
+                
                 return;
             }
+
+            if (content.endsWith(".mp3")) {
+                document.getElementById('displayText').innerHTML = "<audio style=\"width:160px;\" controls><source src=\"../resources/" + content + "\" type=\"audio/mpeg\"></audio>"
+                return;
+            }
+
+            if (/\.(pdf|jpeg|jpg|png|webm|webp)$/i.test(content)) { // Verifica se é uma foto/video //
+
+                data.sendWebhook(
+                    "SITE - LOG-BUSCA",
+                    `O player: \`${user}\`\n\nBuscou com o parâmetro: \`${display}\`\nResultado: \`${content}\``,
+                    'success',
+                );
+                openMedia("../resources/" + content);                        
+                return;
+            }
+
+            if (content === "EXIT()") { // Faz o logout //
+
+                let username = data.getCookie('user');
+
+                data.removeCookie('user');
+                data.removeCookie('last_webhook_time');
+                data.removeCookie('seed');
+                data.removeCookie('deathseed');
+
+                if (!data.getCookie('user') || !data.getCookie('last_webhook_time')) {
+
+                    data.sendWebhook(
+                        "SITE - SAIU",
+                        `O player: \`${username}\`\n\n**Saiu do site usando EXIT() !**`,
+                        'warning'
+                    )
+
+                    window.location.href = '../index.html';
+                } else {
+                    console.log("Houve um erro");
+                }
+                return;
+            }
+
+            document.getElementById('displayText').innerHTML = content;
+
+            data.sendWebhook(
+                "SITE - LOG-BUSCA", 
+                `O player: \`${user}\`\n\nBuscou com o parâmetro: \`${display}\`\nResultado: \`${content}\``,
+                'success',
+            );
+            return;
         });
         if (!hasInput)
             document.getElementById('displayText').innerHTML = "Entrada não encontrada<br>Tente novamente.";
@@ -228,7 +255,7 @@ function openMedia(path = String) {
     );
 
     mediaOverlay.onclick = function() {
-        closeMedia(mediaOverlay);
+        closeMedia(mediaOverlay, suffix == "V");
     };
 
     animation.play();
@@ -240,9 +267,12 @@ function openMedia(path = String) {
         }, 1000)
     }
 }
-function closeMedia(overlayElement) {
+function closeMedia(overlayElement, video = Boolean) {
     if (!canDoAnything) return;
     canDoAnything = false;
+
+    if (video)
+        overlayElement.pause();
 
     const mediaOverlayContainer = document.getElementById("mediaOverlayContainer");
     
@@ -258,6 +288,7 @@ function closeMedia(overlayElement) {
     );
     animation.onfinish = function() {
         mediaOverlayContainer.style.visibility = "hidden";
+        overlayElement.src = null;
         overlayElement.style.visibility = "collapse";
         canDoAnything = true;
     }

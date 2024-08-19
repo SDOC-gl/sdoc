@@ -128,11 +128,11 @@ a {
 .mediaOverlay {
     max-width: 75vw;
     max-height: 75vh;
-    outline-color: white;
+    /*outline-color: white;
     outline-style: solid;
     outline-width: 1vb;
-    outline-offset: 3.5vb;
-    box-shadow: rgba(255, 255, 255, 0.274) 0 0 0px 3.5vb;
+    outline-offset: 3.5vb;*/
+    /* box-shadow: rgba(255, 255, 255, 0.274) 0 0 0px 3.5vb; */
     border-radius: 0.5%;
 }
 

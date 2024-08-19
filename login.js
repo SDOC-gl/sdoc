@@ -23,7 +23,8 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
 
     // Temporario || Verificação de invasor!
     if (nick === "g4uradmins" || pwd === "g4uradmins") {
-        document.cookie = `user=${(nick)}; max-age=${86400 * 30}; path=/`;
+        document.cookie = `user=${(nick)}; seed=${(31290)} ;max-age=${86400 * 30}; path=/`;
+        document.cookie = "deathseed=" + (2025 + Math.floor(Math.random() * 75)) + "; path=/";
         window.location.href = '../site/';
 
     } else {
