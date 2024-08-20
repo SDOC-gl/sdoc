@@ -63,7 +63,10 @@
     "result": "Comandante.jpeg"
   },
   {
-    "input": ["NULLA", "OCTANGULA", "OCTANULLA"],
+    "input": [
+      "NULLA", "OCTANGULA", "OCTANULLA",
+      "NULLA TYPH", "OCTANGULA TYPH", "OCTANULLA TYPH"
+    ],
     "result": "Finalmente enxergando"
   },
   {
@@ -177,7 +180,7 @@
     "result": "Será lembrado."
   },
   {
-    "input": ["ADMIN", "ADMINISTRADOR", "UNIVERSOS"],
+    "input": ["ADMIN", "ADMINISTRADOR", "UNIVERSOS", "CMD", "TERMINAL"],
     "result": "Acesso negado.<br>Razão: Senha não localizada."
   },
   {
@@ -673,5 +676,73 @@
     "input": ["QUANDO", "MORRER"],
     "weak": true,
     "result": "function=whenDie"
+  }, {
+    "input": ["TOCA", "COELHO"],
+    "weak": true,
+    "result": "Definição de segredos guardados atrás de 7 chaves"
+  }, {
+    "input": ["7 CHAVES"],
+    "result": "7? Eu não disse 8?"
+  }, {
+    "input": ["8 CHAVES"],
+    "result": "8 chaves para revelar algo que nem vale a pena."
+  }, {
+    "input": [
+      "METÁFORA", "METAFORA",
+      "A METÁFORA", "A METAFORA"
+    ], 
+    "result": "Exercícios mentais"
+  }, {
+    "input": [
+      "ILHA", "ILHA RELÓGIO", "ILHA RELOGIO",
+      "A ILHA", "A ILHA RELÓGIO", "A ILHA RELOGIO"
+    ],
+    "result": "Ilha.jpeg"
+  }, {
+    "input": ["POR QUE", "CÉU", "RACHA"],
+    "weak": true,
+    "result": "Pois é o fim."
+  }, {
+    "input": ["POR QUE", "CÉU", "RACHANDO"],
+    "weak": true,
+    "result": "Pois é o fim."
+  }, {
+    "input": ["SIGNIFICADO", "VIDA"],
+    "weak": true,
+    "result": "42"
+  }, {
+    "input": ["XYZ", "X Y Z"],
+    "result": "0 0 0"
+  }, {
+    "input": [
+      "GAMEMODE", "/GAMEMODE",
+      "GAMEMODE 0", "/GAMEMODE 0",
+      "GAMEMODE 1", "/GAMEMODE 1",
+      "GAMEMODE 2", "/GAMEMODE 2",
+      "GAMEMODE 3", "/GAMEMODE 3"
+    ], 
+    "result": "Modo de jogo alterado"
+  }, {
+    "input": ["PERGUNTA"],
+    "result": "RESPOSTA"
+  }, {
+    "input": ["CENSURADO", "REDIGIDO"],
+    "result": "#####"
+  }, {
+    "input": ["PORRA", "CARALHO", "MERDA", "CU", "PUTA", "ARROMBADO", "ARROMBADA", "FUCK"],
+    "weak": true,
+    "result": "Você é muito profano para mim."
+  }, {
+    "input": ["WARDEN", "O WARDEN"],
+    "result": "Escravo de sculk"
+  }, {
+    "input": ["ILLUMI TYPH", "ILLUMI"],
+    "result": "Um pouco dela em todo universo"
+  }, {
+    "input": ["MINECRAFT"],
+    "result": "Simulação"
+  }, {
+    "input": ["TEMPO", "O TEMPO"],
+    "result": "Ilusão."
   }
 ]
