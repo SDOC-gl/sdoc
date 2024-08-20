@@ -1,8 +1,14 @@
 // Libs 
 
-import data from './dataModule.js';
+import data from './modules/dataModule.js';
+import tableObjects, { TableObject } from './modules/tableObjects.js'
 
+function print(text = Number) {
+    console.log(text);
+}
 
+let mouseX = 0;
+let mouseY = 0;
 
 // Verificar cookie do usuário ao carregar a página
 /*  -- Desativado temporariamente
@@ -34,10 +40,9 @@ document.addEventListener('DOMContentLoaded', function () {
 document.addEventListener('DOMContentLoaded', function () {
     const user = data.getCookie('user');
     const displayText = document.getElementById('displayText');
+    displayText.textContent = `Saudações ${user}.`;
 
     if (user === "g4uradmins") {
-        displayText.textContent = `Welcome ${user}!`;
-
         const cooldown = 240; // segundos
         const lastWebhookTime = data.getCookie('last_webhook_time');
 
@@ -78,6 +83,8 @@ tooltipElements.forEach(element => {
 const tooltip = document.getElementById("tooltip");
 function tooltipShow(name = String) {
     tooltip.style.visibility = "visible";
+    tooltip.style.left = mouseX + 10 + "px";
+    tooltip.style.top = mouseY + 10 + "px";
     tooltip.innerHTML = name;
 }
 function tooltipClose() {
@@ -85,9 +92,11 @@ function tooltipClose() {
 }
 
 document.addEventListener('mousemove', function(e) {
-        if (tooltip.style.visibility != "visible") return;
-        let left = e.x;
-        let top = e.y;
+    mouseX = e.x;
+    mouseY = e.y;
+    if (tooltip.style.visibility != "visible") return;
+        let left = mouseX;
+        let top = mouseY;
         tooltip.style.left = left + 10 + 'px';
         tooltip.style.top = top + 10 + 'px';
     }
@@ -97,9 +106,20 @@ let canDoAnything = true;
 
 function norgetSpawn() {
     document.getElementById('displayText').innerHTML = "Para você!";
+    let norget = new TableObject("norget", "objects/Norget.webp", [400, 290], 170);
+    norget.setRightClick(function(e) {
+        e.preventDefault();
+        tooltipShow("Norget");
+    });
+    norget.setMouseLeave(tooltipClose);
 }
+
 function whenDie() {
     document.getElementById('displayText').innerHTML = data.getCookie('deathseed');
+}
+if (canDoAnything === "DJSJAJ89AD8DA8FDAY9") { // 4 vscode
+    whenDie(); 
+    norgetSpawn();
 }
 
 
@@ -114,16 +134,17 @@ function process(display) {
         input_value = input_value.trim().replace("?", "")
 
         let hasInput = false;
-        $.each(json, function (i, value) { 
+        $.each(json, function (i, value) {
             const isWeakTyped = (Boolean)(value.weak);
-            if (isWeakTyped) {
+            
+            if (!isWeakTyped) {
+                if (!value.input.includes(input_value))
+                    return;
+            } else {
                 for (let i = 0; i < value.input.length; i++) {
                     if (!input_value.includes(value.input[i]))
                         return;
-                }   
-            } else {
-                if (!value.input.includes(input_value))
-                    return;
+                }
             }
             
             hasInput = true;
@@ -138,7 +159,7 @@ function process(display) {
 
             if (content.startsWith("function=")) {
                 eval(content.split("=")[1] + "();")
-                return;
+                return false;
             }
 
             if (/^https?:\/\//.test(content)) { // Verifica se é um link //
@@ -151,12 +172,12 @@ function process(display) {
                 
                 window.open(content, '_blank');
                 
-                return;
+                return false;
             }
 
             if (content.endsWith(".mp3")) {
                 document.getElementById('displayText').innerHTML = "<audio style=\"width:160px;\" controls><source src=\"../resources/" + content + "\" type=\"audio/mpeg\"></audio>"
-                return;
+                return false;
             }
 
             if (/\.(pdf|jpeg|jpg|png|webm|webp)$/i.test(content)) { // Verifica se é uma foto/video //
@@ -167,7 +188,7 @@ function process(display) {
                     'success',
                 );
                 openMedia("../resources/" + content);                        
-                return;
+                return false;
             }
 
             if (content === "EXIT()") { // Faz o logout //
@@ -188,10 +209,8 @@ function process(display) {
                     )
 
                     window.location.href = '../index.html';
-                } else {
-                    console.log("Houve um erro");
                 }
-                return;
+                return false;
             }
 
             document.getElementById('displayText').innerHTML = content;
@@ -201,7 +220,7 @@ function process(display) {
                 `O player: \`${user}\`\n\nBuscou com o parâmetro: \`${display}\`\nResultado: \`${content}\``,
                 'success',
             );
-            return;
+            return false;
         });
         if (!hasInput)
             document.getElementById('displayText').innerHTML = "Entrada não encontrada<br>Tente novamente.";

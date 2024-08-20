@@ -596,7 +596,6 @@
     "result": "TOR"
   }, {
     "input": ["TOR"],
-    "weak": true,
     "result": "Sigla de TOR:<br><a href=\"https://www.torproject.org/\" target=\"_blank\">Trampolins Originais dos Ratos</a>"
   }, {
     "input": [
@@ -622,7 +621,7 @@
     "result": "Provas.webp"
   }, {
     "input": ["FLOATER"],
-    "result": "ENIGMA AQ"
+    "result": "Floater.webp"
   }, {
     "input": ["POVO", "ANTIGO", "FUNGI"],
     "weak": true,
