@@ -1,18 +1,22 @@
 
 export class TableObject {
     constructor(identifier = String, graphic = String, pos = Float32Array, size = Number) {
-        const node = document.getElementById("to-template").cloneNode(false);
-        node.setAttribute("tableobject", "");
-        node.style.visibility = "visible";
-        node.id = "to-" + identifier;
-        node.src = "../resources/" + graphic;
-        node.width = size;
-        node.style.left = pos[0] + "px";
-        node.style.top = pos[1] + "px";
-
-        makeDraggable(node);
-        document.getElementById("to-template").parentElement.appendChild(node);
-        this.element = node;
+        const img = new Image();
+        img.src = "../resources/" + graphic;
+        img.onload = function() {
+            const node = document.getElementById("to-template").cloneNode(false);
+            node.setAttribute("tableobject", "");
+            node.style.visibility = "visible";
+            node.id = "to-" + identifier;
+            node.src = "../resources/" + graphic;
+            node.width = size;
+            node.style.left = pos[0] + "px";
+            node.style.top = pos[1] + "px";
+    
+            makeDraggable(node);
+            document.getElementById("to-template").parentElement.appendChild(node);
+            this.element = node;
+        };
     }
     setRightClick(method) {
         this.element.addEventListener('contextmenu', method, false);
@@ -53,6 +57,7 @@ function makeDraggable(elmnt) {
   
     function elementDrag(e) {
         e.preventDefault();
+        elmnt.style.cursor = "grabbing";
         fallHeight = 430 + (Number(elmnt.style.left.replace("px", "")) / 8);
         pos1 = pos3 - e.clientX;
         pos2 = pos4 - e.clientY;        
@@ -64,7 +69,7 @@ function makeDraggable(elmnt) {
         else {
             elmnt.style.top = fallHeight + "px";
         }
-        if ((elmnt.offsetLeft - pos1) > 30) {
+        if ((elmnt.offsetLeft - pos1) > 30 && (elmnt.offsetLeft - pos1) < 1000) {
             elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
         }
     }
@@ -72,6 +77,7 @@ function makeDraggable(elmnt) {
     function closeDragElement() {
         document.onmouseup = null;
         document.onmousemove = null;
+        elmnt.style.cursor = "grab";
 
         updateElementPhysics();
     }

@@ -46,7 +46,7 @@ body {
     height: 130px;
     left: 790px;
     top: 385px;
-    cursor: pointer;
+    cursor: help;
 }
 
 #pcinput {
@@ -93,8 +93,6 @@ body {
     transform: skew(0deg, 5deg);
     
     color: white;
-
-    cursor:cell;
 
     animation-name: screen;
     animation-duration: 100ms;
