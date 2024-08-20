@@ -1,5 +1,5 @@
 // Libs
-import data from './dataModule.js';
+import data from './modules/dataModule.js';
 
 
 
