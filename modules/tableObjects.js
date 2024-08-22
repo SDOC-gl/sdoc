@@ -1,28 +1,30 @@
 
 export class TableObject {
     constructor(identifier = String, graphic = String, pos = Float32Array, size = Number) {
-        const img = new Image();
-        img.src = "../resources/" + graphic;
-        img.onload = function() {
-            const node = document.getElementById("to-template").cloneNode(false);
-            node.setAttribute("tableobject", "");
-            node.style.visibility = "visible";
-            node.id = "to-" + identifier;
-            node.src = "../resources/" + graphic;
-            node.width = size;
-            node.style.left = pos[0] + "px";
-            node.style.top = pos[1] + "px";
-    
-            makeDraggable(node);
-            document.getElementById("to-template").parentElement.appendChild(node);
-            this.element = node;
-        };
+        const node = document.getElementById("to-template").cloneNode(false);
+        node.setAttribute("tableobject", "");
+        node.style.visibility = "visible";
+        node.id = "to-" + identifier;
+        node.src = "../resources/" + graphic;
+        node.width = size;
+        node.style.left = pos[0] + "px";
+        node.style.top = pos[1] + "px";
+
+        document.getElementById("to-template").parentElement.appendChild(node);
+
+        this.element = node;
+        this.ondrag = function() {};
+
+        makeDraggable(this);
     }
     setRightClick(method) {
         this.element.addEventListener('contextmenu', method, false);
     }
     setMouseLeave(method) {
         this.element.addEventListener('mouseleave', method, false);
+    }
+    setGrabSprite(sprite) {
+        this.element.setAttribute("grabsprite", "../resources/" + sprite);
     }
 }
 
@@ -33,15 +35,17 @@ function getTableObjects() {
         if (element.hasAttribute("tableobject")) {
             tableObjectElements.push(element);
             element.style.position = "absolute";
-            makeDraggable(element);
         }
     }
     return tableObjectElements;
 }
 
 let fallHeight = 550;
-function makeDraggable(elmnt) {
+function makeDraggable(obj = TableObject) {
+    const elmnt = obj.element;
     
+    const ogSrc = elmnt.src;
+
     let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     elmnt.onmousedown = dragMouseDown;
 
@@ -58,6 +62,11 @@ function makeDraggable(elmnt) {
     function elementDrag(e) {
         e.preventDefault();
         elmnt.style.cursor = "grabbing";
+
+        obj.ondrag();
+        if (elmnt.hasAttribute("grabsprite") && elmnt.src == ogSrc)
+            elmnt.src = elmnt.getAttribute("grabsprite");
+
         fallHeight = 430 + (Number(elmnt.style.left.replace("px", "")) / 8);
         pos1 = pos3 - e.clientX;
         pos2 = pos4 - e.clientY;        
@@ -78,6 +87,9 @@ function makeDraggable(elmnt) {
         document.onmouseup = null;
         document.onmousemove = null;
         elmnt.style.cursor = "grab";
+        if (elmnt.hasAttribute("grabsprite")) {
+            elmnt.src = ogSrc;
+        }
 
         updateElementPhysics();
     }
@@ -99,7 +111,7 @@ function makeDraggable(elmnt) {
                 elmnt.style.top = fallHeight + "px";
             }
         }, 30);
-    }
+    }   
 }
 
 export default {

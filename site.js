@@ -114,12 +114,35 @@ function norgetSpawn() {
     norget.setMouseLeave(tooltipClose);
 }
 
+let candleOn = false;
+function lighterSpawn() {
+    document.getElementById('displayText').innerHTML = "Para você!";
+    let lighter = new TableObject("norget", "objects/Lighter.png", [400, 290], 335/2);
+    lighter.setGrabSprite("objects/Lighter.gif")
+    lighter.ondrag = function() {
+        if (candleOn) return;
+        let numberLeft = Number(lighter.element.style.left.replace("px", ""));
+        let numberTop = Number(lighter.element.style.top.replace("px", ""));
+
+        if (numberLeft > 750 && numberLeft < 800 && numberTop > 330 && numberTop < 440) {
+            lightCandle();
+        }
+    }
+}
+function lightCandle() {
+    candleOn = true;
+    const candleLight = document.getElementById("candle-light");
+    candleLight.style.visibility = "visible"
+    const candle = document.getElementById("candle");
+    candle.src = "../IMG/candle-on.gif";
+    const table = document.getElementById("table");
+    table.src = "../IMG/table-2.png";
+    const mysteryWall = document.getElementById("mystery-wall");
+    mysteryWall.style.visibility = "visible";
+}
+
 function whenDie() {
     document.getElementById('displayText').innerHTML = data.getCookie('deathseed');
-}
-if (canDoAnything === "DJSJAJ89AD8DA8FDAY9") { // 4 vscode
-    whenDie(); 
-    norgetSpawn();
 }
 
 

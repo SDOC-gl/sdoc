@@ -595,6 +595,10 @@
     "weak": true,
     "result": "TOR"
   }, {
+    "input": ["CEBOLA"],
+    "weak": true,
+    "result": "TOR"
+  }, {
     "input": ["TOR"],
     "result": "Sigla de TOR:<br><a href=\"https://www.torproject.org/\" target=\"_blank\">Trampolins Originais dos Ratos</a>"
   }, {
@@ -743,5 +747,10 @@
   }, {
     "input": ["TEMPO", "O TEMPO"],
     "result": "Ilusão."
+  },
+
+  {
+    "input": ["LUZ", "FOGO", "ISQUEIRO", "VELA", "TOCHA", "ILUMINAÇÃO", "ILUMINACAO"],
+    "result": "function=lighterSpawn"
   }
 ]
