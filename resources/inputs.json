@@ -189,7 +189,7 @@
   },
   {
     "input": ["AX2OM_NRGT"],
-    "result": "(página com mais coisa, ainda pensando em algo pra isso)"
+    "result": "function=openGBScreen"
   },
   {
     "input": ["ESPÍRITO DA FLORESTA", "ESPIRITO DA FLORESTA", "ESPÍRITO", "ESPIRITO"],
@@ -747,9 +747,7 @@
   }, {
     "input": ["TEMPO", "O TEMPO"],
     "result": "Ilusão."
-  },
-
-  {
+  }, {
     "input": ["LUZ", "FOGO", "ISQUEIRO", "VELA", "TOCHA", "ILUMINAÇÃO", "ILUMINACAO"],
     "result": "function=lighterSpawn"
   }
