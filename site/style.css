@@ -1,6 +1,21 @@
 html {
     overflow: hidden;
 }
+@media screen and (max-width: 1111px) {
+    html {
+        scale: 0.75;
+    }
+}
+@media screen and (max-width: 800px) {
+    html {
+        scale: 0.5;
+    }
+}
+@media screen and (max-width: 555px) {
+    html {
+        scale: 0.3;
+    }
+}
 
 body {
     margin: 0;

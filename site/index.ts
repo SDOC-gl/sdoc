@@ -227,8 +227,9 @@ function process(display:string):void {
 
             const extensions:string[] = ["pdf", "jpeg", "jpg", "png", "webm", "webp"];
             let hasAnyExtension:boolean = false;
-            for (const i of extensions) {
-                if (content.endsWith(extensions[i])) {
+            for (let i = 0; i < extensions.length; i++) {
+                const element = extensions[i];
+                if (content.endsWith("." + element)) {
                     hasAnyExtension = true;
                     break;
                 }
