@@ -1,5 +1,6 @@
-const screenElement = document.getElementById("screen");
-const Screens = Object.freeze({
+const screenElement:HTMLElement|null = document.getElementById("screen"); 
+
+const Screens:Readonly<any> = Object.freeze({
     LOADING: {
         id: "SCN_LOA",
         html: `
@@ -17,13 +18,15 @@ const Screens = Object.freeze({
             </p>
         `,
         js: () => {
-            const loadingAnim = ["—", "\\", "|", "/", "／"];
-            let curFrame = 0;
-            let loaded = 0;
-            const interval = setInterval(function () {
-                const loadingElement = document.getElementById("loading");
+            const loadingAnim:string[] =  ["—", "\\", "|", "/", "／"];
+            let curFrame:number = 0;
+            let loaded:number = 0;
+
+            const interval:number = setInterval(function() {
+                const loadingElement:HTMLElement|null = document.getElementById("loading");
                 if (loadingElement != null)
                     loadingElement.innerHTML = loadingAnim[curFrame];
+
                 curFrame += 1;
                 if (curFrame >= loadingAnim.length - 1)
                     curFrame = 0;
@@ -33,10 +36,10 @@ const Screens = Object.freeze({
                     updateScreen();
                     clearInterval(interval);
                 }
-                const possibleElement = document.getElementById(String(loaded));
+                const possibleElement:HTMLElement|null = document.getElementById(String(loaded));
                 if (possibleElement != null)
                     possibleElement.style.visibility = "visible";
-            }, 200);
+            }, 200)
         }
     },
     UNIVERSE: {
@@ -44,11 +47,12 @@ const Screens = Object.freeze({
         html: `
             <img src="./Screens/UNI.png">
         `,
-        js: () => { }
+        js: () => {}
     }
 });
-let curScreen = Screens.LOADING;
-function updateScreen() {
+let curScreen:Readonly<any> = Screens.LOADING;
+
+function updateScreen():void {
     if (screenElement)
         screenElement.innerHTML = curScreen.html;
     curScreen.js.call(this);

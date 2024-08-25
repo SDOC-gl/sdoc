@@ -1,27 +1,78 @@
 html {
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 body {
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: black;
+
+    opacity: 0%;
+    animation-name: pageShow;
+    animation-duration: 0.5s;
+    animation-timing-function: cubic-bezier(.75,-0.03,.73,1.08);
+    animation-fill-mode: forwards;
+    animation-delay: 0.2s;
 }
 
 .container {
-    width: 1000px;
-    height: 820px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
 }
 .layer {
     position: absolute;
-    transform-origin: center;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    max-width: 100vw;
+    max-height: 100vh;
+}
+.cmdscreen {
+    mix-blend-mode: overlay;
+    opacity: 0.9;
+}
+#screen {
+    image-rendering: pixelated;
+    shape-rendering: crispEdges;
+    
+    position: relative;
+    /* top: -10%; */
+    transform: translateY(-17%);
+    width: 800px;
+    max-width: 100vb;
+    height: 500px;
+    max-height: 65vb;
 
-    max-width: 120vw;
-    max-height: 120vh;
+    padding-left: 7vw;
+    padding-top: 8vw;
+
+    color: greenyellow;
+    font-size: 1vw;
+    font-family: monospace;
+    text-shadow: 0px 0px 8px greenyellow, 0px 0px 10px rgb(7, 100, 12);
+}
+div#screen img{
+    opacity: 1;
+    max-width: 35vb;
+}
+
+@media screen and (max-width: 1000px) {
+    #screen {
+        width: 80vw;
+        height: 50vw;
+    }   
+}
+@media screen and (min-width: 1500px) {
+    #screen {
+       font-size: 15px;
+       padding: 0;
+       padding-left: 105px;
+       padding-top: 120px;
+    }
+}
+
+
+@keyframes pageShow {
+    from {opacity: 0%;}
+    to {opacity: 100%;}
 }
