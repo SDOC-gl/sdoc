@@ -37,20 +37,53 @@ const Screens = Object.freeze({
                 if (possibleElement != null)
                     possibleElement.style.visibility = "visible";
             }, 200);
-        }
+        },
+        buttons: false
     },
     UNIVERSE: {
         id: "SCN_UNI",
         html: `
-            <img src="./Screens/UNI.png">
+            <img src="./Screens/UNI.png" style="margin-top:16px; position:absolute">
+            <div id="greenbox" style="width:115px; height:320px; position:relative; left: 485px; ">
+                <h4 style="text-align:center;padding-top:12px">ATIVIDADES</h4>
+            </div>
         `,
-        js: () => { }
+        js: () => {
+            const activities = ["Viajante", "Anacrônimo", "Monólito", "Espírito", "Apocalipse"];
+            let shownActivities = [];
+            const greenBox = document.getElementById("greenbox");
+            for (let i = 0; i < 4; i++) {
+                const customInvertal = setInterval(() => {
+                    const activityType = activities[Math.round(Math.random() * (activities.length - 1))];
+                    if (shownActivities.includes(activityType))
+                        return;
+                    const newActivity = document.createElement("p");
+                    newActivity.id = "activity";
+                    newActivity.innerHTML = activityType;
+                    shownActivities.push(activityType);
+                    console.table(shownActivities);
+                    greenBox.appendChild(newActivity);
+                    newActivity.style.visibility = "visible";
+                    setTimeout(() => {
+                        shownActivities.forEach((value, index) => {
+                            if (value === newActivity.innerHTML)
+                                shownActivities.splice(index);
+                        });
+                        newActivity.remove();
+                    }, 3000 + Math.random() * 1000);
+                }, 5000 + (Math.random() * 13000));
+            }
+        },
+        buttons: true
     }
 });
-let curScreen = Screens.LOADING;
+let curScreen = Screens.UNIVERSE;
 function updateScreen() {
     if (screenElement)
         screenElement.innerHTML = curScreen.html;
     curScreen.js.call(this);
+    document.getElementById("sstext").innerHTML = curScreen.id;
+    document.getElementById("ssbuttonl").style.visibility = curScreen.buttons ? "visible" : "collapse";
+    document.getElementById("ssbuttonr").style.visibility = curScreen.buttons ? "visible" : "collapse";
 }
 updateScreen();
