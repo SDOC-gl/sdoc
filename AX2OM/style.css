@@ -89,6 +89,7 @@ body {
     shape-rendering: crispEdges;
 }
 .ssbutton {
+    width: 32px;
     margin: 24px;
     cursor: pointer;
 }

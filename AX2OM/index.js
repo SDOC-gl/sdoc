@@ -1,6 +1,7 @@
 const screenElement = document.getElementById("screen");
-const Screens = Object.freeze({
-    LOADING: {
+const Screens = [
+    // LOAD
+    {
         id: "SCN_LOA",
         html: `
             <h1>LOADING <span id="loading">/</span></h1>
@@ -29,8 +30,7 @@ const Screens = Object.freeze({
                     curFrame = 0;
                 loaded += 1;
                 if (loaded >= 100) {
-                    curScreen = Screens.UNIVERSE;
-                    updateScreen();
+                    updateScreen(1);
                     clearInterval(interval);
                 }
                 const possibleElement = document.getElementById(String(loaded));
@@ -40,7 +40,8 @@ const Screens = Object.freeze({
         },
         buttons: false
     },
-    UNIVERSE: {
+    // UNI
+    {
         id: "SCN_UNI",
         html: `
             <img src="./Screens/UNI.png" style="margin-top:16px; position:absolute">
@@ -61,7 +62,6 @@ const Screens = Object.freeze({
                     newActivity.id = "activity";
                     newActivity.innerHTML = activityType;
                     shownActivities.push(activityType);
-                    console.table(shownActivities);
                     greenBox.appendChild(newActivity);
                     newActivity.style.visibility = "visible";
                     setTimeout(() => {
@@ -75,15 +75,48 @@ const Screens = Object.freeze({
             }
         },
         buttons: true
+    },
+    // ONION
+    {
+        id: "SCN_ONI",
+        html: `
+            <img src="./Screens/ONION.png" style="margin-left: 50%; margin-top: 5%; transform: translate(-50%, 0)">
+        `,
+        js: () => { },
+        buttons: true
+    },
+    // TELEPHONE
+    {
+        id: "SCN_TEL",
+        html: `
+            <img src="./Screens/TELEPHONE.png" style="margin-left: 50%; margin-top: 25%; transform: translate(-50%, 0)">
+        `,
+        js: () => { },
+        buttons: true
     }
-});
-let curScreen = Screens.UNIVERSE;
-function updateScreen() {
+];
+let curScreen = 1;
+function updateScreen(which) {
+    curScreen = which;
+    const screenInfo = Screens[curScreen];
     if (screenElement)
-        screenElement.innerHTML = curScreen.html;
-    curScreen.js.call(this);
-    document.getElementById("sstext").innerHTML = curScreen.id;
-    document.getElementById("ssbuttonl").style.visibility = curScreen.buttons ? "visible" : "collapse";
-    document.getElementById("ssbuttonr").style.visibility = curScreen.buttons ? "visible" : "collapse";
+        screenElement.innerHTML = screenInfo.html;
+    screenInfo.js.call(this);
+    document.getElementById("sstext").innerHTML = screenInfo.id;
+    const scrollButtons = document.getElementsByClassName("ssbutton");
+    for (let i = 0; i < scrollButtons.length; i++) {
+        const element = scrollButtons[i];
+        element.style.visibility = screenInfo.buttons ? "visible" : "collapse";
+        element.onclick = () => { scrollScreens(i == 0 ? -1 : 1); };
+    }
 }
-updateScreen();
+function scrollScreens(amt) {
+    let newCurScreen = curScreen + amt;
+    if (newCurScreen >= Screens.length)
+        newCurScreen = 1;
+    if (newCurScreen <= 0) {
+        newCurScreen = Screens.length - 1;
+    }
+    updateScreen(newCurScreen);
+}
+updateScreen(curScreen);
