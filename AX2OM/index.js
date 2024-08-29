@@ -89,9 +89,61 @@ const Screens = [
     {
         id: "SCN_TEL",
         html: `
-            <img src="./Screens/TELEPHONE.png" style="margin-left: 50%; margin-top: 25%; transform: translate(-50%, 0)">
+            <p id="num" style="position:absolute;font-size:72px;margin-left: 50%; margin-top: 10%; transform: translate(-50%, 0)"></p>
+            <img src="./Screens/TELEPHONE.png" id="telephone" style="margin-left: 50%; margin-top: 25%; transform: translate(-50%, 0)">
         `,
-        js: () => { },
+        js: () => {
+            const numbers = [
+                7, 0,
+                4, 4, 0,
+                6, 6, 6, 0,
+                6, 6, 0,
+                3, 3, 0,
+                6, 6, 0,
+                8, 8, 0,
+                6, 0,
+                8, 0,
+                6, 6, 6, 0,
+                8, 0,
+                3, 0,
+                3, 3, 0,
+                8, 8, 8, 0,
+                4, 4, 4, 0,
+                5, 5, 5, -1
+            ];
+            let curNum = 0;
+            let playing = false;
+            const telephone = document.getElementById("telephone");
+            const num = document.getElementById("num");
+            telephone.onmouseenter = () => {
+                if (!playing) {
+                    const mysteryaudio = new Audio('./Screens/phonesound.mp3');
+                    mysteryaudio.play();
+                    playing = true;
+                    function showNum() {
+                        if (numbers[curNum] === -1) {
+                            num.innerHTML = "";
+                            return;
+                        }
+                        if (numbers[curNum] === 0) {
+                            num.innerHTML = "";
+                            curNum++;
+                        }
+                        num.innerHTML += String(numbers[curNum]);
+                        curNum++;
+                    }
+                    showNum();
+                    const tickInverval = setInterval(() => {
+                        if (curNum >= numbers.length) {
+                            playing = false;
+                            clearInterval(tickInverval);
+                            return;
+                        }
+                        showNum();
+                    }, 925);
+                }
+            };
+        },
         buttons: true
     }
 ];

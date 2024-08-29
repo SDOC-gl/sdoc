@@ -23,6 +23,7 @@ body {
     height: 100vh;
 }
 .layer {
+    pointer-events: none;
     position: absolute;
     max-width: calc(1000px / 1.25);
     max-height: calc(820px / 1.25);
@@ -40,8 +41,6 @@ body {
     top: -62px;
     width: 630px;
     height: 380px;
-    padding-left: 25px;
-    padding-top: 30px;
     
     color: rgb(0, 255, 0);
     font-size: 14px;
