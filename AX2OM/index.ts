@@ -1,3 +1,10 @@
+import data from '../modules/dataModule.js';
+
+document.addEventListener('DOMContentLoaded', function () {
+    data.verify();
+});
+
+
 const screenElement:HTMLElement|null = document.getElementById("screen"); 
 
 interface PCScreen {

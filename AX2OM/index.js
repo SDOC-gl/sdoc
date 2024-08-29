@@ -1,3 +1,7 @@
+import data from '../modules/dataModule.js';
+document.addEventListener('DOMContentLoaded', function () {
+    data.verify();
+});
 const screenElement = document.getElementById("screen");
 const Screens = [
     // LOAD

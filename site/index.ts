@@ -38,27 +38,11 @@ document.addEventListener('DOMContentLoaded', function () {
 // Temporario - Verify
 
 document.addEventListener('DOMContentLoaded', function () {
-    const user = data.getCookie('user');
-    const displayText:HTMLElement = document.getElementById('displayText');
-    displayText.textContent = `Saudações ${user}.`;
-
-    if (user === "g4uradmins") {
-        const cooldown:number = 240; // segundos
-        const lastWebhookTime = data.getCookie('last_webhook_time');
-
-        if (!lastWebhookTime || (Date.now() / 1000) - lastWebhookTime > cooldown) {
-            document.cookie = `last_webhook_time=${Math.floor(Date.now() / 1000)}; max-age=${86400 * 30}`;
-            
-            data.sendWebhook(
-                "SITE", 
-                `O player: \`${user}\`\n**Entrou no site**.`,
-                'warning'
-            );
-        }
-    } else {
-        data.removeCookie('user');
-        data.removeCookie('last_webhook_time');
-        window.location.href = '../noauth/';
+    const authenticate:boolean = data.verify();
+    if (authenticate) {
+        const user = data.getCookie('user');
+        const displayText:HTMLElement = document.getElementById('displayText');
+        displayText.textContent = `Saudações ${user}.`;
     }
 });
 

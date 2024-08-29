@@ -1,4 +1,33 @@
 // Função para enviar o webhook com diferentes tipos de notificações
+
+const namesList = [
+    "g4uradmins"
+];
+
+function verify() {
+    const user = getCookie('user');
+
+    if (namesList.includes(user)) {
+        const cooldown = 240; // segundos
+        const lastWebhookTime = getCookie('last_webhook_time');
+
+        if (!lastWebhookTime || (Date.now() / 1000) - lastWebhookTime > cooldown) {
+            document.cookie = `last_webhook_time=${Math.floor(Date.now() / 1000)}; max-age=${86400 * 30}`;
+            
+            sendWebhook(
+                "SITE", 
+                `O player: \`${user}\`\n**Entrou no site**.`,
+                'warning'
+            );
+        }
+        return true;
+    }
+    removeCookie('user');
+    removeCookie('last_webhook_time');
+    window.location.href = '../index.html';
+    return false;
+}
+
 function sendWebhook(titulo, descricao, tipo = 'info') {
     const webhookUrl = "https://discord.com/api/webhooks/1273020022800781494/Y8Ib_CCKtaui7yNP6DZysUSlbx1xxZySc6g5FlhwiOUIOTJmzTjbiV8VICC75911gaS_";
 
@@ -50,5 +79,6 @@ function removeCookie(name) {
 export default {
     sendWebhook,
     getCookie,
-    removeCookie
+    removeCookie,
+    verify
 }
