@@ -14,6 +14,12 @@ body {
     animation-fill-mode: forwards;
     animation-delay: 0.2s;
 }
+input {
+    background-color: transparent;
+    border: 2px solid rgb(0, 255, 0);
+    outline-style: solid;
+    color: rgb(0, 255, 0);
+}
 
 .container {
     display: flex;

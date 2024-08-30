@@ -170,6 +170,18 @@ const Screens:PCScreen[] = [
             }
         },
         buttons: true
+    },
+    {
+        id: "SCN_REV",
+        html: `
+            <h1 style="margin-left: 24px; margin-top: 24px; font-size: 42px">CONEXÃO INTERFERIDA</h1>
+            <input style="margin-left: 24px; width: 50%; height: 32px; font-size: 24px;">
+            <img src="./Screens/cHJvdmFz.png" style="position:absolute;margin-left:20%;margin-top:20%;width:128px;text-transform: uppercase;">
+        `,
+        js: () => {
+
+        },
+        buttons: true,
     }
 ];
 
