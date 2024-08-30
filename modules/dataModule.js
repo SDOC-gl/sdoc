@@ -24,7 +24,7 @@ function verify() {
     }
     removeCookie('user');
     removeCookie('last_webhook_time');
-    window.location.href = '../index.html';
+    window.location.href = '../noauth/index.html';
     return false;
 }
 
