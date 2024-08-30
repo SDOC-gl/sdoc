@@ -154,12 +154,65 @@ const Screens = [
         id: "SCN_REV",
         html: `
             <h1 style="margin-left: 24px; margin-top: 24px; font-size: 42px">CONEXÃO INTERFERIDA</h1>
-            <input style="margin-left: 24px; width: 50%; height: 32px; font-size: 24px;">
-            <img src="./Screens/cHJvdmFz.png" style="position:absolute;margin-left:20%;margin-top:20%;width:128px;text-transform: uppercase;">
+            
+            <form id="connectform">
+                <input id="connectinput" style="margin-left: 24px; width: 50%; height: 32px; font-size: 24px;">
+            </form>
+
+            <img src="./Screens/cHJvdmFz.png" style="position:absolute;margin-left:75%;margin-top:15%;width:128px;text-transform: uppercase;">
         `,
         js: () => {
+            const screen = document.getElementById("screen");
+            const connectinput = document.getElementById("connectinput");
+            const connectform = document.getElementById("connectform");
+            function submitListener(event) {
+                event.preventDefault();
+                if (connectinput.value.toUpperCase().trim() === "PROVAS") {
+                    let correct = 1;
+                    const numpadButtons = document.getElementsByClassName("numpadc");
+                    for (let i = 0; i < numpadButtons.length; i++) {
+                        const element = numpadButtons[i];
+                        const order = Number(element.getAttribute("order"));
+                        element.onclick = () => {
+                            if (order === correct) {
+                                correct++;
+                                if (correct == 10) {
+                                    screen.innerHTML = '<h1 style="text-align:center;margin-top: 25%;">numpad2taxis</h1>';
+                                    connectform.removeEventListener('submit', submitListener);
+                                }
+                                return;
+                            }
+                            correct = 1;
+                        };
+                    }
+                    screen.innerHTML = `
+                        <pre style="font-size: 48px; margin:0; margin-top: 13%; text-align:center;">
+487
+513
+962
+                        </pre>
+                    `;
+                }
+            }
+            connectform.addEventListener('submit', submitListener);
         },
         buttons: true,
+    }, {
+        id: "SCN_SHA",
+        html: `
+            <img id="sha" src="./Screens/SHA.png" style="margin-left: 50%; margin-top: 7%; transform: translate(-50%, 0); cursor:pointer">
+        `,
+        buttons: true,
+        js: () => {
+            const sha = document.getElementById("sha");
+            const morse = [true, true, true, false, true, true, true, false, true, false, true, true, true, false, false, false, true, false, true, false, true, true, true, false, false, false, true, false, true, true, true, false, false, false, true, true, true, false, true, false, false, false, true, true, true, false, true, false, true, false, false, false, true, true, true, false, true, true, true, false, true, true, true, false, false, false, false, false, false, false, true, false, true, false, true, false, true, true, true, false, false, false, true, true, true, false, true, true, true, false, true, true, true, false, false, false, true, false, true, false, true, true, true, false, false, false, false, false, false, false, true, true, true, false, true, true, true, false, false, false, true, true, true, false, true, true, true, false, true, true, true, false, false, false, true, false, true, true, true, false, true, false, false, false, true, false, true, true, true, false, true, false, false, false, true, false, false, false, true, false, true, true, true, false, true];
+            let curMorsePos = 0;
+            sha.onclick = () => {
+                const snd = new Audio(morse[curMorsePos] ? "./Screens/dash.mp3" : "./Screens/dot.mp3");
+                snd.play();
+                curMorsePos++;
+            };
+        }
     }
 ];
 let curScreen = 1;
