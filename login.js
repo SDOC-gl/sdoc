@@ -1,1 +1,26 @@
-const _0x287173=_0xa6f3;(function(_0xd17bfe,_0x4e6829){const _0x531e4c=_0xa6f3,_0x1c3db3=_0xd17bfe();while(!![]){try{const _0x38e42b=parseInt(_0x531e4c(0x1c8))/0x1*(parseInt(_0x531e4c(0x1c1))/0x2)+-parseInt(_0x531e4c(0x1d3))/0x3+-parseInt(_0x531e4c(0x1d2))/0x4+-parseInt(_0x531e4c(0x1d1))/0x5+parseInt(_0x531e4c(0x1db))/0x6+-parseInt(_0x531e4c(0x1d6))/0x7*(parseInt(_0x531e4c(0x1d9))/0x8)+parseInt(_0x531e4c(0x1c4))/0x9;if(_0x38e42b===_0x4e6829)break;else _0x1c3db3['push'](_0x1c3db3['shift']());}catch(_0x520bb3){_0x1c3db3['push'](_0x1c3db3['shift']());}}}(_0x3a7c,0x277c3));function _0xa6f3(_0x6881f9,_0x20d4f5){const _0x3a7ca3=_0x3a7c();return _0xa6f3=function(_0xa6f38e,_0x55ee37){_0xa6f38e=_0xa6f38e-0x1c1;let _0x1469cf=_0x3a7ca3[_0xa6f38e];return _0x1469cf;},_0xa6f3(_0x6881f9,_0x20d4f5);}function _0x3a7c(){const _0xf0ad34=['nick','285738ZkhEVx','loginForm','82akoutn','value','length','3092193HQAyaA','preventDefault','DOMContentLoaded',';\x20path=/','7804MJigKx','submit','deathseed=','../site/','addEventListener','user','cookie','random',';\x20seed=','160190QhrMTP','125272OrYzVj','504957DHxZki','location','getElementById','158879aleKEZ','\x20;max-age=','href','112yrlpjr'];_0x3a7c=function(){return _0xf0ad34;};return _0x3a7c();}import _0x70f986 from'./modules/dataModule.js';document[_0x287173(0x1cc)](_0x287173(0x1c6),function(){const _0x3e64f7=_0x287173,_0x2366da=_0x70f986['getCookie'](_0x3e64f7(0x1cd));if(_0x2366da)window[_0x3e64f7(0x1d4)][_0x3e64f7(0x1d8)]=_0x3e64f7(0x1cb);}),document[_0x287173(0x1d5)](_0x287173(0x1dc))[_0x287173(0x1cc)](_0x287173(0x1c9),function(_0x3cf3b1){const _0x3eed46=_0x287173;_0x3cf3b1[_0x3eed46(0x1c5)]();const _0x273edb=document['getElementById'](_0x3eed46(0x1da))[_0x3eed46(0x1c2)];_0x273edb[_0x3eed46(0x1c3)]>0x0&&(document[_0x3eed46(0x1ce)]='user='+_0x273edb+_0x3eed46(0x1d0)+0x7a3a+_0x3eed46(0x1d7)+0x15180*0x1e+';\x20path=/',document['cookie']=_0x3eed46(0x1ca)+(0x7e9+Math['floor'](Math[_0x3eed46(0x1cf)]()*0x4b))+_0x3eed46(0x1c7),window[_0x3eed46(0x1d4)][_0x3eed46(0x1d8)]=_0x3eed46(0x1cb));});
+// Libs
+import data from './modules/dataModule.js';
+
+// Verificar se o cookie do usuário está definido
+document.addEventListener('DOMContentLoaded', function () {
+    const user = data.getCookie('user');
+    
+    if (user)
+       window.location.href = '../site/';
+});
+
+// Manipular o envio do formulário
+document.getElementById('loginForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const nick = document.getElementById('nick').value;
+
+    if (nick.length > 0) {
+        document.cookie = `user=${(nick)}; seed=${(31290)} ;max-age=${86400 * 30}; path=/`;
+        document.cookie = "deathseed=" + (2025 + Math.floor(Math.random() * 75)) + "; path=/";
+        window.location.href = '../site/';
+    }
+});
+
+
+

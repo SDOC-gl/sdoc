@@ -1,9 +1,20 @@
 import data from '../modules/dataModule.js';
+
 document.addEventListener('DOMContentLoaded', function () {
     data.verify();
 });
-const screenElement = document.getElementById("screen");
-const Screens = [
+
+
+const screenElement:HTMLElement|null = document.getElementById("screen"); 
+
+interface PCScreen {
+    id: string;
+    html: string;
+    js: Function;
+    buttons: boolean;
+}
+
+const Screens:PCScreen[] = [
     // LOAD
     {
         id: "SCN_LOA",
@@ -22,13 +33,15 @@ const Screens = [
             </p>
         `,
         js: () => {
-            const loadingAnim = ["—", "\\", "|", "/", "／"];
-            let curFrame = 0;
-            let loaded = 0;
-            const interval = setInterval(function () {
-                const loadingElement = document.getElementById("loading");
+            const loadingAnim:string[] =  ["—", "\\", "|", "/", "／"];
+            let curFrame:number = 0;
+            let loaded:number = 0;
+
+            const interval:number = setInterval(function() {
+                const loadingElement:HTMLElement|null = document.getElementById("loading");
                 if (loadingElement != null)
                     loadingElement.innerHTML = loadingAnim[curFrame];
+
                 curFrame += 1;
                 if (curFrame >= loadingAnim.length - 1)
                     curFrame = 0;
@@ -37,13 +50,14 @@ const Screens = [
                     updateScreen(1);
                     clearInterval(interval);
                 }
-                const possibleElement = document.getElementById(String(loaded));
+                const possibleElement:HTMLElement|null = document.getElementById(String(loaded));
                 if (possibleElement != null)
                     possibleElement.style.visibility = "visible";
-            }, 200);
+            }, 200)
         },
         buttons: false
     },
+    
     // UNI
     {
         id: "SCN_UNI",
@@ -54,18 +68,21 @@ const Screens = [
             </div>
         `,
         js: () => {
-            const activities = ["Viajante", "Anacrônimo", "Monólito", "Espírito", "Apocalipse"];
-            let shownActivities = [];
-            const greenBox = document.getElementById("greenbox");
+            const activities:string[] = ["Viajante", "Anacrônimo", "Monólito", "Espírito", "Apocalipse"];
+            let shownActivities:string[] = [];
+
+            const greenBox:HTMLDivElement = document.getElementById("greenbox") as HTMLDivElement;
+
             for (let i = 0; i < 4; i++) {
-                const customInvertal = setInterval(() => {
-                    const activityType = activities[Math.round(Math.random() * (activities.length - 1))];
-                    if (shownActivities.includes(activityType))
-                        return;
-                    const newActivity = document.createElement("p");
+                const customInvertal:number = setInterval(() => {
+                    const activityType:string = activities[Math.round(Math.random() * (activities.length - 1))];
+                    if (shownActivities.includes(activityType)) return;
+
+                    const newActivity:HTMLParagraphElement = document.createElement("p");
                     newActivity.id = "activity";
                     newActivity.innerHTML = activityType;
                     shownActivities.push(activityType);
+
                     greenBox.appendChild(newActivity);
                     newActivity.style.visibility = "visible";
                     setTimeout(() => {
@@ -74,7 +91,7 @@ const Screens = [
                                 shownActivities.splice(index);
                         });
                         newActivity.remove();
-                    }, 3000 + Math.random() * 1000);
+                    }, 3000 + Math.random() * 1000)
                 }, 5000 + (Math.random() * 13000));
             }
         },
@@ -86,39 +103,47 @@ const Screens = [
         `,
         buttons: true,
         js: () => {
-            const sha = document.getElementById("sha");
-            const morse = [true, true, true, false, true, true, true, false, true, false, true, true, true, false, false, false, true, false, true, false, true, true, true, false, false, false, true, false, true, true, true, false, false, false, true, true, true, false, true, false, false, false, true, true, true, false, true, false, true, false, false, false, true, true, true, false, true, true, true, false, true, true, true, false, false, false, false, false, false, false, true, false, true, false, true, false, true, true, true, false, false, false, true, true, true, false, true, true, true, false, true, true, true, false, false, false, true, false, true, false, true, true, true, false, false, false, false, false, false, false, true, true, true, false, true, true, true, false, false, false, true, true, true, false, true, true, true, false, true, true, true, false, false, false, true, false, true, true, true, false, true, false, false, false, true, false, true, true, true, false, true, false, false, false, true, false, false, false, true, false, true, true, true, false, true];
-            let curMorsePos = 0;
+            const sha:HTMLImageElement = document.getElementById("sha") as HTMLImageElement;
+            const morse:boolean[] = [true,true,true,false,true,true,true,false,true,false,true,true,true,false,false,false,true,false,true,false,true,true,true,false,false,false,true,false,true,true,true,false,false,false,true,true,true,false,true,false,false,false,true,true,true,false,true,false,true,false,false,false,true,true,true,false,true,true,true,false,true,true,true,false,false,false,false,false,false,false,true,false,true,false,true,false,true,true,true,false,false,false,true,true,true,false,true,true,true,false,true,true,true,false,false,false,true,false,true,false,true,true,true,false,false,false,false,false,false,false,true,true,true,false,true,true,true,false,false,false,true,true,true,false,true,true,true,false,true,true,true,false,false,false,true,false,true,true,true,false,true,false,false,false,true,false,true,true,true,false,true,false,false,false,true,false,false,false,true,false,true,true,true,false,true];
+            let curMorsePos:number = 0;
             sha.onclick = () => {
                 const snd = new Audio(morse[curMorsePos] ? "./Screens/dash.mp3" : "./Screens/dot.mp3");
                 snd.play();
                 curMorsePos++;
-            };
+            }
         }
     }
 ];
-let curScreen = 0;
-function updateScreen(which) {
+
+let curScreen:number = 0;
+
+function updateScreen(which:number):void {
     curScreen = which;
-    const screenInfo = Screens[curScreen];
+    const screenInfo:PCScreen = Screens[curScreen];
+
     if (screenElement)
         screenElement.innerHTML = screenInfo.html;
     screenInfo.js.call(this);
     document.getElementById("sstext").innerHTML = screenInfo.id;
-    const scrollButtons = document.getElementsByClassName("ssbutton");
+
+    const scrollButtons:HTMLCollectionOf<HTMLImageElement> = document.getElementsByClassName("ssbutton") as HTMLCollectionOf<HTMLImageElement>;
+
     for (let i = 0; i < scrollButtons.length; i++) {
         const element = scrollButtons[i];
         element.style.visibility = screenInfo.buttons ? "visible" : "collapse";
-        element.onclick = () => { scrollScreens(i == 0 ? -1 : 1); };
+        element.onclick = () => {scrollScreens(i == 0 ? -1 : 1)}
     }
 }
-function scrollScreens(amt) {
-    let newCurScreen = curScreen + amt;
+
+function scrollScreens(amt:number) {
+    let newCurScreen:number = curScreen + amt;
     if (newCurScreen >= Screens.length)
         newCurScreen = 1;
     if (newCurScreen <= 0) {
         newCurScreen = Screens.length - 1;
     }
+
     updateScreen(newCurScreen);
 }
+
 updateScreen(curScreen);
