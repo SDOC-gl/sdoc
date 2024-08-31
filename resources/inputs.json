@@ -753,5 +753,8 @@
   }, {
     "input": ["NORBERTO", "O NORBERTO"],
     "result": "Dizem que seu sobrenome era Carlos."
+  }, {
+    "input": ["PRIZE"],
+    "result": "Parece que vocês se provaram bons o suficiente.<br>O teste foi finalizado, essa foi apenas a primeira fase, muito bom, porém, esperamos os melhores dos melhores, queremos trabalho em equipe, veremos se serão capazes de juntar todas as peças do quebra cabeça.<br>Até lá estarei esperando pacientemente."
   }
 ]

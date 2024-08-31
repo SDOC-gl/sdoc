@@ -78,9 +78,9 @@ body {
         rgba(255, 255, 255, 0.2),1px 1px 2px 
         rgba(255, 255, 255, 0.2);
 
-    outline: 2px solid transparent;
-
     text-transform: uppercase;
+
+    outline: 2px solid transparent;
 
     width: 150px;
     height: 44px;
@@ -90,6 +90,7 @@ body {
     cursor:text;
 }
 #pcscreen {
+    overflow-y: scroll;
     user-select: none;
     display: flex;
 
@@ -129,8 +130,8 @@ a {
 }
 
 #mediaOverlayContainer {
-    width: 100vw;
-    height: 100vh;
+    width: 100dvw;
+    height: 100dvh;
     background-color: rgba(0, 0, 0, 0.66);
     z-index: 1000;
 
@@ -141,11 +142,6 @@ a {
 .mediaOverlay {
     max-width: 75vw;
     max-height: 75vh;
-    /*outline-color: white;
-    outline-style: solid;
-    outline-width: 1vb;
-    outline-offset: 3.5vb;*/
-    /* box-shadow: rgba(255, 255, 255, 0.274) 0 0 0px 3.5vb; */
     border-radius: 0.5%;
 }
 
