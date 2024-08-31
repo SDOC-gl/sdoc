@@ -79,124 +79,6 @@ const Screens = [
             }
         },
         buttons: true
-    },
-    // ONION
-    {
-        id: "SCN_ONI",
-        html: `
-            <img src="./Screens/ONION.png" style="margin-left: 50%; margin-top: 5%; transform: translate(-50%, 0)">
-        `,
-        js: () => { },
-        buttons: true
-    },
-    // TELEPHONE
-    {
-        id: "SCN_TEL",
-        html: `
-            <p id="num" style="position:absolute;font-size:72px;margin-left: 50%; margin-top: 10%; transform: translate(-50%, 0)"></p>
-            <img src="./Screens/TELEPHONE.png" id="telephone" style="margin-left: 50%; margin-top: 25%; transform: translate(-50%, 0)">
-        `,
-        js: () => {
-            const numbers = [
-                7, 0,
-                4, 4, 0,
-                6, 6, 6, 0,
-                6, 6, 0,
-                3, 3, 0,
-                6, 6, 0,
-                8, 8, 0,
-                6, 0,
-                8, 0,
-                6, 6, 6, 0,
-                8, 0,
-                3, 0,
-                3, 3, 0,
-                8, 8, 8, 0,
-                4, 4, 4, 0,
-                5, 5, 5, -1
-            ];
-            let curNum = 0;
-            let playing = false;
-            const telephone = document.getElementById("telephone");
-            const num = document.getElementById("num");
-            telephone.onmouseenter = () => {
-                if (!playing) {
-                    const mysteryaudio = new Audio('./Screens/phonesound.mp3');
-                    mysteryaudio.play();
-                    playing = true;
-                    function showNum() {
-                        if (numbers[curNum] === -1) {
-                            num.innerHTML = "";
-                            return;
-                        }
-                        if (numbers[curNum] === 0) {
-                            num.innerHTML = "";
-                            curNum++;
-                        }
-                        num.innerHTML += String(numbers[curNum]);
-                        curNum++;
-                    }
-                    showNum();
-                    const tickInverval = setInterval(() => {
-                        if (curNum >= numbers.length) {
-                            playing = false;
-                            clearInterval(tickInverval);
-                            return;
-                        }
-                        showNum();
-                    }, 925);
-                }
-            };
-        },
-        buttons: true
-    },
-    {
-        id: "SCN_REV",
-        html: `
-            <h1 style="margin-left: 24px; margin-top: 24px; font-size: 42px">CONEXÃO INTERFERIDA</h1>
-            
-            <form id="connectform">
-                <input id="connectinput" style="margin-left: 24px; width: 50%; height: 32px; font-size: 24px;">
-            </form>
-
-            <img src="./Screens/cHJvdmFz.png" style="position:absolute;margin-left:75%;margin-top:15%;width:128px;text-transform: uppercase;">
-        `,
-        js: () => {
-            const screen = document.getElementById("screen");
-            const connectinput = document.getElementById("connectinput");
-            const connectform = document.getElementById("connectform");
-            function submitListener(event) {
-                event.preventDefault();
-                if (connectinput.value.toUpperCase().trim() === "PROVAS") {
-                    let correct = 1;
-                    const numpadButtons = document.getElementsByClassName("numpadc");
-                    for (let i = 0; i < numpadButtons.length; i++) {
-                        const element = numpadButtons[i];
-                        const order = Number(element.getAttribute("order"));
-                        element.onclick = () => {
-                            if (order === correct) {
-                                correct++;
-                                if (correct == 10) {
-                                    screen.innerHTML = '<h1 style="text-align:center;margin-top: 25%;">numpad2taxis</h1>';
-                                    connectform.removeEventListener('submit', submitListener);
-                                }
-                                return;
-                            }
-                            correct = 1;
-                        };
-                    }
-                    screen.innerHTML = `
-                        <pre style="font-size: 48px; margin:0; margin-top: 13%; text-align:center;">
-487
-513
-962
-                        </pre>
-                    `;
-                }
-            }
-            connectform.addEventListener('submit', submitListener);
-        },
-        buttons: true,
     }, {
         id: "SCN_SHA",
         html: `
@@ -215,7 +97,7 @@ const Screens = [
         }
     }
 ];
-let curScreen = 1;
+let curScreen = 0;
 function updateScreen(which) {
     curScreen = which;
     const screenInfo = Screens[curScreen];
