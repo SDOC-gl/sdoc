@@ -56,6 +56,13 @@
     </form>
 
     <script type="module" src="./login.js"></script>
+    <script>
+        const nickInput = document.getElementById('nick');
+    
+        nickInput.addEventListener('input', function() {
+            this.value = this.value.replace(/\s/g, '');
+        });
+    </script>
 </body>
 
 </html>
