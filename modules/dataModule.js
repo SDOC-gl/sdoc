@@ -1,13 +1,8 @@
 // Função para enviar o webhook com diferentes tipos de notificações
-
-const namesList = [
-    "g4uradmins"
-];
-
 function verify() {
     const user = getCookie('user');
 
-    if (namesList.includes(user)) {
+    if (user) {
         const cooldown = 240; // segundos
         const lastWebhookTime = getCookie('last_webhook_time');
 

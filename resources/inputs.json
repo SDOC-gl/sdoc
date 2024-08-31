@@ -750,5 +750,8 @@
   }, {
     "input": ["LUZ", "FOGO", "ISQUEIRO", "VELA", "TOCHA", "ILUMINAÇÃO", "ILUMINACAO"],
     "result": "function=lighterSpawn"
+  }, {
+    "input": ["NORBERTO", "O NORBERTO"],
+    "result": "Dizem que seu sobrenome era Carlos."
   }
 ]
