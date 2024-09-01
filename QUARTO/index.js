@@ -206,8 +206,10 @@ function process(display) {
             data.sendWebhook("SITE - LOG-BUSCA", `O player: \`${user}\`\n\nBuscou com o parâmetro: \`${display}\`\nResultado: \`${content}\``, 'success');
             return false;
         });
-        if (!hasInput)
+        if (!hasInput) {
+            data.sendWebhook("SITE - LOG-BUSCA", `O player: \`${user}\`\n\nBuscou com o parâmetro: \`${display}\`\nResultado: falhou`, 'error');
             document.getElementById('displayText').innerHTML = "Entrada não encontrada<br>Tente novamente.";
+        }
     });
 }
 // Manipular o envio do formulário
