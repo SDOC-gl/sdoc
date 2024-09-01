@@ -100,20 +100,25 @@ main {
     cursor:text;
 }
 #pcscreen {
+    cursor: pointer;
+    pointer-events: all;
+    z-index: 1000;
+    transform: skew(-2deg, 5deg);
+
     display: flex;
     align-items: center;
     justify-content: center;
 
     position: absolute;
 
-    left: 30px;
+    left: 35px;
     top: 45px;
-    width: 270px;
+    width: 260px;
     height: 165px;
 
-    transform: skew(0deg, 5deg);
     
     color: white;
+    
 
     animation-name: screen;
     animation-duration: 100ms;

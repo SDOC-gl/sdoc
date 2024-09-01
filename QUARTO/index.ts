@@ -46,6 +46,33 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+let canZoom:boolean = true;
+let zoomedIn:boolean = false
+
+document.getElementById("pcscreen").onclick = () => {
+    if (!canZoom) return;
+    canZoom = false;
+    canDoAnything = false;
+    // blurAll();
+
+    const main:HTMLElement = document.getElementById("main");
+    
+
+    if (zoomedIn) {
+        main.animate([{ transform: "scale(4, 4) translateX(220px) translateY(120px)"},{ transform: "scale(1, 1) translateX(0px) translateY(0px)"},],
+        { duration: 1500,easing: "cubic-bezier(.78,.25,.73,1.03)",fill: 'forwards' }).onfinish = () => {
+            canZoom = true;canDoAnything = true;
+        }
+    } else {
+        main.animate([{ transform: "scale(1, 1) translateX(0px) translateY(0px)"},{ transform: "scale(4, 4) translateX(220px) translateY(120px)"},],
+        { duration: 1500,easing: "cubic-bezier(.78,.25,.73,1.03)",fill: 'forwards' }).onfinish = () => {
+            canZoom = true;
+        }
+    }
+    zoomedIn = !zoomedIn;
+
+}
+
 let tooltipElements = [];
 
 for (let i = 0; i < document.getElementsByTagName("*").length; i++) {
