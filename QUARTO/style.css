@@ -1,3 +1,8 @@
+@font-face {
+    font-family: terminal;
+    src: url(../fonts/decterm.ttf);
+}
+
 html {
     overflow: hidden;
 }
@@ -13,6 +18,9 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: terminal;
+    font-weight: lighter;
+    font-size: 19px;
 
     width: 100dvw;
     height: 100dvh;
@@ -64,16 +72,17 @@ main {
 
 #pcinput {
     position: absolute;
+    font-family: terminal !important;
     margin-left: -245px;
     margin-top: -20px;
     transform: scaleY(1.75) skew(-12deg, 2deg);
     background-color: transparent;
 
     text-shadow: -1px -1px 2px 
-        rgba(255, 255, 255, 0.2),-1px 1px 2px 
-        rgba(255, 255, 255, 0.2),1px -1px 2px
-        rgba(255, 255, 255, 0.2),1px 1px 2px 
-        rgba(255, 255, 255, 0.2);
+        rgba(255, 255, 255, 0.1),-1px 1px 2px 
+        rgba(255, 255, 255, 0.1),1px -1px 2px
+        rgba(255, 255, 255, 0.1),1px 1px 2px 
+        rgba(255, 255, 255, 0.33);
 
     text-transform: uppercase;
 
@@ -81,7 +90,7 @@ main {
 
     width: 140px;
     height: 44px;
-    font-size: 16px;
+    font-size: 19px;
     color: white;
     border: none;
     cursor:text;
@@ -112,10 +121,10 @@ a {
 
 #displayText {
     text-shadow: -1px -1px 2px 
-        rgba(255, 255, 255, 0.2),-1px 1px 2px 
-        rgba(255, 255, 255, 0.2),1px -1px 2px
-        rgba(255, 255, 255, 0.2),1px 1px 2px 
-        rgba(255, 255, 255, 0.2);
+        rgba(255, 255, 255, 0.1),-1px 1px 2px 
+        rgba(255, 255, 255, 0.1),1px -1px 2px
+        rgba(255, 255, 255, 0.1),1px 1px 2px 
+        rgba(255, 255, 255, 0.1);
 }
 #displayImg {
     max-height: 160px;
@@ -140,13 +149,13 @@ a {
 
 #tooltip {
     position: absolute;
-    background-color: rgb(62, 59, 73);
-    color: white;
+    background-color: #76b297;
+    color: #093029;
     width: fit-content;
     height: fit-content;
     padding: 5px;
     font-family: monospace;
-    box-shadow: 2px 2px rgb(31, 28, 46);
+    box-shadow: 2px 2px #225245;    
 
     visibility: collapse;
 
