@@ -215,7 +215,7 @@ function process(display:string):void {
                 return false;
             }
 
-            const extensions:string[] = ["pdf", "jpeg", "jpg", "png", "webm", "webp"];
+            const extensions:string[] = ["pdf", "jpeg", "jpg", "png", "webm", "mp4", "webp"];
             let hasAnyExtension:boolean = false;
             for (let i = 0; i < extensions.length; i++) {
                 const element = extensions[i];
@@ -290,7 +290,7 @@ function openMedia(path:string) {
 
     blurAll();
 
-    let isImg:boolean = !path.endsWith(".webm");
+    let isImg:boolean = !path.endsWith(".webm") && !path.endsWith(".mp4");
     
     const mediaOverlayContainer:HTMLDivElement = document.getElementById("mediaOverlayContainer") as HTMLDivElement;
     const mediaOverlay:HTMLImageElement|HTMLVideoElement = document.getElementById("mediaOverlay" + (isImg ? "I" : "V")) as HTMLImageElement|HTMLVideoElement;

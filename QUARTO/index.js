@@ -175,7 +175,7 @@ function process(display) {
                 document.getElementById('displayText').innerHTML = "<audio style=\"width:160px;\" controls><source src=\"../resources/" + content + "\" type=\"audio/mpeg\"></audio>";
                 return false;
             }
-            const extensions = ["pdf", "jpeg", "jpg", "png", "webm", "webp"];
+            const extensions = ["pdf", "jpeg", "jpg", "png", "webm", "mp4", "webp"];
             let hasAnyExtension = false;
             for (let i = 0; i < extensions.length; i++) {
                 const element = extensions[i];
@@ -227,7 +227,7 @@ function openMedia(path) {
         return;
     }
     blurAll();
-    let isImg = !path.endsWith(".webm");
+    let isImg = !path.endsWith(".webm") && !path.endsWith(".mp4");
     const mediaOverlayContainer = document.getElementById("mediaOverlayContainer");
     const mediaOverlay = document.getElementById("mediaOverlay" + (isImg ? "I" : "V"));
     document.getElementById("mediaOverlay" + (isImg ? "V" : "I")).style.visibility = "collapse";
