@@ -35,3 +35,6 @@ jobs:
           git commit -m "Add obfuscated JavaScript file" -a
       - name: Push changes
         uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.TOKEN }}
+          branch: ${{ github.ref }}
