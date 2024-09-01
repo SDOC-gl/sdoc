@@ -1,3 +1,12 @@
+@font-face {
+    font-family: terminal;
+    src: url(../fonts/decterm.ttf);
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    font-family: terminal;
+}
+
 html {
     overflow: hidden;
 }
@@ -42,6 +51,7 @@ input {
     overflow: hidden;
 
     filter: blur(0.5px);
+    padding-left: 30px;
 
     position: relative;
     top: -62px;
@@ -96,28 +106,6 @@ input {
 .ssbutton {
     width: 32px;
     margin: 24px;
-    cursor: pointer;
-}
-#numpad {
-    position: absolute;
-    display: grid;
-    grid-template-columns: 40px 37px 50px;
-    grid-gap: 10px;
-
-    /* background-color: rgba(255, 0, 0, 0.363); */
-    width: 160px;
-    height: 120px;
-    z-index: 1000;
-    margin-left: -450px;
-    margin-top: 400px;
-    padding-left: 30px;
-    padding-top: 20px;
-
-}
-.numpadc {
-    /* background-color: green; */
-    width: 24px;
-    height: 24px;
     cursor: pointer;
 }
 
