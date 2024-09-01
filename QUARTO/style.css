@@ -57,9 +57,13 @@ main {
 }
 
 #candle-light {
+    position: relative;
+    right: 30px;
+    bottom: 30px;
+
     z-index: 2;
-    opacity: 40%;
-    mix-blend-mode:hard-light; 
+    opacity: 60%;
+    mix-blend-mode: hard-light; 
     animation-name: light;
     animation-duration: 5s;
     animation-iteration-count: infinite;
@@ -176,9 +180,15 @@ a {
 
 @keyframes light {
     0% {
-        opacity:40%;
+        scale: 1.25;
+        opacity: 50%;
+    }
+    50% {
+        scale: 1;
+        opacity: 40%;
     }
     100% {
-        opacity: 30%;
+        scale: 1.25;
+        opacity: 50%;
     }
 }

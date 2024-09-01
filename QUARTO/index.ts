@@ -85,7 +85,7 @@ let canDoAnything:boolean = true;
 
 function norgetSpawn():void {
     document.getElementById('displayText').innerHTML = "Para você!";
-    let norget:TableObject = new TableObject("norget", "objects/Norget.webp", [400, 290], 170);
+    let norget:TableObject = new TableObject("norget", "objects/Norget.webp", [0, -200], 170);
     norget.setRightClick(function(e) {
         e.preventDefault();
         tooltipShow("Norget");
@@ -110,14 +110,14 @@ function lighterSpawn():void {
 }
 function lightCandle():void {
     candleOn = true;
-    // const candleLight:HTMLImageElement = document.getElementById("candle-light") as HTMLImageElement;
-    // candleLight.style.visibility = "visible"
+    const candleLight:HTMLImageElement = document.getElementById("candle-light") as HTMLImageElement;
+    candleLight.style.visibility = "visible"
     const candle:HTMLImageElement = document.getElementById("candle") as HTMLImageElement;
     candle.src = "./IMG/candle-on.gif";
     const table:HTMLImageElement = document.getElementById("table") as HTMLImageElement;
     table.src = "./IMG/table-2.png";
-    // const mysteryWall:HTMLImageElement = document.getElementById("mystery-wall") as HTMLImageElement;
-    // mysteryWall.style.visibility = "visible";
+    const mysteryWall:HTMLImageElement = document.getElementById("mystery-wall") as HTMLImageElement;
+    mysteryWall.style.visibility = "visible";
 }
 
 function whenDie():void {

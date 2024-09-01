@@ -71,7 +71,7 @@ document.addEventListener('mousemove', function (e) {
 let canDoAnything = true;
 function norgetSpawn() {
     document.getElementById('displayText').innerHTML = "Para você!";
-    let norget = new TableObject("norget", "objects/Norget.webp", [400, 290], 170);
+    let norget = new TableObject("norget", "objects/Norget.webp", [0, -200], 170);
     norget.setRightClick(function (e) {
         e.preventDefault();
         tooltipShow("Norget");
@@ -94,14 +94,14 @@ function lighterSpawn() {
 }
 function lightCandle() {
     candleOn = true;
-    // const candleLight:HTMLImageElement = document.getElementById("candle-light") as HTMLImageElement;
-    // candleLight.style.visibility = "visible"
+    const candleLight = document.getElementById("candle-light");
+    candleLight.style.visibility = "visible";
     const candle = document.getElementById("candle");
     candle.src = "./IMG/candle-on.gif";
     const table = document.getElementById("table");
     table.src = "./IMG/table-2.png";
-    // const mysteryWall:HTMLImageElement = document.getElementById("mystery-wall") as HTMLImageElement;
-    // mysteryWall.style.visibility = "visible";
+    const mysteryWall = document.getElementById("mystery-wall");
+    mysteryWall.style.visibility = "visible";
 }
 function whenDie() {
     document.getElementById('displayText').innerHTML = data.getCookie('deathseed');
