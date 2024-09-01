@@ -79,7 +79,7 @@ main {
     font-family: terminal !important;
     margin-left: -245px;
     margin-top: -20px;
-    transform: scaleY(1.75) skew(-12deg, 2deg);
+    transform: scaleY(1.5) skew(-12deg, 2deg);
     background-color: transparent;
 
     text-shadow: -1px -1px 2px 
@@ -94,7 +94,7 @@ main {
 
     width: 140px;
     height: 44px;
-    font-size: 19px;
+    font-size: 24px;
     color: white;
     border: none;
     cursor:text;
@@ -114,8 +114,6 @@ main {
     top: 45px;
     width: 260px;
     height: 165px;
-
-    
     color: white;
     
 

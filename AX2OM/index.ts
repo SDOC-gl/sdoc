@@ -68,7 +68,7 @@ const Screens:PCScreen[] = [
             </div>
         `,
         js: () => {
-            const activities:string[] = ["Viajante", "Anacrônimo", "Monólito", "Espírito", "Apocalipse"];
+            const activities:string[] = [data.sc("VmlhamFudGU="), data.sc("QW5hY3LDtG5pbW8="), data.sc("TW9uw7NsaXRv"), data.sc("RXNww61yaXRv"), data.sc("QXBvY2FsaXBzZQ==")];
             let shownActivities:string[] = [];
 
             const greenBox:HTMLDivElement = document.getElementById("greenbox") as HTMLDivElement;
@@ -104,7 +104,7 @@ const Screens:PCScreen[] = [
         buttons: true,
         js: () => {
             const sha:HTMLImageElement = document.getElementById("sha") as HTMLImageElement;
-            const morse:boolean[] = [true,true,true,false,true,true,true,false,true,false,true,true,true,false,false,false,true,false,true,false,true,true,true,false,false,false,true,false,true,true,true,false,false,false,true,true,true,false,true,false,false,false,true,true,true,false,true,false,true,false,false,false,true,true,true,false,true,true,true,false,true,true,true,false,false,false,false,false,false,false,true,false,true,false,true,false,true,true,true,false,false,false,true,true,true,false,true,true,true,false,true,true,true,false,false,false,true,false,true,false,true,true,true,false,false,false,false,false,false,false,true,true,true,false,true,true,true,false,false,false,true,true,true,false,true,true,true,false,true,true,true,false,false,false,true,false,true,true,true,false,true,false,false,false,true,false,true,true,true,false,true,false,false,false,true,false,false,false,true,false,true,true,true,false,true];
+            const morse:boolean[] = [!![],!![],!![],![],!![],!![],!![],![],!![],![],!![],!![],!![],![],![],![],!![],![],!![],![],!![],!![],!![],![],![],![],!![],![],!![],!![],!![],![],![],![],!![],!![],!![],![],!![],![],![],![],!![],!![],!![],![],!![],![],!![],![],![],![],!![],!![],!![],![],!![],!![],!![],![],!![],!![],!![],![],![],![],![],![],![],![],!![],![],!![],![],!![],![],!![],!![],!![],![],![],![],!![],!![],!![],![],!![],!![],!![],![],!![],!![],!![],![],![],![],!![],![],!![],![],!![],!![],!![],![],![],![],![],![],![],![],!![],!![],!![],![],!![],!![],!![],![],![],![],!![],!![],!![],![],!![],!![],!![],![],!![],!![],!![],![],![],![],!![],![],!![],!![],!![],![],!![],![],![],![],!![],![],!![],!![],!![],![],!![],![],![],![],!![],![],![],![],!![],![],!![],!![],!![],![],!![]];
             let curMorsePos:number = 0;
             sha.onclick = () => {
                 const snd = new Audio(morse[curMorsePos] ? "./Screens/dash.mp3" : "./Screens/dot.mp3");

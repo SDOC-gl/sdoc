@@ -1,39 +1,8 @@
-// Libs 
-
 import data from '../modules/dataModule.js';
 import tableObjects, { TableObject } from '../modules/tableObjects.js';
 
-function print(text:number):void {
-    return console.log(text);
-}
-
 let mouseX:number = 0;
 let mouseY:number = 0;
-
-// Verificar cookie do usuário ao carregar a página
-/*  -- Desativado temporariamente
-
-document.addEventListener('DOMContentLoaded', function () {
-    const user = getCookie('user');
-    const displayText = document.getElementById('displayText');
-
-    if (user) {
-        displayText.textContent = `Bem vindo(a) ${user}!`;
-
-        const cooldown = 240; // segundos
-        const lastWebhookTime = getCookie('last_webhook_time');
-
-        if (!lastWebhookTime || (Date.now() / 1000) - lastWebhookTime > cooldown) {
-            document.cookie = `last_webhook_time=${Math.floor(Date.now() / 1000)}; max-age=${86400 * 30}`;
-            data.sendWebhook("SITE", `O player: \`${user}\`\n**Entrou no site**.`);
-        }
-    } else {
-        window.location.href = 'index.html';
-    }
-});
-
-*/
-
 
 // Temporario - Verify
 
@@ -53,7 +22,6 @@ document.getElementById("pcscreen").onclick = () => {
     if (!canZoom) return;
     canZoom = false;
     canDoAnything = false;
-    // blurAll();
 
     const main:HTMLElement = document.getElementById("main");
     
@@ -164,8 +132,8 @@ function openGBScreen():void {
     setTimeout(() => {
         document.getElementById('displayText').innerHTML = "";
     }, 2500);
-    const html:HTMLBodyElement = document.body as HTMLBodyElement;
-    html.animate(
+    const main:HTMLElement = document.getElementById("main");
+    main.animate(
         [
             // keyframes
             { transform: "scale(1, 1) translateX(0px) translateY(0px)", opacity: 1 },
@@ -181,7 +149,7 @@ function openGBScreen():void {
             window.open("../AX2OM", "_self");
         }, 500)
     };
-    html.style.opacity = "0";
+    main.style.opacity = "0";
     blurAll();
     canDoAnything = false;
 }
@@ -192,7 +160,7 @@ function process(display:string):void {
 
     const user:string = data.getCookie('user');
 
-    $.getJSON("../resources/inputs.json", function(json) {
+    $.getJSON(data.sc("Li4vcmVzb3VyY2VzL2lucHV0cy5qc29u"), function(json) {
         let input_value:string = (String)(display.toUpperCase());
         input_value = input_value.trim().replace("?", "")
 
@@ -221,7 +189,7 @@ function process(display:string):void {
                 content = (content as string).trim().replace("%user%", data.getCookie('user'));
             }
 
-            if (input_value === "AX2OM_NRGT") {
+            if (input_value === data.sc("QVgyT01fTlJHVA==")) {
                 openGBScreen();
                 return;
             }
@@ -270,7 +238,7 @@ function process(display:string):void {
                 let username = data.getCookie('user');
 
                 data.removeCookie('user');
-                data.removeCookie('last_webhook_time');
+                data.removeCookie('last_webhook_time'); 
                 data.removeCookie('seed');
                 data.removeCookie('deathseed');
                 data.removeCookie('candlelight');

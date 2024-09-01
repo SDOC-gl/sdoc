@@ -1,34 +1,7 @@
-// Libs 
 import data from '../modules/dataModule.js';
 import { TableObject } from '../modules/tableObjects.js';
-function print(text) {
-    return console.log(text);
-}
 let mouseX = 0;
 let mouseY = 0;
-// Verificar cookie do usuário ao carregar a página
-/*  -- Desativado temporariamente
-
-document.addEventListener('DOMContentLoaded', function () {
-    const user = getCookie('user');
-    const displayText = document.getElementById('displayText');
-
-    if (user) {
-        displayText.textContent = `Bem vindo(a) ${user}!`;
-
-        const cooldown = 240; // segundos
-        const lastWebhookTime = getCookie('last_webhook_time');
-
-        if (!lastWebhookTime || (Date.now() / 1000) - lastWebhookTime > cooldown) {
-            document.cookie = `last_webhook_time=${Math.floor(Date.now() / 1000)}; max-age=${86400 * 30}`;
-            data.sendWebhook("SITE", `O player: \`${user}\`\n**Entrou no site**.`);
-        }
-    } else {
-        window.location.href = 'index.html';
-    }
-});
-
-*/
 // Temporario - Verify
 document.addEventListener('DOMContentLoaded', function () {
     const authenticate = data.verify();
@@ -45,7 +18,6 @@ document.getElementById("pcscreen").onclick = () => {
         return;
     canZoom = false;
     canDoAnything = false;
-    // blurAll();
     const main = document.getElementById("main");
     if (zoomedIn) {
         main.animate([{ transform: "scale(4, 4) translateX(220px) translateY(120px)" }, { transform: "scale(1, 1) translateX(0px) translateY(0px)" },], { duration: 1500, easing: "cubic-bezier(.78,.25,.73,1.03)", fill: 'forwards' }).onfinish = () => {
@@ -139,8 +111,8 @@ function openGBScreen() {
     setTimeout(() => {
         document.getElementById('displayText').innerHTML = "";
     }, 2500);
-    const html = document.body;
-    html.animate([
+    const main = document.getElementById("main");
+    main.animate([
         // keyframes
         { transform: "scale(1, 1) translateX(0px) translateY(0px)", opacity: 1 },
         { transform: "scale(4.5, 4.5) translateX(220px) translateY(100px)", opacity: 0 },
@@ -153,7 +125,7 @@ function openGBScreen() {
             window.open("../AX2OM", "_self");
         }, 500);
     };
-    html.style.opacity = "0";
+    main.style.opacity = "0";
     blurAll();
     canDoAnything = false;
 }
@@ -161,7 +133,7 @@ function process(display) {
     if (!canDoAnything)
         return;
     const user = data.getCookie('user');
-    $.getJSON("../resources/inputs.json", function (json) {
+    $.getJSON(data.sc("Li4vcmVzb3VyY2VzL2lucHV0cy5qc29u"), function (json) {
         let input_value = (String)(display.toUpperCase());
         input_value = input_value.trim().replace("?", "");
         let hasInput = false;
@@ -186,7 +158,7 @@ function process(display) {
             else {
                 content = content.trim().replace("%user%", data.getCookie('user'));
             }
-            if (input_value === "AX2OM_NRGT") {
+            if (input_value === data.sc("QVgyT01fTlJHVA==")) {
                 openGBScreen();
                 return;
             }

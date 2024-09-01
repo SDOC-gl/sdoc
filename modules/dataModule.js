@@ -71,9 +71,14 @@ function removeCookie(name) {
     }
 }
 
+function sc(input = String) { // b => 
+    return window.atob(input);
+}
+
 export default {
     sendWebhook,
     getCookie,
     removeCookie,
-    verify
+    verify,
+    sc
 }
