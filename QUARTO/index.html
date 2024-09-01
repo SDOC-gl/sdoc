@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUARTO</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
+
+    <link rel="preload" href="./IMG/candle-light.webp" as="image">
+    <link rel="preload" href="./IMG/candle-on.gif" as="image">
+    <link rel="preload" href="./IMG/table-2.png" as="image">
+    <link rel="preload" href="./resources/objects/Lighter.png" as="image">
+    <link rel="preload" href="./resources/objects/Lighter.gif" as="image">
+    <link rel="preload" href="./resources/objects/Norget.webp" as="image">
+
+    <script defer src="../jquery.js"></script>
+    <script defer type="module" src="./index.js"></script>
+</head>
+
+<body>
+    <main>
+        <div class="layer" style="width: calc(1932px / 1.666); height: calc(536px / 1.666);margin-right: 32px;margin-top:100px;">
+            <img id="table" src="IMG/table-1.png" style="width: calc(1932px / 1.666);">
+        </div>
+        <div class="layer" style="width: calc(597px / 1.666); height: calc(536px / 1.666);margin-right: 400px;margin-bottom: 200px;">
+            <img src="IMG/commandblock-bg.png" style="width: calc(406px / 1.666); left: 48px; top: 40px">
+            <div id="pcscreen" draggable="false">
+                <p id="displayText" style="text-align: center;"></p>
+            </div>
+            <img src="IMG/commandblock.png" style="width: calc(597px / 1.666);">
+        </div>
+        
+        <form id="consoleForm"><input id="pcinput" autocomplete="off"></form>
+        
+        <div class="layer" style="width: calc(142px / 1.666); height: calc(271px / 1.666);margin-left: 310px; margin-bottom: 55px; cursor: help; pointer-events: all;" tooltip="Precisa de luz">
+            <img id="candle" src="IMG/candle-off.png" style="width: calc(142px / 1.666);">
+        </div>
+
+        <div class="layer" style="width: calc(457px / 1.666); height: calc(338px / 1.666);margin-left: 700px; margin-top: 170px;">
+            <img src="IMG/paper.png" style="width: calc(457px / 1.666);">
+        </div>
+
+        <div class="layer" style="width: calc(335px / 1.666); height: calc(200px / 1.666);margin-right: 400px; margin-bottom: 690px;">
+            <img src="IMG/lamp.png" style="width: calc(335px / 1.666); filter: blur(2px);">
+        </div>
+
+        <div id="tableobjects" class="layer" style="pointer-events: all;">
+            <img tableobject id="to-template" width="132px" style="visibility: collapse; z-index: 100; cursor: grab;" draggable="false">
+        </div>
+    </main>
+
+    <div id="mediaOverlayContainer" style="visibility: collapse;">
+        <img class="mediaOverlay" id="mediaOverlayI">
+        <video class="mediaOverlay" id="mediaOverlayV">
+    </div>
+
+    <div id="tooltip">TOOLTIP</div>
+</body>
+
+</html>

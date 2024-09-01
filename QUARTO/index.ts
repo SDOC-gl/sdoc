@@ -74,6 +74,7 @@ function tooltipClose():void {
 document.addEventListener('mousemove', function(e) {
     mouseX = e.x;
     mouseY = e.y;
+
     if (tooltip.style.visibility != "visible") return;
 
     tooltip.style.left = mouseX + 10 + 'px';
@@ -96,27 +97,27 @@ let candleOn:boolean = false;
 
 function lighterSpawn():void {
     document.getElementById('displayText').innerHTML = "Isso serve?";
-    let lighter:TableObject = new TableObject("norget", "objects/Lighter.png", [400, 290], 335/2);
+    let lighter:TableObject = new TableObject("norget", "objects/Lighter.png", [-500, -200], 335/2);
     lighter.setGrabSprite("objects/Lighter.gif");
     lighter.ondrag = function() {
         if (candleOn) return;
         let numberLeft:number = Number(lighter.element.style.left.replace("px", ""));
         let numberTop:number = Number(lighter.element.style.top.replace("px", ""));
 
-        if (numberLeft > 750 && numberLeft < 800 && numberTop > 330 && numberTop < 440)
+        if (numberLeft > 50 && numberTop > -175 && numberTop < -55 && numberLeft < 130)
             lightCandle();
     }
 }
 function lightCandle():void {
     candleOn = true;
-    const candleLight:HTMLImageElement = document.getElementById("candle-light") as HTMLImageElement;
-    candleLight.style.visibility = "visible"
+    // const candleLight:HTMLImageElement = document.getElementById("candle-light") as HTMLImageElement;
+    // candleLight.style.visibility = "visible"
     const candle:HTMLImageElement = document.getElementById("candle") as HTMLImageElement;
     candle.src = "./IMG/candle-on.gif";
     const table:HTMLImageElement = document.getElementById("table") as HTMLImageElement;
     table.src = "./IMG/table-2.png";
-    const mysteryWall:HTMLImageElement = document.getElementById("mystery-wall") as HTMLImageElement;
-    mysteryWall.style.visibility = "visible";
+    // const mysteryWall:HTMLImageElement = document.getElementById("mystery-wall") as HTMLImageElement;
+    // mysteryWall.style.visibility = "visible";
 }
 
 function whenDie():void {

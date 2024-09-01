@@ -1,4 +1,3 @@
-
 export class TableObject {
     constructor(identifier = String, graphic = String, pos = Float32Array, size = Number) {
         const node = document.getElementById("to-template").cloneNode(false);
@@ -40,7 +39,8 @@ function getTableObjects() {
     return tableObjectElements;
 }
 
-let fallHeight = 550;
+const BASE_FALL_HEIGHT = 40;
+let fallHeight = BASE_FALL_HEIGHT;
 function makeDraggable(obj = TableObject) {
     const elmnt = obj.element;
     
@@ -67,9 +67,9 @@ function makeDraggable(obj = TableObject) {
         if (elmnt.hasAttribute("grabsprite") && elmnt.src == ogSrc)
             elmnt.src = elmnt.getAttribute("grabsprite");
 
-        fallHeight = 430 + (Number(elmnt.style.left.replace("px", "")) / 8);
+        fallHeight = BASE_FALL_HEIGHT + (Number(elmnt.style.left.replace("px", "")) / 8);
         pos1 = pos3 - e.clientX;
-        pos2 = pos4 - e.clientY;        
+        pos2 = pos4 - e.clientY;
         pos3 = e.clientX;
         pos4 = e.clientY;
 
@@ -78,7 +78,7 @@ function makeDraggable(obj = TableObject) {
         else {
             elmnt.style.top = fallHeight + "px";
         }
-        if ((elmnt.offsetLeft - pos1) > 30 && (elmnt.offsetLeft - pos1) < 1000) {
+        if ((elmnt.offsetLeft - pos1) > -550 && (elmnt.offsetLeft - pos1) < 300) {
             elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
         }
     }
@@ -95,7 +95,7 @@ function makeDraggable(obj = TableObject) {
     }
     function updateElementPhysics() {
         let accel = 1;
-        fallHeight = 430 + (Number(elmnt.style.left.replace("px", "")) / 8);
+        fallHeight = BASE_FALL_HEIGHT + (Number(elmnt.style.left.replace("px", "")) / 8);
         const myinterval = setInterval(function() {
             let elmntTop = Number(elmnt.style.top.replace("px", ""));
             if (elmntTop < fallHeight) {

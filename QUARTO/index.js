@@ -81,27 +81,27 @@ function norgetSpawn() {
 let candleOn = false;
 function lighterSpawn() {
     document.getElementById('displayText').innerHTML = "Isso serve?";
-    let lighter = new TableObject("norget", "objects/Lighter.png", [400, 290], 335 / 2);
+    let lighter = new TableObject("norget", "objects/Lighter.png", [-500, -200], 335 / 2);
     lighter.setGrabSprite("objects/Lighter.gif");
     lighter.ondrag = function () {
         if (candleOn)
             return;
         let numberLeft = Number(lighter.element.style.left.replace("px", ""));
         let numberTop = Number(lighter.element.style.top.replace("px", ""));
-        if (numberLeft > 750 && numberLeft < 800 && numberTop > 330 && numberTop < 440)
+        if (numberLeft > 50 && numberTop > -175 && numberTop < -55 && numberLeft < 130)
             lightCandle();
     };
 }
 function lightCandle() {
     candleOn = true;
-    const candleLight = document.getElementById("candle-light");
-    candleLight.style.visibility = "visible";
+    // const candleLight:HTMLImageElement = document.getElementById("candle-light") as HTMLImageElement;
+    // candleLight.style.visibility = "visible"
     const candle = document.getElementById("candle");
     candle.src = "./IMG/candle-on.gif";
     const table = document.getElementById("table");
     table.src = "./IMG/table-2.png";
-    const mysteryWall = document.getElementById("mystery-wall");
-    mysteryWall.style.visibility = "visible";
+    // const mysteryWall:HTMLImageElement = document.getElementById("mystery-wall") as HTMLImageElement;
+    // mysteryWall.style.visibility = "visible";
 }
 function whenDie() {
     document.getElementById('displayText').innerHTML = data.getCookie('deathseed');
