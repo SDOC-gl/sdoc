@@ -116,14 +116,21 @@ function lighterSpawn() {
 }
 function lightCandle() {
     candleOn = true;
+    document.cookie = "candlelight=true; path=/";
     const candleLight = document.getElementById("candle-light");
     candleLight.style.visibility = "visible";
     const candle = document.getElementById("candle");
     candle.src = "./IMG/candle-on.gif";
+    candle.removeAttribute("tooltip");
+    candle.onmouseenter = () => null;
+    candle.style.cursor = "auto";
     const table = document.getElementById("table");
     table.src = "./IMG/table-2.png";
     const mysteryWall = document.getElementById("mystery-wall");
     mysteryWall.style.visibility = "visible";
+}
+if (data.getCookie("candlelight") == "true") {
+    lightCandle();
 }
 function whenDie() {
     document.getElementById('displayText').innerHTML = data.getCookie('deathseed');
@@ -216,6 +223,7 @@ function process(display) {
                 data.removeCookie('last_webhook_time');
                 data.removeCookie('seed');
                 data.removeCookie('deathseed');
+                data.removeCookie('candlelight');
                 if (!data.getCookie('user') || !data.getCookie('last_webhook_time')) {
                     data.sendWebhook("SITE - SAIU", `O player: \`${username}\`\n\n**Saiu do site usando EXIT() !**`, 'warning');
                     window.location.href = '../index.html';

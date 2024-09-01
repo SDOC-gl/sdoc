@@ -102,7 +102,6 @@ main {
 #pcscreen {
     cursor: pointer;
     pointer-events: all;
-    z-index: 1000;
     transform: skew(-2deg, 5deg);
 
     display: flex;

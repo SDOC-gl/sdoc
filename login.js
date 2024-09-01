@@ -18,6 +18,7 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
     if (nick.length > 0) {
         document.cookie = `user=${(nick)}; seed=${(31290)} ;max-age=${86400 * 30}; path=/`;
         document.cookie = "deathseed=" + (2025 + Math.floor(Math.random() * 75)) + "; path=/";
+        document.cookie = "candlelight=false; path=/";
         window.location.href = '../QUARTO/';
     }
 });

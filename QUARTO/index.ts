@@ -137,14 +137,24 @@ function lighterSpawn():void {
 }
 function lightCandle():void {
     candleOn = true;
+    document.cookie = "candlelight=true; path=/";
+
     const candleLight:HTMLImageElement = document.getElementById("candle-light") as HTMLImageElement;
     candleLight.style.visibility = "visible"
     const candle:HTMLImageElement = document.getElementById("candle") as HTMLImageElement;
     candle.src = "./IMG/candle-on.gif";
+    candle.removeAttribute("tooltip");
+    candle.onmouseenter = () => null;
+    candle.style.cursor = "auto"
+    
     const table:HTMLImageElement = document.getElementById("table") as HTMLImageElement;
     table.src = "./IMG/table-2.png";
     const mysteryWall:HTMLImageElement = document.getElementById("mystery-wall") as HTMLImageElement;
     mysteryWall.style.visibility = "visible";
+}
+
+if (data.getCookie("candlelight") == "true") {
+   lightCandle();
 }
 
 function whenDie():void {
@@ -263,6 +273,7 @@ function process(display:string):void {
                 data.removeCookie('last_webhook_time');
                 data.removeCookie('seed');
                 data.removeCookie('deathseed');
+                data.removeCookie('candlelight');
 
                 if (!data.getCookie('user') || !data.getCookie('last_webhook_time')) {
                     data.sendWebhook(
