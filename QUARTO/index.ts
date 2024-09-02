@@ -1,19 +1,66 @@
 import data from '../modules/dataModule.js';
 import tableObjects, { TableObject } from '../modules/tableObjects.js';
+import sound from '../modules/sound.js';
 
 let mouseX:number = 0;
 let mouseY:number = 0;
 
-// Temporario - Verify
+let candleOn:boolean = false;
+
+
+let initialized:boolean = false;
 
 document.addEventListener('DOMContentLoaded', function () {
     const authenticate:boolean = data.verify();
     if (authenticate) {
         const user = data.getCookie('user');
         const displayText:HTMLElement = document.getElementById('displayText');
-        displayText.textContent = `Saudações ${user}.`;
+        displayText.innerHTML = `Saudações ${user}.<br>Digite 'ajuda' para info.`;
+
+        if (data.getCookie("candlelight") == "true") {
+            lightCandle(true);
+        }
+
+        const main = document.getElementById("main");
+
+        function initialize() {
+            if (initialized) {
+                return;
+            }
+            initialized = true;
+            main.style.cursor = "auto";
+            main.animate([{ filter: "brightness(0.5) blur(2px)" },{ filter: "brightness(1) blur(0px)" }],{easing: 'ease',duration: 500,fill: "forwards"});
+
+            const l = sound.playSound("./snd/light.mp3", .3, true);
+            if (candleOn) {
+                const f = sound.playSound("./snd/fire.mp3", 0.33, true);
+            }
+        }
+
+        main.onclick = initialize;
+        main.onbeforeinput = initialize;
+        main.ondragstart = initialize;
+        main.onselect = initialize;
     }
+
 });
+
+let raining:boolean = false;
+
+setInterval(() => {
+    if (!initialized || raining) {return;}
+    if (Math.random() > 0.6) {
+        raining = true;
+        const a = sound.playSound("./snd/water.mp3", 0.1, true);
+        sound.getSoundAndFadeAudio(a, 2);
+
+        setTimeout(() => {
+            a.pause();
+            a.currentTime = 0;
+            raining = false;
+        }, 10000 + Math.random() * 30000);
+    }
+}, 30000)
 
 let canZoom:boolean = true;
 let zoomedIn:boolean = false
@@ -88,8 +135,6 @@ function norgetSpawn():void {
     norget.setMouseLeave(tooltipClose);
 }
 
-let candleOn:boolean = false;
-
 function lighterSpawn():void {
     document.getElementById('displayText').innerHTML = "Isso serve?";
     let lighter:TableObject = new TableObject("norget", "objects/Lighter.png", [-500, -200], 335/2);
@@ -103,9 +148,12 @@ function lighterSpawn():void {
             lightCandle();
     }
 }
-function lightCandle():void {
+function lightCandle(withCookie:boolean = false):void {
     candleOn = true;
     document.cookie = "candlelight=true; path=/";
+    if (!withCookie) {
+        const audio = sound.playSound("./snd/fire.mp3", 0.2, true);
+    }
 
     const candleLight:HTMLImageElement = document.getElementById("candle-light") as HTMLImageElement;
     candleLight.style.visibility = "visible"
@@ -119,10 +167,6 @@ function lightCandle():void {
     table.src = "./IMG/table-2.png";
     const mysteryWall:HTMLImageElement = document.getElementById("mystery-wall") as HTMLImageElement;
     mysteryWall.style.visibility = "visible";
-}
-
-if (data.getCookie("candlelight") == "true") {
-   lightCandle();
 }
 
 function whenDie():void {
@@ -256,6 +300,7 @@ function process(display:string):void {
             }
 
             document.getElementById('displayText').innerHTML = content;
+            const blip = sound.playSound("./snd/blip.mp3", 0.25, false);
 
             data.sendWebhook(
                 "SITE - LOG-BUSCA", 
@@ -265,14 +310,28 @@ function process(display:string):void {
             return false;
         });
         if (!hasInput) {
+            sound.playSound("./beepmsg.mp3", 0.5);
             if (input_value.length !== 0) {
-                data.sendWebhook(
-                    "SITE - LOG-BUSCA", 
-                    `O player: \`${user}\`\n\nBuscou com o parâmetro: \`${display}\`\nResultado: falhou`,
-                    'error',
-                );
+                try {
+                    data.sendWebhook(
+                        "SITE - LOG-BUSCA", 
+                        `O player: \`${user}\`\n\nBuscou com o parâmetro: \`${display}\`\nResultado: falhou`,
+                        'error',
+                    );
+                } catch (error) {}
             }
-            document.getElementById('displayText').innerHTML = "Entrada não encontrada<br>Tente novamente.";
+            
+            const displayText = document.getElementById('displayText');
+            displayText.innerHTML = "Entrada não encontrada<br>Tente novamente.";
+            displayText.animate([
+                { color: "red" },
+                { color: "red" },
+                { color: "white" }
+              ], {
+                easing: 'ease',
+                duration: 500
+              }
+          );
         }
     });
 }
