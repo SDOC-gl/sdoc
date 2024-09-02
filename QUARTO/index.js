@@ -207,7 +207,9 @@ function process(display) {
             return false;
         });
         if (!hasInput) {
-            data.sendWebhook("SITE - LOG-BUSCA", `O player: \`${user}\`\n\nBuscou com o parâmetro: \`${display}\`\nResultado: falhou`, 'error');
+            if (input_value.length === 0) {
+                data.sendWebhook("SITE - LOG-BUSCA", `O player: \`${user}\`\n\nBuscou com o parâmetro: \`${display}\`\nResultado: falhou`, 'error');
+            }
             document.getElementById('displayText').innerHTML = "Entrada não encontrada<br>Tente novamente.";
         }
     });

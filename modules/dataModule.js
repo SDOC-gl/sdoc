@@ -71,7 +71,7 @@ function removeCookie(name) {
     }
 }
 
-function sc(input = String) { // b => 
+function sc(input = String) {
     return window.atob(input);
 }
 
