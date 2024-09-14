@@ -60,7 +60,7 @@ setInterval(() => {
             raining = false;
         }, 10000 + Math.random() * 30000);
     }
-}, 30000)
+}, 30000 + Math.random() * 30000)
 
 let canZoom:boolean = true;
 let zoomedIn:boolean = false

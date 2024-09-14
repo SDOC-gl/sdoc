@@ -93,7 +93,7 @@
     "result": "Nome gerado em um<br>gerador de sílabas,<br>não confundir com Benignitas."
   },
   {
-    "input": ["LAURA", "ATLIY", "ATLIYLOL", "GABI", "BAGI"],
+    "input": ["LAURA", "ATLIY", "ATLIYLOL", "ANNE", "ANNE BANANNA", "ANNE BANANA", "ANE", "ANE BANANA"],
     "result": "?"
   },
   {
