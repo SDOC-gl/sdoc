@@ -756,5 +756,8 @@
   }, {
     "input": ["ENALDINHO"],
     "result": "ENALDINHO.mp4"
+  }, {
+    "input": ["PROTOBASHER", "PROTO BASHER"],
+    "result": "function=protoLoad"
   }
 ]

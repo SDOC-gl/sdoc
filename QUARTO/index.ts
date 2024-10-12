@@ -169,6 +169,10 @@ function lightCandle(withCookie:boolean = false):void {
     mysteryWall.style.visibility = "visible";
 }
 
+function protoLoad():void {
+    document.getElementById('displayText').innerHTML = "<img src=\"./load.gif\" style=\"width: 32px; transform: translate(-50%, -50%)\">"
+}
+
 function whenDie():void {
     document.getElementById('displayText').innerHTML = data.getCookie('deathseed');
 }
@@ -346,6 +350,10 @@ document.getElementById('consoleForm').addEventListener('submit', function (even
     process(inputElement.value);
     inputElement.value = '';
 });
+
+(document.getElementById('pcinput') as HTMLInputElement).addEventListener("keypress", function(event) {
+    sound.playSound("./snd/typing.mp3", .3, false)
+})
     
 function openMedia(path:string) {
     if (!canDoAnything) return;

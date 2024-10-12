@@ -141,6 +141,9 @@ function lightCandle(withCookie = false) {
     const mysteryWall = document.getElementById("mystery-wall");
     mysteryWall.style.visibility = "visible";
 }
+function protoLoad() {
+    document.getElementById('displayText').innerHTML = "<img src=\"./load.gif\" style=\"width: 32px; transform: translate(-50%, -50%)\">";
+}
 function whenDie() {
     document.getElementById('displayText').innerHTML = data.getCookie('deathseed');
 }
@@ -273,6 +276,9 @@ document.getElementById('consoleForm').addEventListener('submit', function (even
     const inputElement = document.getElementById('pcinput');
     process(inputElement.value);
     inputElement.value = '';
+});
+document.getElementById('pcinput').addEventListener("keypress", function (event) {
+    sound.playSound("./snd/typing.mp3", .3, false);
 });
 function openMedia(path) {
     if (!canDoAnything)
