@@ -759,5 +759,8 @@
   }, {
     "input": ["PROTOBASHER", "PROTO BASHER"],
     "result": "function=protoLoad"
+  }, {
+    "input": ["ARQUI", "ARQUIMEDES", "ARQUI MEDES", "O CACHORRO", "FURRY", "O FURRY"],
+    "result": "Cachorro responsável por cuidar de uma das benções de Benignitas com 'Myth'"
   }
 ]
