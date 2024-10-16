@@ -761,6 +761,6 @@
     "result": "function=protoLoad"
   }, {
     "input": ["ARQUI", "ARQUIMEDES", "ARQUI MEDES", "O CACHORRO", "FURRY", "O FURRY"],
-    "result": "Cachorro responsável por cuidar<br>de uma das benções<br>de Benignitas com 'Myth'"
+    "result": "Cachorro responsável por<br> cuidar de uma <br>das benções<br>de Benignitas com 'Myth'"
   }
 ]
