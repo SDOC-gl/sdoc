@@ -354,7 +354,7 @@ document.getElementById('consoleForm').addEventListener('submit', function (even
 (document.getElementById('pcinput') as HTMLInputElement).addEventListener("keypress", function(event) {
     sound.playSound("./snd/typing.mp3", .3, false)
 })
-    
+        
 function openMedia(path:string) {
     if (!canDoAnything) return;
     
