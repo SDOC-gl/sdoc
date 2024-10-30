@@ -19,22 +19,26 @@
 
 <body>
     <main id="main">
-        <div class="layer" style="width: calc(772px / 1.666); height: calc(523px / 1.666);margin-left: 500px;margin-bottom:370px;">
+        <div id="mysterywallcontainer" class="layer" style="width: calc(772px / 1.666); height: calc(523px / 1.666);margin-left: 500px;margin-bottom:370px;">
             <img id="mystery-wall" src="IMG/myterywall.png" style="width: calc(772px / 1.666);">
         </div>
 
         <div class="layer" style="width: calc(1932px / 1.666); height: calc(536px / 1.666);margin-right: 32px;margin-top:100px;">
             <img id="table" src="IMG/table-1.png" style="width: calc(1932px / 1.666);">
         </div>
-        <div class="layer" style="width: calc(597px / 1.666); height: calc(536px / 1.666);margin-right: 400px;margin-bottom: 200px;">
-            <img src="IMG/commandblock-bg.png" style="width: calc(406px / 1.666); left: 48px; top: 40px">
-            <div id="pcscreen">
-                <p id="displayText" style="text-align: center;"></p>
-            </div>
-            <img src="IMG/commandblock.png" style="width: calc(597px / 1.666);">
+
+        <div class="layer" style="width: calc(685px / 1.666); height: calc(353px / 1.666);margin-right: 650px;margin-top: 200px;">
+            <img src="IMG/keyboard.png" style="width: calc(685px / 1.666); left: 48px; top: 40px">
         </div>
-        
-        <form id="consoleForm"><input id="pcinput" autocomplete="off"></form>
+
+        <div class="layer" style="width: calc(597px / 1.666); height: calc(536px / 1.666);margin-right: 400px;margin-bottom: 200px;">
+            <img src="IMG/pc-bg.png" style="width: calc(406px / 1.666); left: 48px; top: 40px">
+            <div id="pcscreen">
+                <p class="displayText" id="displayText"></p>
+                <form id="consoleForm"><input class="displayText" id="pcinput" autocomplete="off" maxlength="48"></form>
+            </div>
+            <img src="IMG/pc.png" id="tablepc" style="width: calc(597px / 1.666);">
+        </div>
         
         <div class="layer" style="width: calc(142px / 1.666); height: calc(271px / 1.666);margin-left: 310px; margin-bottom: 55px; cursor: help; pointer-events: all;">
             <img id="candle" src="IMG/candle-off.png" style="width: calc(142px / 1.666);" tooltip="Precisa de luz">
@@ -42,10 +46,10 @@
         </div>
 
         <div class="layer" style="width: calc(457px / 1.666); height: calc(338px / 1.666);margin-left: 700px; margin-top: 170px;">
-            <img src="IMG/paper.png" style="width: calc(457px / 1.666);">
+            <img src="IMG/paper.png" id="tablepaper" style="width: calc(457px / 1.666);">
         </div>
 
-        <div class="layer" style="width: calc(335px / 1.666); height: calc(200px / 1.666);margin-right: 400px; margin-bottom: 690px;">
+        <div class="layer" style="width: calc(335px / 1.666); height: calc(200px / 1.666);margin-right: 400px; margin-bottom: 650px;">
             <img src="IMG/lamp.png" style="width: calc(335px / 1.666); filter: blur(2px);">
         </div>
 

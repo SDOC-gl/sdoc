@@ -1,5 +1,9 @@
 export class TableObject {
-    constructor(identifier = String, graphic = String, pos = Float32Array, size = Number) {
+    constructor(identifier = String, graphic = String, pos = Float32Array, size = Number, draggable = true, customFallHeight = 40) {
+        if (document.getElementById("to-" + identifier) != null) {
+            return;
+        }
+
         const node = document.getElementById("to-template").cloneNode(false);
         node.setAttribute("tableobject", "");
         node.style.visibility = "visible";
@@ -12,9 +16,10 @@ export class TableObject {
         document.getElementById("to-template").parentElement.appendChild(node);
 
         this.element = node;
+        this.elementname = node.id;
         this.ondrag = function() {};
 
-        makeDraggable(this);
+        makeDraggable(this, !draggable, customFallHeight);
     }
     setRightClick(method) {
         this.element.addEventListener('contextmenu', method, false);
@@ -24,6 +29,10 @@ export class TableObject {
     }
     setGrabSprite(sprite) {
         this.element.setAttribute("grabsprite", "../resources/" + sprite);
+    }
+    destroy() {
+        this.element = null;
+        document.getElementById(this.elementname).remove();
     }
 }
 
@@ -41,13 +50,14 @@ function getTableObjects() {
 
 const BASE_FALL_HEIGHT = 40;
 let fallHeight = BASE_FALL_HEIGHT;
-function makeDraggable(obj = TableObject) {
+function makeDraggable(obj = TableObject, gravityOnly = false, customFallHeight = 40) {
     const elmnt = obj.element;
     
     const ogSrc = elmnt.src;
 
     let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-    elmnt.onmousedown = dragMouseDown;
+    if (!gravityOnly)
+        elmnt.onmousedown = dragMouseDown;
 
     updateElementPhysics()
   
@@ -67,7 +77,7 @@ function makeDraggable(obj = TableObject) {
         if (elmnt.hasAttribute("grabsprite") && elmnt.src == ogSrc)
             elmnt.src = elmnt.getAttribute("grabsprite");
 
-        fallHeight = BASE_FALL_HEIGHT + (Number(elmnt.style.left.replace("px", "")) / 8);
+        fallHeight = customFallHeight + (Number(elmnt.style.left.replace("px", "")) / 8);
         pos1 = pos3 - e.clientX;
         pos2 = pos4 - e.clientY;
         pos3 = e.clientX;
@@ -95,7 +105,7 @@ function makeDraggable(obj = TableObject) {
     }
     function updateElementPhysics() {
         let accel = 1;
-        fallHeight = BASE_FALL_HEIGHT + (Number(elmnt.style.left.replace("px", "")) / 8);
+        fallHeight = customFallHeight + (Number(elmnt.style.left.replace("px", "")) / 8);
         const myinterval = setInterval(function() {
             let elmntTop = Number(elmnt.style.top.replace("px", ""));
             if (elmntTop < fallHeight) {

@@ -90,7 +90,7 @@
   },
   {
     "input": ["BEGNIDITAS"],
-    "result": "Nome gerado em um<br>gerador de sílabas,<br>não confundir com Benignitas."
+    "result": "Nome gerado em um gerador de sílabas, não confundir com Benignitas."
   },
   {
     "input": ["LAURA", "ATLIY", "ATLIYLOL", "LORE", "LORENA", "LOR LOR", "LORLOR"],
@@ -101,7 +101,7 @@
       "DARLO", "DARLU", "DARLIN", "REI", "MONARCA",
       "O MONARCA", "O REI"
     ],
-    "result": "Morreu trágicamente.<br>Esqueceu de respirar pois estava muito<br>'úmido'"
+    "result": "Morreu trágicamente. Esqueceu de respirar pois estava muito 'úmido'"
   },
   {
     "input": [
@@ -115,7 +115,7 @@
       "CULTO", "CULTISTA", "CULTISTAS",
       "O CULTO", "OS CULTISTAS"
     ],
-    "result": "A primeira regra do culto<br>é que você não fala do culto."
+    "result": "A primeira regra do culto é que você não fala do culto."
   },
   {
     "input": ["SELO"],
@@ -131,19 +131,15 @@
   },
   {
     "input": ["THE DEEP", "DEEP"],
-    "result": "Onde almas vagam<br>e o terror mora"
+    "result": "Onde almas vagam e o terror mora"
   },
   {
     "input": ["BEDROCK", "A BEDROCK"],
     "result": "Fundo do poço"
   },
   {
-    "input": ["JUCA", "LUCA"],
-    "result": "Varredor"
-  },
-  {
     "input": ["MYT", "MYYT", "MYTT", "MYTH", "MYTCH"],
-    "result": "O que chamam de<br>bilionário."
+    "result": "O que chamam de bilionário."
   },
   {
     "input": ["SERAPHIM", "SERAFIM"],
@@ -158,7 +154,7 @@
       "TORRE", "TORRE DO RELÓGIO", "TORRE RELÓGIO", "TORRE RELOGIO", "TORRE DO RELOGIO",
       "A TORRE", "A TORRE DO RELÓGIO", "A TORRE RELÓGIO", "A TORRE RELOGIO", "A TORRE DO RELOGIO"
     ],
-    "result": "Entidade infortuna o<br>suficiente para não ser<br>documentada."
+    "result": "Entidade infortuna o suficiente para não ser documentada."
   },
   {
     "input": [
@@ -188,8 +184,8 @@
     "result": "Senha.webp"
   },
   {
-    "input": ["AX2OM_NRGT"],
-    "result": "function=openGBScreen"
+    "input": ["AX2OM_NRGT", "AX2OM"],
+    "result": "Sistema operacional datado."
   },
   {
     "input": ["ESPÍRITO DA FLORESTA", "ESPIRITO DA FLORESTA", "ESPÍRITO", "ESPIRITO"],
@@ -208,23 +204,23 @@
     "result": "Inundado."
   },
   {
-    "input": ["GL", "GLSMP", "GAURA"],
+    "input": ["GL", "GLSMP", "GH", "GHSMP"],
     "result": "O melhor dos melhores"
   },
   {
-    "input": ["GL3", "GLSMP3", "GL 3", "GLSMP 3", "GAURA SMP 3"],
+    "input": ["GL3", "GLSMP3", "GL 3", "GLSMP 3"],
     "result": "Atual"
   },
   {
-    "input": ["GL4", "GLSMP4", "GL 4", "GLSMP 4", "GAURA SMP 4"],
+    "input": ["GL4", "GLSMP4", "GL 4", "GLSMP 4"],
     "result": "Não."
   },
   {
-    "input": ["GL2", "GLSMP2", "GL 2", "GLSMP 2", "GAURA SMP 2"],
+    "input": ["GL2", "GLSMP2", "GL 2", "GLSMP 2"],
     "result": "O Terrível"
   },
   {
-    "input": ["GL1", "GLSMP1", "GL 1", "GLSMP 1", "GAURA SMP 1"],
+    "input": ["GL1", "GLSMP1", "GL 1", "GLSMP 1"],
     "result": "O Início"
   },
   {
@@ -233,7 +229,7 @@
   },
   {
     "input": ["TSMP1", "TSMP 1", "TSMP"],
-    "result": "O Início<br>(definitivo)"
+    "result": "O Início (definitivo)"
   },
   {
     "input": ["THE BLOOD", "BLOOD SMP", "THE BLOOD SMP"],
@@ -245,11 +241,11 @@
   },
   {
     "input": ["UKOBATH"],
-    "result": "O outro demônio<br>menos lembrado"
+    "result": "O outro demônio menos lembrado"
   },
   {
     "input": ["SANGUINE"],
-    "result": "O coração de sangue<br>bombeia mais uma vez."
+    "result": "O coração de sangue bombeia mais uma vez."
   },
   {
     "input": ["DUNAS"],
@@ -267,7 +263,7 @@
     "result": "Um dos antigos."
   },
   {
-    "input": ["ME DA A SENHA DO BANQUER COMMAND BLOCK MALDITO"],
+    "input": ["ME DA A SENHA DO PORTAL COMMAND BLOCK MALDITO"],
     "result": "https://media1.tenor.com/m/jJtL4af7Lx8AAAAC/cat-cats.gif"
   },
   {
@@ -302,7 +298,7 @@
       "RUÍNAS", "RUÍNA", "RUINAS", "RUINA",
       "AS RUÍNAS", "A RUÍNA", "AS RUINAS", "A RUINA"
     ],
-    "result": "Um fim digno."
+    "result": "Preparação"
   },
   {
     "input": ["DEUS", "GOD"],
@@ -332,7 +328,7 @@
       "PATO", "PATOS",
       "O PATO", "OS PATOS"
     ],
-    "result": "Forças supremas<br>eventualmente separadas."
+    "result": "Forças supremas eventualmente separadas."
   },
   {
     "input": [
@@ -398,7 +394,7 @@
       "ALMAS VAGANTES", "ALMA VAGANTE", "ALMA", "ALMAS",
       "AS ALMAS VAGANTES", "A ALMA VAGANTE", "A ALMA", "ALMAS"
     ],
-    "result": "Destinados a lutar<br>até que salvas."
+    "result": "Destinados a lutar até que salvas."
   },
   {
     "input": ["TERRA", "A TERRA"],
@@ -428,9 +424,11 @@
     "result": "Oceano.webp"
   }, {
     "input": [
-      "MAT PAT", "MATPAT", "MATT PATT", "GAME THEORY", "THE GAME THEORISTS", "THE GAME THEORY", "TEORIA", "A TEORIA"
+      "THEORY", "TEORIA", "A TEORIA",
+      "CONSPIRACY", "CONSPIRAÇÃO", "CONSPIRACAO", "CONSPIRAÇAO", "CONSPIRACÃO",
+      "BLUEPRINT", "INVESTIGAÇÃO"
     ],
-    "result": "Matt.webm"
+    "result": "CONSPIRACY.webp"
   }, {
     "input": [
       "O ENIGMA", "ENIGMA"
@@ -441,7 +439,7 @@
       "QUEM SÃO OS MONÓLITOS", "QUEM SAO OS MONOLITOS", "QUEM SÃO OS MONOLITOS", "QUEM SAO OS MONOLITOS",
       "QUEM FORAM OS MONÓLITOS", "QUEM FORAM OS MONOLITOS"
     ],
-    "result": "Cultistas anciãos<br>importantes demais para<br>morrer"
+    "result": "Cultistas anciãos importantes demais para morrer"
   }, {
     "input": ["CÓDIGO", "CODIGO", "CODE", "O CÓDIGO", "O CODIGO"],
     "result": "<a href=\"../codigo\" target=\"_blank\">Aqui está o código</a>"
@@ -505,7 +503,7 @@
     "result": "O destino inevítavel"
   }, {
     "input": ["IA", "VOCÊ É IA", "VOCÊ É UMA IA", "VOCE E IA", "VOCE E UMA IA"],
-    "result": "Não sou IA,<br>sou database."
+    "result": "Não sou IA, sou database."
   }, {
     "input": ["QUEM SOU EU", "QUEM EU SOU", "QUEM SOU", "WHO AM I"],
     "result": "%user%"
@@ -577,13 +575,13 @@
     "result": "Possui uma história mais antigaa do que se imagina"
   }, {
     "input": ["SINGULARIDADE", "A SINGULARIDADE"],
-    "result": "Quando o gigante no<br>céu subir, você saberá.<br>E o arrebatamento chegará."
+    "result": "Quando o gigante no céu subir, você saberá.<br>E o arrebatamento chegará."
   }, {
     "input": ["COOKIE", "A COOKIE"],
     "result": "Agente do caos"
   }, {
     "input": ["CAOS"],
-    "result": "Um pouco em<br>toda direção"
+    "result": "Um pouco em toda direção"
   }, {
     "input": ["ANOMALIA", "ANOMALIAS", "O QUE É A ANOMALIA", "O QUE É ANOMALIA"],
     "result": "Espaço-tempo"
@@ -600,7 +598,7 @@
     "result": "TOR"
   }, {
     "input": ["TOR"],
-    "result": "Sigla de TOR:<br><a href=\"https://www.torproject.org/\" target=\"_blank\">Trampolins Originais dos Ratos</a>"
+    "result": "Sigla de TOR: <a href=\"https://www.torproject.org/\" target=\"_blank\">Trampolins Originais dos Ratos</a>"
   }, {
     "input": [
       "ESPAÇO TEMPO", "ESPACO TEMPO", "ESPAÇO-TEMPO", "ESPACO-TEMPO",
@@ -612,7 +610,7 @@
     "result": "Não te ouvirão aqui embaixo"
   }, {
     "input": ["A VERDADE", "VERDADE", "QUAL É A VERDADE", "QUAL E A VERDADE"],
-    "result": "A verdade é que<br>não sabes a verdade"
+    "result": "A verdade é que não sabes a verdade"
   }, {
     "input": ["MENTIRA", "A MENTIRA", "QUAL É A MENTIRA", "QUAL E A MENTIRA"],
     "result": "Não estão te observando"
@@ -645,7 +643,7 @@
   }, {
     "input": ["DESTINO", "BEGNIDITAS"],
     "weak": true,
-    "result": "'Begniditas' é uma<br>entrada desconhecida<br>Você quer dizer 'Benignitas'?"
+    "result": "'Begniditas' é uma entrada desconhecida.<br>Você quer dizer 'Benignitas'?"
   }, {
     "input": [
       "CORAÇÃO", "CORACAO", "CORAÇAO", "CORACÃO",
@@ -654,7 +652,7 @@
     "result": "Coracao.mp3"
   }, {
     "input": ["TRECO"],
-    "result": "<pre style=\"font-size:8px\">                   .                      <br>                  ****                    <br>              .xxx@@@@xxxx*               <br>          * xxxxxxxx   xxx@@x*            <br>          xxx      xxxx    @@xxx          <br>       *xxx      xx@@@@x      xx@x*       <br>    *xxx        @x      x .     @@xx      <br>xxx@@xx       .@@   0   @x        xxxxx   <br>* xxx@@x       @x      @xx         xxxxxx*<br>    *xxx@@x     x@@@@@xx        xxx@x*    <br>      *xxx@@xxx    xxx      xx@@x*        <br>          *xx@@@xxxx  xx@@@xx*.           <br>               .*xxxxxxx*.                <br>                    ..                    <br></pre>"
+    "result": "<pre style=\"font-size:4px\">                   .                      <br>                  ****                    <br>              .xxx@@@@xxxx*               <br>          * xxxxxxxx   xxx@@x*            <br>          xxx      xxxx    @@xxx          <br>       *xxx      xx@@@@x      xx@x*       <br>    *xxx        @x      x .     @@xx      <br>xxx@@xx       .@@   0   @x        xxxxx   <br>* xxx@@x       @x      @xx         xxxxxx*<br>    *xxx@@x     x@@@@@xx        xxx@x*    <br>      *xxx@@xxx    xxx      xx@@x*        <br>          *xx@@@xxxx  xx@@@xx*.           <br>               .*xxxxxxx*.                <br>                    ..                    <br></pre>"
   }, {
     "input": ["TEST", "TESTE"],
     "result": "Testando."
@@ -751,16 +749,68 @@
     "input": ["LUZ", "FOGO", "ISQUEIRO", "VELA", "TOCHA", "ILUMINAÇÃO", "ILUMINACAO"],
     "result": "function=lighterSpawn"
   }, {
+    "input": ["FACA", "KNIFE", "SACRIFICIO", "SACRIFICAR", "ARMA", "MALDITA", "ADAGA", "ADAGA MALDITA"],
+    "result": "function=knifeSpawn"
+  }, {
     "input": ["NORBERTO", "O NORBERTO"],
     "result": "Dizem que seu sobrenome era Carlos."
   }, {
     "input": ["ENALDINHO"],
     "result": "ENALDINHO.mp4"
   }, {
-    "input": ["PROTOBASHER", "PROTO BASHER"],
+    "input": ["PROTOBASHER", "PROTO BASHER", "PROTOBASH", "PROTO BASH"],
     "result": "function=protoLoad"
   }, {
     "input": ["ARQUI", "ARQUIMEDES", "ARQUI MEDES", "O CACHORRO", "FURRY", "O FURRY"],
-    "result": "Cachorro responsável por<br> cuidar de uma <br>das benções<br>de Benignitas com 'Myth'"
+    "result": "Cachorro responsável por cuidar de uma das benções de Benignitas com 'Myth'"
+  }, {
+    "input": ["AEQUOR"],
+    "result": "AEQUOR.jpeg"
+  }, {
+    "input": ["NAUTILUS", "PROJECT NAUTILUS", "PROJETO NAUTILUS", "PROJECT: NAUTILUS", "PROJETO: NAUTILUS"],
+    "result": "NAUTILUS.jpeg"
+  }, {
+    "input": ["LUÍNAS"],
+    "weak": true,
+    "result": "page=bHVpbmFz"
+  }, {
+    "input": ["LUINAS"],
+    "weak": true,
+    "result": "page=bHVpbmFz"
+  }, {
+    "input": ["CU ROXO", "CU CU ROXO", "CUROXO", "CUCUROXO"],
+    "result": "QROXO.jpeg"
+  }, {
+    "input": ["00340033443"],
+    "result": "Você realmente achou que isso era um código?"
+  }, {
+    "input": ["SEGREDO", "SECRET", "ESPAÑOL", "ESPANHOL", "ILLA"],
+    "result": "illa.webm"
+  }, {
+    "input": ["GILKA", "CAVALO", "HORSE", "JUCA", "LUCA"],
+    "result": "https://en.wikipedia.org/wiki/Horse"
+  }, {
+    "input": ["SUBMERGIDO"],
+    "result": "submergido.webp"
+  }, {
+    "input": ["EMUBASHER"],
+    "result": "Software de emulação de jogos especiais de PSX<br>O que classifica como especial? Um jogo com rom de estrutura inconvencional que outros emuladores não são capazes de rodar.<br>Um exemplo é Protobasher"
+  }, {
+    "input": [
+      "PROJECT TETRATION",
+      "PROJECTTETRATION",
+      "PROJETO TETRATION",
+      "PROJETOTETRATION"
+    ],
+    "result": "function=spawnProjectTetration"
+  }, {
+    "input": ["MURDERS"],
+    "result": "Alma reciclada"
+  }, {
+    "input": ["LOLAPAD", "LOLAPADGAMES", "LOLAPADGAMES.COM", "LOLAPADGAMES.COM/", "LOLAPADGAMES.COM/REPORT", "LOLAPADGAMES.COM/REPORT/"],
+    "result": "LOLAPAD.jpeg"
+  }, {
+    "input": ["PLAYER236", "PLAYER 236", "236", "TOTEM", "CANON", "CANNON"],
+    "result": "Volte mais tarde..."
   }
 ]
