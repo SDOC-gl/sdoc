@@ -812,5 +812,8 @@
   }, {
     "input": ["PLAYER236", "PLAYER 236", "236", "TOTEM", "CANON", "CANNON"],
     "result": "Volte mais tarde..."
+  }, {
+    "input": ["CAPTURADO"],
+    "result": "UNKNOWN.jpeg"
   }
 ]
